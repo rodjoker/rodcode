@@ -9,10 +9,10 @@ const Header = () => {
   }
 
   return (
-    <header className="bg-black text-white fixed w-full top-0 z-50">
+    <header className="bg-gradient-to-br from-blue-900 via-gray-800 to-gray-700 text-white fixed w-full top-0 z-50">
       <div className="container mx-auto px-4 py-4">
         <nav className="flex justify-between items-center">
-          <div className="h-22">
+          <div className="h-16">
             RodCode
           </div>
 
