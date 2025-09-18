@@ -4,10 +4,10 @@ import ProjectCard from '../../components/ProjectCard';
 
 export default function Home() {
   return (
-  <main className="min-h-screen bg-gradient-to-br from-orange-900 via-orange-800 to-orange-700 text-white">
+  <main className="min-h-screen bg-orange-100 text-gray-900">
       <Header />
       <section className="max-w-6xl mx-auto px-4 py-10 mt-16">
-        <h1 className="text-4xl font-bold mb-8 text-center text-orange-200 drop-shadow">Mis Proyectos</h1>
+        <h1 className="text-4xl font-bold mb-8 text-center text-orange-700 drop-shadow">Mis Proyectos</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
             {

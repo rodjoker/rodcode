@@ -9,7 +9,7 @@ const Header = () => {
   }
 
   return (
-    <header className="bg-gradient-to-br from-blue-900 via-gray-800 to-gray-700 text-white fixed w-full top-0 z-50">
+  <header className="bg-orange-50 border-b border-orange-300 text-gray-900 fixed w-full top-0 z-50 shadow-md">
       <div className="container mx-auto px-4 py-4">
         <nav className="flex justify-between items-center">
           <div className="h-16">
@@ -54,7 +54,7 @@ const Header = () => {
           `}>
             <a 
               href="/home" 
-              className="hover:text-gray-300 transition-colors block md:inline-block text-center"
+              className="hover:text-orange-700 transition-colors block md:inline-block text-center text-gray-900"
               onClick={() => setIsMenuOpen(false)}
             >
               Home
