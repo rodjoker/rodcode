@@ -11,10 +11,10 @@ export default function Home() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
             {
-              title: 'Portfolio Web',
-              description: 'Mi portafolio personal con Next.js y Tailwind.',
-              image: '/file.svg',
-              link: 'https://portfolio.example.com',
+              title: 'Delivery App',
+              description: 'Aplicación para gestionar entregas y pedidos.',
+              image: '/delivery_app.PNG',
+              link: 'https://delivery-ten-umber.vercel.app',
             },
             {
               title: 'E-commerce Moderno',
