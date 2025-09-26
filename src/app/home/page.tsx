@@ -4,10 +4,12 @@ import ProjectCard from '../../components/ProjectCard';
 
 export default function Home() {
   return (
-  <main className="min-h-screen bg-orange-100 text-gray-900">
-      <Header />
+    <>
+    <Header />
+  <div className="min-h-screen bg-blue-50 text-blue-900">
+      
       <section className="max-w-6xl mx-auto px-4 py-10 mt-16">
-        <h1 className="text-4xl font-bold mb-8 text-center text-orange-700 drop-shadow">Mis Proyectos</h1>
+        <h1 className="text-4xl font-bold mb-8 text-center text-blue-900 drop-shadow">Mis Proyectos</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
             {
@@ -51,6 +53,7 @@ export default function Home() {
           ))}
         </div>
       </section>
-    </main>
+    </div>
+    </>
   );
 }

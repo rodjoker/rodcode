@@ -9,11 +9,15 @@ const Header = () => {
   }
 
   return (
-  <header className="bg-orange-50 border-b border-orange-300 text-gray-900 fixed w-full top-0 z-50 shadow-md">
+  <header className="bg-blue-200 border-b border-blue-200 text-blue-900 fixed w-full top-0 z-50 shadow-md">
       <div className="container mx-auto px-4 py-4">
         <nav className="flex justify-between items-center">
-          <div className="h-16">
-            RodCode
+           <div className="h-26">
+            <img 
+              src="/rodcode_logo.png" 
+              alt="Marco Castillo Logo" 
+              className="h-full w-auto object-contain"
+            />
           </div>
 
           {/* Hamburger Menu Button (visible only on mobile) */}
@@ -45,30 +49,30 @@ const Header = () => {
             ${isMenuOpen ? 'absolute top-full left-0 right-0 flex' : 'hidden'}
             md:relative md:top-auto md:bg-transparent
             flex-col md:flex-row
-            bg-black
+            bg-blue-100
             py-4 md:py-0
             px-4 md:px-0
             space-y-4 md:space-y-0
             w-full md:w-auto
-            border-t md:border-t-0 border-zinc-800
+            border-t md:border-t-0 border-blue-200
           `}>
             <a 
               href="/home" 
-              className="hover:text-orange-700 transition-colors block md:inline-block text-center text-gray-900"
+              className="text-blue-700 hover:text-blue-500 transition-colors block md:inline-block text-center"
               onClick={() => setIsMenuOpen(false)}
             >
               Home
             </a>
             <a 
               href="/project" 
-              className="hover:text-gray-300 transition-colors block md:inline-block text-center"
+              className="text-blue-700 hover:text-blue-500 transition-colors block md:inline-block text-center"
               onClick={() => setIsMenuOpen(false)}
             >
               Projects
             </a>
             <a 
               href="/about" 
-              className="hover:text-gray-300 transition-colors block md:inline-block text-center"
+              className="text-blue-700 hover:text-blue-500 transition-colors block md:inline-block text-center"
               onClick={() => setIsMenuOpen(false)}
             >
               About Me
