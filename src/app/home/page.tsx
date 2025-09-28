@@ -1,15 +1,23 @@
 
 import Header from '../../components/Header';
 import ProjectCard from '../../components/ProjectCard';
+import ProfileCard from '../../components/ProfileCard';
+import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
     <>
     <Header />
-  <div className="min-h-screen bg-blue-50 text-blue-900">
-      
+    <div className="min-h-screen bg-green-50 text-green-900">
       <section className="max-w-6xl mx-auto px-4 py-10 mt-16">
-        <h1 className="text-4xl font-bold mb-8 text-center text-blue-900 drop-shadow">Mis Proyectos</h1>
+        <ProfileCard 
+          name="Rodolfo Rodriguez"
+          title="RodCode"
+          description="Soy un desarrollador Full Stack apasionado por crear soluciones web innovadoras y eficientes. Con experiencia en tecnologías modernas como React, Next.js, y Node.js, me especializo en construir aplicaciones web escalables y responsivas. Mi enfoque se centra en combinar funcionalidad robusta con diseño intuitivo para crear experiencias de usuario excepcionales."
+          image="/rodolfo_perfil.png"
+        />
+        
+        <h1 className="text-4xl font-bold mb-8 text-center text-green-900 drop-shadow">Mis Proyectos</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
             {
@@ -54,6 +62,7 @@ export default function Home() {
         </div>
       </section>
     </div>
+      <Footer />
     </>
   );
 }
