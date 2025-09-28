@@ -10,12 +10,14 @@ export default function ProfileCard({ name, title, description, image }: Profile
     <div className="bg-green-100 border border-green-200 rounded-xl shadow-lg overflow-hidden mb-16 mt-16">
       <div className="flex flex-col md:flex-row">
         {/* Imagen - ocupa todo el ancho en móvil, lado izquierdo en desktop */}
-        <div className="w-full md:w-1/3 h-64 md:h-auto">
-          <img 
-            src={image} 
-            alt={name} 
-            className="w-full h-full object-cover"
-          />
+        <div className="w-full md:w-1/3 relative">
+          <div className="aspect-square md:aspect-auto md:h-full">
+            <img 
+              src={image} 
+              alt={name} 
+              className="w-full h-full object-contain object-center md:object-cover"
+            />
+          </div>
         </div>
         
         {/* Contenido - adaptable y centrado en móvil, alineado a la izquierda en desktop */}
