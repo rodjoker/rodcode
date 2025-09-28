@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import { CVDownloadButton } from './PDFDocument'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -45,17 +46,18 @@ const Header = () => {
 
           {/* Navigation Links */}
           <div className={`
-            md:flex md:space-x-8 md:items-center
             ${isMenuOpen ? 'absolute top-full left-0 right-0 flex' : 'hidden'}
-            md:relative md:top-auto md:bg-transparent
+            md:flex md:space-x-8 md:items-center
             flex-col md:flex-row
-            bg-green-100
+            bg-green-100 md:bg-transparent
             py-4 md:py-0
             px-4 md:px-0
             space-y-4 md:space-y-0
             w-full md:w-auto
             border-t md:border-t-0 border-green-200
           `}>
+            {/* Download CV Button */}
+            <CVDownloadButton />
             <a 
               href="/home" 
               className="text-green-700 hover:text-green-500 transition-colors block md:inline-block text-center"
