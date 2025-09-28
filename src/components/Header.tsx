@@ -1,6 +1,5 @@
 'use client'
 import { useState } from 'react'
-import { CVDownloadButton } from './PDFDocument'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -15,7 +14,7 @@ const Header = () => {
         <nav className="flex justify-between items-center">
            <div className="h-26">
             <img 
-              src="/logo_verde_mate.png" 
+              src="/rodcode_logo.png" 
               alt="RodCode Logo" 
               className="h-full w-auto object-contain"
             />
@@ -56,8 +55,6 @@ const Header = () => {
             w-full md:w-auto
             border-t md:border-t-0 border-green-200
           `}>
-            {/* Download CV Button */}
-            <CVDownloadButton />
             <a 
               href="/home" 
               className="text-green-700 hover:text-green-500 transition-colors block md:inline-block text-center"

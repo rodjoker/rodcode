@@ -64,10 +64,11 @@ export default function ProjectsPage() {
   return (
      <>
     <Header />
-    <div className="container mx-auto px-4 py-24">
-      <h1 className="text-4xl font-bold text-green-800 mb-12 text-center">
-        Proyectos
-      </h1>
+    <div className="min-h-screen bg-green-50 text-green-900 pt-24">
+      <div className="container mx-auto px-4">
+        <h1 className="text-4xl font-bold text-green-800 mb-12 text-center">
+          Proyectos
+        </h1>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {projects.map((project, index) => (
@@ -76,6 +77,7 @@ export default function ProjectsPage() {
             {...project}
           />
         ))}
+      </div>
       </div>
     </div>
     <Footer />
