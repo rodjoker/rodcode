@@ -2,10 +2,12 @@ interface ProfileCardProps {
   name: string;
   title: string;
   description: string;
+  subtitle: string;
+  additionalDescription: string;
   image: string;
 }
 
-export default function ProfileCard({ name, title, description, image }: ProfileCardProps) {
+export default function ProfileCard({ name, title, description, subtitle, additionalDescription, image }: ProfileCardProps) {
   return (
     <div className="bg-green-100 border border-green-200 rounded-xl shadow-lg overflow-hidden mb-16 mt-16">
       <div className="flex flex-col md:flex-row">
@@ -24,7 +26,9 @@ export default function ProfileCard({ name, title, description, image }: Profile
         <div className="w-full md:w-2/3 p-6 md:p-8 flex flex-col justify-center">
           <h1 className="text-3xl md:text-4xl font-bold text-green-900 mb-2">{name}</h1>
           <h2 className="text-xl md:text-2xl font-semibold text-green-700 mb-4">{title}</h2>
-          <p className="text-green-700 text-lg leading-relaxed">{description}</p>
+          <p className="text-green-700 text-lg leading-relaxed text-justify mb-6">{description}</p>
+          <h3 className="text-xl font-semibold text-green-800 mb-3">{subtitle}</h3>
+          <p className="text-green-700 text-lg leading-relaxed text-justify">{additionalDescription}</p>
         </div>
       </div>
     </div>
