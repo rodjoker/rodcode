@@ -35,7 +35,7 @@ export default function Contact() {
 
   return (
     <>
-      <main className="min-h-screen bg-green-50 text-green-900">
+      <main className="min-h-screen bg-green-50 text-green-900 mt-32">
         <Header />
         <section className="max-w-2xl mx-auto px-4 py-16 text-center">
           <h1 className="text-4xl font-bold mb-8 text-green-900">Contacto</h1>
