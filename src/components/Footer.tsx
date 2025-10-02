@@ -33,7 +33,7 @@ const Footer = () => {
                 className="hover:text-gray-300 transition-colors"
               >Instagram</a>
                <a 
-                href="https://www.linkedin.com/in/marco-alejandro-castillo-rodríguez-9386bb276" 
+                href="https://www.linkedin.com/in/rodolforodriguez-desarrolladorweb" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="hover:text-gray-300 transition-colors"

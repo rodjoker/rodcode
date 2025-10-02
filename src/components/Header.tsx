@@ -14,7 +14,7 @@ const Header = () => {
         <nav className="flex justify-between items-center">
            <div className="h-26">
             <img 
-              src="/logo_verde_mate.png" 
+              src="/rodcode_logo.png" 
               alt="RodCode Logo" 
               className="h-full w-auto object-contain"
             />
@@ -45,11 +45,10 @@ const Header = () => {
 
           {/* Navigation Links */}
           <div className={`
-            md:flex md:space-x-8 md:items-center
             ${isMenuOpen ? 'absolute top-full left-0 right-0 flex' : 'hidden'}
-            md:relative md:top-auto md:bg-transparent
+            md:flex md:space-x-8 md:items-center
             flex-col md:flex-row
-            bg-green-100
+            bg-green-100 md:bg-transparent
             py-4 md:py-0
             px-4 md:px-0
             space-y-4 md:space-y-0

@@ -1,3 +1,5 @@
+
+
 interface ProjectCardProps {
   title: string;
   description: string;
@@ -7,6 +9,7 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ title, description, image, link }: ProjectCardProps) {
   return (
+   
   <div className="bg-green-100 border border-green-200 rounded-xl shadow-lg overflow-hidden flex flex-col hover:scale-105 transition-all duration-300">
       {image && (
   <img src={image} alt={title} className="w-full h-40 object-cover bg-green-50" />
@@ -21,5 +24,6 @@ export default function ProjectCard({ title, description, image, link }: Project
         )}
       </div>
     </div>
+    
   );
 }
