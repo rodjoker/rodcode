@@ -1,25 +1,41 @@
 
 import Header from '../../components/Header';
 import ProjectCard from '../../components/ProjectCard';
-import ProfileCard from '../../components/ProfileCard';
+import ClientThreeHero from '@/components/ClientThreeHero';
 import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
     <>
     <Header />
-    <div className="min-h-screen bg-green-50 text-green-900">
-      <section className="max-w-6xl mx-auto px-4 py-10 mt-16">
-        <ProfileCard 
-          name="Rodolfo Rodriguez"
-          title="RodCode"
-          description="Soy un desarrollador Full Stack apasionado por crear soluciones web innovadoras y eficientes. Con experiencia en tecnologías modernas como React, Next.js, y Node.js, me especializo en construir aplicaciones web escalables y responsivas. Mi enfoque se centra en combinar funcionalidad robusta con diseño intuitivo para crear experiencias de usuario excepcionales."
-          subtitle="Integración de IA para un Desarrollo Avanzado"
-          additionalDescription="Además de mis habilidades técnicas, he desarrollado y aplicado la ingeniería de prompts para integrar la Inteligencia Artificial de forma efectiva en mi flujo de trabajo de desarrollo. Esta sinergia me ha permitido generar código más limpio y optimizado, entregando consistentemente aplicaciones altamente escalables. Como resultado, he logrado acelerar significativamente los procesos de entrega y asegurar la máxima satisfacción del cliente."
-          image="/rodolfo_perfil.png"
-        />
+    <div className="min-h-screen bg-black text-white mt-10">
+      <section className="max-w-6xl mx-auto px-4 py-10 mt-36">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h1 className="text-5xl font-bold mb-4">
+              RodCode — Rodolfo Rodriguez
+            </h1>
+            <p className="text-2xl text-gray-300 mb-6">
+              Programador Web FullStack creando interfaces modernas y experiencias 3D interactivas para la web
+            </p>
+            <div className="space-x-4">
+              <a href="#portfolio" className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+                Ver proyectos
+              </a>
+              <a href="#contact" className="border border-white text-white px-8 py-3 rounded-lg hover:bg-white hover:text-black transition-colors">
+                Hablar conmigo
+              </a>
+            </div>
+            <p className="mt-8 text-gray-400">
+              React · Next.js · Three.js · TypeScript · Node.js · AWS
+            </p>
+          </div>
+          <div className="h-[60vh] w-full">
+            <ClientThreeHero />
+          </div>
+        </div>
         
-        <h1 className="text-4xl font-bold mb-8 text-center text-green-900 drop-shadow">Proyectos Destacados</h1>
+        <h1 className="text-4xl font-bold mb-8 text-center text-white" id="portfolio">Proyectos Destacados</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {[
             {
