@@ -28,16 +28,22 @@ function wrapText(ctx: CanvasRenderingContext2D, text: string, x: number, y: num
 function Monitor({ texture }: { texture: THREE.Texture }) {
   return (
     <group position={[0, 0.8, 0]}>
+      {/* Marco del monitor */}
       <mesh position={[0, 0, 0]}>
-        <boxGeometry args={[5.4, 3.1, 0.1]} />
+        <boxGeometry args={[6.4, 4.1, 0.1]} />
         <meshStandardMaterial color="#9CA3AF" metalness={0.2} roughness={0.5} />
       </mesh>
 
+      {/* Pantalla del monitor */}
       <mesh position={[0, 0, 0.06]}>
-        <planeGeometry args={[5.0, 2.8]} />
-        <meshBasicMaterial map={texture} toneMapped={false} />
+        <planeGeometry args={[6.0, 3.8]} />
+        <meshBasicMaterial 
+          map={texture} 
+          toneMapped={false}
+        />
       </mesh>
 
+      {/* Base del monitor */}
       <mesh position={[0, -1.8, 0]}>
         <boxGeometry args={[2.0, 0.14, 1.8]} />
         <meshStandardMaterial color="#9CA3AF" metalness={0.2} roughness={0.5} />
@@ -79,51 +85,60 @@ export default function ThreeDeskScene() {
     canvas.height = 1152
     const ctx = canvas.getContext('2d')!
     
-    // Fondo
-    ctx.fillStyle = '#ffffff'
-    ctx.fillRect(0, 0, canvas.width, canvas.height)
-
     // Configuración base
-    const margin = 40
-    let y = margin
+    const margin = 80
+    let y = margin + 20
     const contentWidth = canvas.width - (margin * 2)
+
+    // Fondo con efecto de hoja
+    ctx.fillStyle = '#F8F8F8'
+    ctx.fillRect(0, 0, canvas.width, canvas.height)
+    
+    // Efecto de sombra sutil para simular una hoja
+    ctx.shadowColor = 'rgba(0, 0, 0, 0.1)'
+    ctx.shadowBlur = 20
+    ctx.shadowOffsetX = 5
+    ctx.shadowOffsetY = 5
+    ctx.fillStyle = '#F8F8F8'
+    ctx.fillRect(margin/2, margin/2, canvas.width - margin, canvas.height - margin)
+    ctx.shadowColor = 'transparent'
     
     // Encabezado
     ctx.fillStyle = '#111827'
-    ctx.font = 'bold 32px Inter, system-ui'
+    ctx.font = 'bold 48px Inter, system-ui'
     ctx.fillText('RODOLFO ANTONIO RODRÍGUEZ QUINTERO', margin, y)
-    y += 30
-
-    // Contacto
-    ctx.font = '16px Inter, system-ui'
-    ctx.fillStyle = '#4B5563'
-    ctx.fillText('Cel: +34 611360462 | rodolfoantoniorq@gmail.com | LinkedIn | GitHub', margin, y)
-    y += 35
-
-    // Título
-    ctx.font = 'bold 20px Inter, system-ui'
-    ctx.fillStyle = '#111827'
-    ctx.fillText('DESARROLLADOR WEB', margin, y)
-    y += 35
-
-    // Perfil
-    ctx.font = 'bold 18px Inter, system-ui'
-    ctx.fillText('PERFIL', margin, y)
-    y += 25
-    
-    const perfil = 'Desarrollador Full Stack con 2 años de experiencia en desarrollo web y móvil, con un enfoque en la integración de herramientas de IA para optimizar y acelerar los flujos de trabajo de desarrollo. Especializado en JavaScript, React, Node.js, Express.js y MongoDB, con experiencia en Python y FastAPI para el desarrollo de APIs y servicios.'
-    ctx.font = '14px Inter, system-ui'
-    wrapText(ctx, perfil, margin, y, contentWidth, 20)
     y += 45
 
-    // Experiencia
-    ctx.font = 'bold 18px Inter, system-ui'
-    ctx.fillText('EXPERIENCIA', margin, y)
-    y += 25
+    // Contacto
+    ctx.font = '20px Inter, system-ui'
+    ctx.fillStyle = '#4B5563'
+    ctx.fillText('Cel: +34 611360462 | rodolfoantoniorq@gmail.com | LinkedIn | GitHub', margin, y)
+    y += 45
+
+    // Título
+    ctx.font = 'bold 32px Inter, system-ui'
+    ctx.fillStyle = '#111827'
+    ctx.fillText('DESARROLLADOR WEB', margin, y)
+    y += 45
+
+    // Perfil
+    ctx.font = 'bold 24px Inter, system-ui'
+    ctx.fillText('PERFIL', margin, y)
+    y += 30
     
-    ctx.font = 'bold 16px Inter, system-ui'
+    const perfil = 'Desarrollador Full Stack con 2 años de experiencia en desarrollo web y móvil, con un enfoque en la integración de herramientas de IA para optimizar y acelerar los flujos de trabajo de desarrollo. Especializado en JavaScript, React, Node.js, Express.js y MongoDB, con experiencia en Python y FastAPI para el desarrollo de APIs y servicios.'
+    ctx.font = '18px Inter, system-ui'
+    wrapText(ctx, perfil, margin, y, contentWidth, 24)
+    y += 55
+
+    // Experiencia
+    ctx.font = 'bold 24px Inter, system-ui'
+    ctx.fillText('EXPERIENCIA', margin, y)
+    y += 35
+    
+    ctx.font = 'bold 20px Inter, system-ui'
     ctx.fillText('Desarrollador Full Stack Freelance (Mar. 2023 – Actualidad)', margin, y)
-    y += 20
+    y += 25
 
     const experiencias = [
       '• Desarrollo de aplicaciones web responsivas utilizando React Vite, Material UI y MongoDB',
@@ -133,17 +148,17 @@ export default function ThreeDeskScene() {
       '• Integración con servicios AWS (Lex, Connect) para optimización de procesos'
     ]
 
-    ctx.font = '14px Inter, system-ui'
+    ctx.font = '18px Inter, system-ui'
     experiencias.forEach(exp => {
-      wrapText(ctx, exp, margin, y, contentWidth, 18)
-      y += 20
+      wrapText(ctx, exp, margin, y, contentWidth, 24)
+      y += 28
     })
 
     // Habilidades
-    y += 25
-    ctx.font = 'bold 18px Inter, system-ui'
+    y += 35
+    ctx.font = 'bold 24px Inter, system-ui'
     ctx.fillText('HABILIDADES TÉCNICAS', margin, y)
-    y += 25
+    y += 35
 
     const skills = [
       'Lenguajes: JavaScript, TypeScript, Python',
@@ -153,17 +168,17 @@ export default function ThreeDeskScene() {
       'Cloud: AWS (Lex, Connect, Cognito, Boto3), Git, GitHub'
     ]
 
-    ctx.font = '14px Inter, system-ui'
+    ctx.font = '18px Inter, system-ui'
     skills.forEach(skill => {
-      wrapText(ctx, '• ' + skill, margin, y, contentWidth, 18)
-      y += 20
+      wrapText(ctx, '• ' + skill, margin, y, contentWidth, 24)
+      y += 28
     })
 
     // Otras Habilidades
-    y += 20
-    ctx.font = 'bold 18px Inter, system-ui'
+    y += 35
+    ctx.font = 'bold 24px Inter, system-ui'
     ctx.fillText('OTRAS HABILIDADES', margin, y)
-    y += 20
+    y += 30
 
     const otherSkills = [
       'Prompt engineering y optimización de instrucciones para IA',
@@ -171,22 +186,22 @@ export default function ThreeDeskScene() {
       'Integración de modelos de IA para optimización de procesos'
     ]
 
-    ctx.font = '14px Inter, system-ui'
+    ctx.font = '18px Inter, system-ui'
     otherSkills.forEach(skill => {
-      wrapText(ctx, '• ' + skill, margin, y, contentWidth, 18)
-      y += 18
+      wrapText(ctx, '• ' + skill, margin, y, contentWidth, 24)
+      y += 28
     })
 
     // Estudios
-    y += 20
-    ctx.font = 'bold 18px Inter, system-ui'
+    y += 35
+    ctx.font = 'bold 24px Inter, system-ui'
     ctx.fillText('ESTUDIOS', margin, y)
-    y += 20
+    y += 30
 
     // Footer
-    ctx.font = '14px Inter, system-ui'
+    ctx.font = '18px Inter, system-ui'
     ctx.fillStyle = '#4B5563'
-    wrapText(ctx, 'Formación en Desarrollo Web Full Stack – Protalento/ADA School, 2023', margin, y, contentWidth, 18)
+    wrapText(ctx, 'Formación en Desarrollo Web Full Stack – Protalento/ADA School, 2023', margin, y, contentWidth, 24)
 
     return new THREE.CanvasTexture(canvas)
   })
