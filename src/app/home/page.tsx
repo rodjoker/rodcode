@@ -9,7 +9,7 @@ export default function Home() {
     <>
     <Header />
     <div className="min-h-screen bg-black text-white">
-      <section className="relative max-w-6xl mx-auto px-4 py-10 mt-20">
+      <section className="relative max-w-6xl mx-auto px-4 py-10 mt-36 md:mt-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="relative z-10">
             <h1 className="text-5xl font-bold mb-4 text-white">
@@ -35,7 +35,7 @@ export default function Home() {
           </div>
         </div>
         
-        <h1 className="text-4xl font-bold mb-8 text-center text-blue-100" id="portfolio">Proyectos Destacados</h1>
+        <h1 className="text-4xl font-bold mt-32 mb-8 text-center text-blue-100" id="portfolio">Proyectos Destacados</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {[
             {
