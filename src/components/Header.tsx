@@ -9,7 +9,7 @@ const Header = () => {
   }
 
   return (
-  <header className="bg-black/80 backdrop-blur-sm border-b border-white/10 text-white fixed w-full top-0 z-50 shadow-md">
+  <header className="bg-black/80 backdrop-blur-sm border-b border-gray-700/20 text-white fixed w-full top-0 z-50 shadow-md">
       <div className="container mx-auto px-4 py-4">
         <nav className="flex justify-between items-center">
            <div className="h-26">
@@ -48,37 +48,37 @@ const Header = () => {
             ${isMenuOpen ? 'absolute top-full left-0 right-0 flex' : 'hidden'}
             md:flex md:space-x-8 md:items-center
             flex-col md:flex-row
-            bg-green-100 md:bg-transparent
+            bg-black/95 md:bg-transparent
             py-4 md:py-0
             px-4 md:px-0
             space-y-4 md:space-y-0
             w-full md:w-auto
-            border-t md:border-t-0 border-green-200
+            border-t md:border-t-0 border-gray-700/20
           `}>
             <a 
               href="/home" 
-              className="text-green-700 hover:text-green-500 transition-colors block md:inline-block text-center"
+              className="text-blue-200 hover:text-blue-500 transition-colors block md:inline-block text-center"
               onClick={() => setIsMenuOpen(false)}
             >
               Home
             </a>
             <a 
               href="/project" 
-              className="text-green-700 hover:text-green-500 transition-colors block md:inline-block text-center"
+              className="text-blue-200 hover:text-blue-500 transition-colors block md:inline-block text-center"
               onClick={() => setIsMenuOpen(false)}
             >
               Projects
             </a>
             <a 
               href="/about" 
-              className="text-green-700 hover:text-green-500 transition-colors block md:inline-block text-center"
+              className="text-blue-200 hover:text-blue-500 transition-colors block md:inline-block text-center"
               onClick={() => setIsMenuOpen(false)}
             >
               About Me
             </a>
             <a 
               href="/contact" 
-              className="hover:text-gray-300 transition-colors block md:inline-block text-center"
+              className="text-blue-200 hover:text-blue-500 transition-colors block md:inline-block text-center"
               onClick={() => setIsMenuOpen(false)}
             >
               Contact

@@ -7,8 +7,7 @@ export default function About() {
     <>
       <Header />
       <main className="min-h-screen py-20 md:py-0">
-        {/* Sección 1 - Verde menta suave */}
-        <section className="min-h-screen md:h-screen w-full bg-emerald-800 flex items-center justify-center px-4 py-16 md:py-0 mt-16 md:mt-32">
+        <section className="min-h-screen md:h-screen w-full bg-gray-900 flex items-center justify-center px-4 py-16 md:py-0 mt-16 md:mt-32">
           <div className="max-w-5xl w-11/12">
             <ProfileCard
               name="Rodolfo Rodríguez"

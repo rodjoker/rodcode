@@ -12,17 +12,17 @@ export default function Home() {
       <section className="relative max-w-6xl mx-auto px-4 py-10 mt-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="relative z-10">
-            <h1 className="text-5xl font-bold mb-4">
+            <h1 className="text-5xl font-bold mb-4 text-white">
               RodCode — Rodolfo Rodriguez
             </h1>
             <p className="text-2xl text-gray-300 mb-6">
               Programador Web FullStack creando interfaces modernas y experiencias 3D interactivas para la web
             </p>
             <div className="space-x-4">
-              <a href="#portfolio" className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+              <a href="#portfolio" className="bg-gray-800 text-white px-8 py-3 rounded-lg hover:bg-gray-700 transition-colors">
                 Ver proyectos
               </a>
-              <a href="#contact" className="border border-white text-white px-8 py-3 rounded-lg hover:bg-white hover:text-black transition-colors">
+              <a href="#contact" className="border border-gray-600 text-gray-300 px-8 py-3 rounded-lg hover:bg-gray-800/50 hover:text-white hover:border-gray-500 transition-colors">
                 Hablar conmigo
               </a>
             </div>
@@ -35,7 +35,7 @@ export default function Home() {
           </div>
         </div>
         
-        <h1 className="text-4xl font-bold mb-8 text-center text-white" id="portfolio">Proyectos Destacados</h1>
+        <h1 className="text-4xl font-bold mb-8 text-center text-blue-100" id="portfolio">Proyectos Destacados</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {[
             {

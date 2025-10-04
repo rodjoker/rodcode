@@ -35,11 +35,11 @@ export default function Contact() {
 
   return (
     <>
-      <main className="min-h-screen bg-green-50 text-green-900 mt-32">
+      <main className="min-h-screen bg-black text-white mt-32">
         <Header />
         <section className="max-w-2xl mx-auto px-4 py-16 text-center">
-          <h1 className="text-4xl font-bold mb-8 text-green-900">Contacto</h1>
-          <p className="text-lg text-green-700 mb-4">
+          <h1 className="text-4xl font-bold mb-8 text-white">Contacto</h1>
+          <p className="text-lg text-gray-300 mb-4">
             ¿Quieres trabajar conmigo o tienes alguna pregunta? ¡Contáctame!
           </p>
           <form ref={form} onSubmit={sendEmail} className="flex flex-col gap-4">
@@ -48,25 +48,25 @@ export default function Contact() {
               name="name"
               placeholder="Nombre"
               required
-              className="p-3 rounded-lg bg-green-100 border border-green-200 text-green-900 focus:border-green-500 focus:ring-1 focus:ring-green-500 outline-none"
+              className="p-3 rounded-lg bg-gray-900 border border-gray-700 text-white focus:border-gray-500 focus:ring-1 focus:ring-gray-500 outline-none placeholder-gray-500"
             />
             <input
               type="email"
               name="email"
               placeholder="Email"
               required
-              className="p-3 rounded-lg bg-green-100 border border-green-200 text-green-900 focus:border-green-500 focus:ring-1 focus:ring-green-500 outline-none"
+              className="p-3 rounded-lg bg-gray-900 border border-gray-700 text-white focus:border-gray-500 focus:ring-1 focus:ring-gray-500 outline-none placeholder-gray-500"
             />
             <textarea
               name="message"
               placeholder="Mensaje"
               required
               rows={4}
-              className="p-3 rounded-lg bg-green-100 border border-green-200 text-green-900 focus:border-green-500 focus:ring-1 focus:ring-green-500 outline-none"
+              className="p-3 rounded-lg bg-gray-900 border border-gray-700 text-white focus:border-gray-500 focus:ring-1 focus:ring-gray-500 outline-none placeholder-gray-500"
             />
             <button
               type="submit"
-              className="bg-green-500 hover:bg-green-600 py-3 px-6 rounded-xl font-bold text-white transition-colors"
+              className="bg-gray-800 hover:bg-gray-700 py-3 px-6 rounded-xl font-bold text-white transition-colors"
             >
               Enviar
             </button>
@@ -75,7 +75,7 @@ export default function Contact() {
           {statusMessage && (
             <p
               className={`mt-6 text-lg font-medium ${
-                isSuccess ? "text-green-700" : "text-red-600"
+                isSuccess ? "text-gray-300" : "text-red-400"
               }`}
             >
               {statusMessage}
