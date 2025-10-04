@@ -4,74 +4,7 @@ import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { OrbitControls, Float, Html } from '@react-three/drei'
 import * as THREE from 'three'
 
-function ResumeTexture({ width = 1024, height = 576 }: { width?: number, height?: number }) {
-  const [texture] = useState(() => new THREE.CanvasTexture(document.createElement('canvas')))
-  const canvasRef = useRef<HTMLCanvasElement | null>(null)
-
-  useEffect(() => {
-    const canvas = document.createElement('canvas')
-    canvas.width = width
-    canvas.height = height
-    canvasRef.current = canvas
-    const ctx = canvas.getContext('2d')
-    if (!ctx) return
-
-    // Estilos base
-    ctx.fillStyle = '#ffffff'
-    ctx.fillRect(0, 0, width, height)
-    ctx.fillStyle = '#0f172a'
-    ctx.font = '28px Inter, Roboto, monospace'
-    ctx.textBaseline = 'top'
-
-    // Cabecera
-    ctx.fillStyle = '#0b1220'
-    ctx.font = 'bold 36px Inter, Roboto, sans-serif'
-    ctx.fillText('Rodolfo Rodriguez — RodCode', 40, 36)
-
-    // Subtitulo
-    ctx.font = '18px Inter, Roboto, sans-serif'
-    ctx.fillStyle = '#0b1220'
-    ctx.fillText('Programador Web FullStack', 40, 80)
-
-    // Secciones: resumen breve y bullets
-    ctx.font = '16px Inter, Roboto, monospace'
-    const leftX = 40
-    let y = 130
-    const lineHeight = 22
-
-    const summary =
-      'FullStack developer especializado en React, Next.js, Three.js, Node.js, Python y despliegues en AWS y Google Cloud.'
-    wrapText(ctx, summary, leftX, y, width - 80, lineHeight)
-    y += 3 * lineHeight
-
-    const bullets = [
-      'Frontend: React · Next.js · Tailwind CSS · TypeScript',
-      'Backend: Node.js · Express · NestJS · Python · FastAPI',
-      'Cloud: AWS · Google Cloud · Salesforce · Amazon Connect',
-      'Databases: MongoDB · PostgreSQL · Supabase',
-    ]
-    bullets.forEach((b) => {
-      ctx.fillText('• ' + b, leftX, y)
-      y += lineHeight
-    })
-
-    // Footer: contacto
-    y = height - 72
-    ctx.font = '14px Inter, Roboto, monospace'
-    ctx.fillStyle = '#0369a1'
-    ctx.fillText('Contacto: rodcode@example.com · GitHub: github.com/rodcode', leftX, y)
-
-    // Actualiza la textura
-    texture.image = canvas
-    texture.needsUpdate = true
-  }, [texture, width, height])
-
-  // exposa la textura al resto de la escena
-  return (
-    // usamos Html para mostrar un fallback accesible encima si WebGL no está disponible
-    <primitive object={texture} attach="map" />
-  )
-}
+/* helper para wrap text en canvas */
 
 /* helper para wrap text en canvas */
 function wrapText(ctx: CanvasRenderingContext2D, text: string, x: number, y: number, maxWidth: number, lineHeight: number) {
@@ -140,29 +73,123 @@ function DeskObjects({ texture }: { texture: THREE.Texture }) {
 }
 
 export default function ThreeDeskScene() {
-  // create a canvas texture using the same code used above
-  const canvas = document.createElement('canvas')
-  canvas.width = 1024
-  canvas.height = 576
-  const ctx = canvas.getContext('2d')!
-  ctx.fillStyle = '#ffffff'
-  ctx.fillRect(0, 0, canvas.width, canvas.height)
-  ctx.fillStyle = '#0b1220'
-  ctx.font = 'bold 36px Inter, sans-serif'
-  ctx.fillText('Rodolfo Rodriguez — RodCode', 40, 36)
-  ctx.font = '18px Inter, sans-serif'
-  ctx.fillText('Programador Web FullStack', 40, 80)
-  ctx.font = '16px monospace'
-  ctx.fillText('Frontend: React · Next.js · Three.js · TypeScript', 40, 140)
-  ctx.fillText('Backend: Node.js · Express · NestJS · Python · FastAPI', 40, 170)
-  ctx.fillText('Cloud: AWS · Google Cloud · Salesforce · Amazon Connect', 40, 200)
-  ctx.fillText('Databases: MongoDB · PostgreSQL · Supabase', 40, 230)
-  ctx.font = '14px monospace'
-  ctx.fillStyle = '#0369a1'
-  ctx.fillText('Contacto: rodcode@example.com · GitHub: github.com/rodcode', 40, 520)
+  const [texture] = useState(() => {
+    const canvas = document.createElement('canvas')
+    canvas.width = 2048
+    canvas.height = 1152
+    const ctx = canvas.getContext('2d')!
+    
+    // Fondo
+    ctx.fillStyle = '#ffffff'
+    ctx.fillRect(0, 0, canvas.width, canvas.height)
 
-  const resumeTexture = new THREE.CanvasTexture(canvas)
-  resumeTexture.needsUpdate = true
+    // Configuración base
+    const margin = 40
+    let y = margin
+    const contentWidth = canvas.width - (margin * 2)
+    
+    // Encabezado
+    ctx.fillStyle = '#111827'
+    ctx.font = 'bold 32px Inter, system-ui'
+    ctx.fillText('RODOLFO ANTONIO RODRÍGUEZ QUINTERO', margin, y)
+    y += 30
+
+    // Contacto
+    ctx.font = '16px Inter, system-ui'
+    ctx.fillStyle = '#4B5563'
+    ctx.fillText('Cel: +34 611360462 | rodolfoantoniorq@gmail.com | LinkedIn | GitHub', margin, y)
+    y += 35
+
+    // Título
+    ctx.font = 'bold 20px Inter, system-ui'
+    ctx.fillStyle = '#111827'
+    ctx.fillText('DESARROLLADOR WEB', margin, y)
+    y += 35
+
+    // Perfil
+    ctx.font = 'bold 18px Inter, system-ui'
+    ctx.fillText('PERFIL', margin, y)
+    y += 25
+    
+    const perfil = 'Desarrollador Full Stack con 2 años de experiencia en desarrollo web y móvil, con un enfoque en la integración de herramientas de IA para optimizar y acelerar los flujos de trabajo de desarrollo. Especializado en JavaScript, React, Node.js, Express.js y MongoDB, con experiencia en Python y FastAPI para el desarrollo de APIs y servicios.'
+    ctx.font = '14px Inter, system-ui'
+    wrapText(ctx, perfil, margin, y, contentWidth, 20)
+    y += 45
+
+    // Experiencia
+    ctx.font = 'bold 18px Inter, system-ui'
+    ctx.fillText('EXPERIENCIA', margin, y)
+    y += 25
+    
+    ctx.font = 'bold 16px Inter, system-ui'
+    ctx.fillText('Desarrollador Full Stack Freelance (Mar. 2023 – Actualidad)', margin, y)
+    y += 20
+
+    const experiencias = [
+      '• Desarrollo de aplicaciones web responsivas utilizando React Vite, Material UI y MongoDB',
+      '• Implementación de AWS Cognito User Pool para autenticación de usuarios',
+      '• APIs RESTful con Python (FastAPI) y NestJS, integrando AWS Boto3',
+      '• Sistemas de autenticación con OAuth 2.0 usando Passport.js',
+      '• Integración con servicios AWS (Lex, Connect) para optimización de procesos'
+    ]
+
+    ctx.font = '14px Inter, system-ui'
+    experiencias.forEach(exp => {
+      wrapText(ctx, exp, margin, y, contentWidth, 18)
+      y += 20
+    })
+
+    // Habilidades
+    y += 25
+    ctx.font = 'bold 18px Inter, system-ui'
+    ctx.fillText('HABILIDADES TÉCNICAS', margin, y)
+    y += 25
+
+    const skills = [
+      'Lenguajes: JavaScript, TypeScript, Python',
+      'Frontend: React, Next.js, Material UI, Tailwind CSS',
+      'Backend: Node.js, Express.js, FastAPI, NestJS',
+      'Bases de Datos: MongoDB, SQL',
+      'Cloud: AWS (Lex, Connect, Cognito, Boto3), Git, GitHub'
+    ]
+
+    ctx.font = '14px Inter, system-ui'
+    skills.forEach(skill => {
+      wrapText(ctx, '• ' + skill, margin, y, contentWidth, 18)
+      y += 20
+    })
+
+    // Otras Habilidades
+    y += 20
+    ctx.font = 'bold 18px Inter, system-ui'
+    ctx.fillText('OTRAS HABILIDADES', margin, y)
+    y += 20
+
+    const otherSkills = [
+      'Prompt engineering y optimización de instrucciones para IA',
+      'Desarrollo asistido por IA (GitHub Copilot)',
+      'Integración de modelos de IA para optimización de procesos'
+    ]
+
+    ctx.font = '14px Inter, system-ui'
+    otherSkills.forEach(skill => {
+      wrapText(ctx, '• ' + skill, margin, y, contentWidth, 18)
+      y += 18
+    })
+
+    // Estudios
+    y += 20
+    ctx.font = 'bold 18px Inter, system-ui'
+    ctx.fillText('ESTUDIOS', margin, y)
+    y += 20
+
+    // Footer
+    ctx.font = '14px Inter, system-ui'
+    ctx.fillStyle = '#4B5563'
+    wrapText(ctx, 'Formación en Desarrollo Web Full Stack – Protalento/ADA School, 2023', margin, y, contentWidth, 18)
+
+    return new THREE.CanvasTexture(canvas)
+  })
 
   return (
     <Canvas camera={{ position: [0, 1.6, 6], fov: 40 }}>
@@ -170,7 +197,7 @@ export default function ThreeDeskScene() {
       <directionalLight position={[5, 5, 5]} intensity={0.7} />
       <directionalLight position={[-5, 3, -5]} intensity={0.4} />
       <OrbitControls enablePan={true} enableZoom={true} />
-      <DeskObjects texture={resumeTexture} />
+      <DeskObjects texture={texture} />
     </Canvas>
   )
 }
