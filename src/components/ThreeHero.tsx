@@ -16,7 +16,10 @@ function FloatingCode() {
     `const stack = [
   "React",
   "Next.js",
-  "Three.js"
+  "TypeScript",
+  "Python",
+  "AWS",
+  "Salesforce"
 ]`,
     `// Build awesome
 // 3D experiences
@@ -46,7 +49,7 @@ render(<App />)`
       >
         <boxGeometry args={[3, 2, 0.1]} />
         <meshStandardMaterial 
-          color={hovered ? "#3b82f6" : "#1d4ed8"}
+          color={hovered ? "#9CA3AF" : "#374151"}
           metalness={0.6}
           roughness={0.2}
         />
