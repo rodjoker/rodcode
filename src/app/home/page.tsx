@@ -8,10 +8,10 @@ export default function Home() {
   return (
     <>
     <Header />
-    <div className="min-h-screen bg-black text-white mt-10">
-      <section className="max-w-6xl mx-auto px-4 py-10 mt-36">
+    <div className="min-h-screen bg-black text-white">
+      <section className="relative max-w-6xl mx-auto px-4 py-10 mt-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
+          <div className="relative z-10">
             <h1 className="text-5xl font-bold mb-4">
               RodCode — Rodolfo Rodriguez
             </h1>
@@ -30,7 +30,7 @@ export default function Home() {
               React · Next.js · Three.js · TypeScript · Node.js · AWS
             </p>
           </div>
-          <div className="h-[60vh] w-full">
+          <div className="h-[60vh] w-full relative z-0">
             <ClientThreeHero />
           </div>
         </div>
