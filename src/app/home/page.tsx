@@ -36,7 +36,7 @@ export default function Home() {
         </div>
         
         <h1 className="text-4xl font-bold mt-32 mb-8 text-center text-blue-100" id="portfolio">Proyectos Destacados</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto mt-16">
           {[
             {
               title: 'Delivery App',
@@ -64,7 +64,11 @@ export default function Home() {
             },
             
           ].map((project, idx) => (
-            <ProjectCard key={idx} {...project} />
+            <ProjectCard
+              key={idx}
+              {...project}
+              index={idx}
+            />
           ))}
         </div>
       </section>

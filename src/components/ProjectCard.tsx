@@ -1,16 +1,32 @@
 
 
+'use client';
+import { motion } from 'framer-motion';
+
 interface ProjectCardProps {
   title: string;
   description: string;
   image?: string;
   link?: string;
+  index: number;
 }
 
-export default function ProjectCard({ title, description, image, link }: ProjectCardProps) {
+export default function ProjectCard({ title, description, image, link, index }: ProjectCardProps) {
   return (
-   
-  <div className="bg-gray-900/40 border border-gray-700/20 rounded-xl shadow-lg overflow-hidden flex flex-col hover:scale-105 transition-all duration-300">
+   <motion.div
+    initial={{ opacity: 0, x: index % 2 === 0 ? -300 : 300 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    viewport={{ 
+      once: false,
+      margin: "-100px"
+    }}
+    transition={{ 
+      duration: 0.8,
+      delay: index * 0.2,
+      type: "spring",
+      stiffness: 50
+    }}
+    className="bg-gray-900/40 border border-gray-700/20 rounded-xl shadow-lg overflow-hidden flex flex-col hover:scale-105 transition-all duration-300">
       {image && (
   <img src={image} alt={title} className="w-full h-40 object-cover bg-black/50" />
       )}
@@ -23,7 +39,7 @@ export default function ProjectCard({ title, description, image, link }: Project
           <a href={link} target="_blank" rel="noopener noreferrer" className="mt-auto inline-block bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-200 text-center">Ver Proyecto</a>
         )}
       </div>
-    </div>
+    </motion.div>
     
   );
 }
