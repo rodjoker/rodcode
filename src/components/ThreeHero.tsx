@@ -1,5 +1,5 @@
 'use client';
-import { Canvas } from '@react-three/fiber';
+import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, Html, Float } from '@react-three/drei';
 import { useState, useRef, useEffect } from 'react';
 import * as THREE from 'three';
@@ -28,24 +28,36 @@ render(<App />)`
   
   const [currentSnippet, setCurrentSnippet] = useState(0);
   
+  // Cambiar el snippet de código cada rotación completa (aproximadamente)
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSnippet((prev) => (prev + 1) % codeSnippets.length);
-    }, 3000);
+    }, 6000); // Ajustado para coincidir mejor con la rotación
     return () => clearInterval(interval);
   }, []);
 
+  useFrame(() => {
+    if (!meshRef.current) return;
+    const rotation = meshRef.current.rotation.y % (Math.PI * 2);
+    // Cuando las letras están al revés (entre 90° y 270°)
+    if (rotation > Math.PI/2 && rotation < Math.PI * 1.5) {
+      meshRef.current.rotation.y += 0.02; // Giro más rápido cuando no es visible
+    } else {
+      meshRef.current.rotation.y += 0.005; // Giro más lento cuando es legible
+    }
+  });
+
   return (
-    <Float 
-      speed={1.5} 
-      rotationIntensity={0.5} 
-      floatIntensity={0.5}
-      floatingRange={[-0.1, 0.1]}
+    <Float
+      speed={1.5}
+      rotationIntensity={0}
+      floatIntensity={2}
     >
       <mesh
         ref={meshRef}
         onPointerOver={() => setHovered(true)}
         onPointerOut={() => setHovered(false)}
+        position={[0, 0, 0]}
       >
         <boxGeometry args={[3, 2, 0.1]} />
         <meshStandardMaterial 
