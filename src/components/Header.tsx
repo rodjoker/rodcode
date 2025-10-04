@@ -14,7 +14,7 @@ const Header = () => {
         <nav className="flex justify-between items-center">
            <div className="h-26">
             <img 
-              src="/rodcode_logo.png" 
+              src="/rodcode_logo_black.png" 
               alt="RodCode Logo" 
               className="h-full w-auto object-contain"
             />

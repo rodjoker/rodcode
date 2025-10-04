@@ -187,7 +187,7 @@ const MyDocument = () => (
 export const CVDownloadButton = () => (
   <PDFDownloadLink document={<MyDocument />} fileName="CV_Rodolfo_Rodriguez.pdf">
     {({ blob, url, loading, error }) => (
-      <div className="inline-flex items-center px-4 py-2 bg-green-700 hover:bg-green-800 text-white rounded-lg transition-colors duration-200">
+      <div className="inline-flex items-center px-4 py-2 bg-gray-800 hover:bg-gray-700 text-white rounded-lg transition-colors duration-200">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-5 w-5 mr-2"

@@ -97,7 +97,7 @@ function Monitor({ texture }: { texture: THREE.Texture }) {
     <group position={[0, 0.8, 0]}>
       <mesh position={[0, 0, 0]}>
         <boxGeometry args={[5.4, 3.1, 0.1]} />
-        <meshStandardMaterial color="#0b1220" metalness={0.2} roughness={0.3} />
+        <meshStandardMaterial color="#9CA3AF" metalness={0.2} roughness={0.5} />
       </mesh>
 
       <mesh position={[0, 0, 0.06]}>
@@ -107,7 +107,7 @@ function Monitor({ texture }: { texture: THREE.Texture }) {
 
       <mesh position={[0, -1.8, 0]}>
         <boxGeometry args={[2.0, 0.14, 1.8]} />
-        <meshStandardMaterial color="#111827" />
+        <meshStandardMaterial color="#9CA3AF" metalness={0.2} roughness={0.5} />
       </mesh>
     </group>
   )
@@ -122,12 +122,12 @@ function DeskObjects({ texture }: { texture: THREE.Texture }) {
 
       <mesh position={[2.4, -1.05, -0.8]}>
         <boxGeometry args={[0.5, 0.5, 0.5]} />
-        <meshStandardMaterial color="#06b6d4" metalness={0.3} roughness={0.4} />
+        <meshStandardMaterial color="#374151" metalness={0.3} roughness={0.4} />
       </mesh>
 
       <mesh position={[-2.5, -1.05, -0.7]}>
         <cylinderGeometry args={[0.15, 0.15, 0.4, 16]} />
-        <meshStandardMaterial color="#f97316" />
+        <meshStandardMaterial color="#374151" />
       </mesh>
 
       <Html position={[0, -0.5, 1.2]} center>
