@@ -14,12 +14,12 @@ const projects = [
     date: "2023"
   },
   {
-    title: "E-commerce Dashboard",
-    description: "Panel de administración para una tienda en línea con análisis de ventas, gestión de inventario y sistema de pedidos en tiempo real.",
-    imageUrl: "/ecommerce.jpg",
-    technologies: ["React", "TypeScript", "Material-UI", "Node.js", "PostgreSQL"],
+    title: 'Landing Page Castello Films',
+    description: 'Pagina Web para la productora y editora Castello Films.',
+    imageUrl: "/castello_pw.PNG",
+    technologies: ["NextJS", "TypeScript", "Tailwind CSS"],
     githubUrl: "https://github.com/yourusername/ecommerce-dashboard",
-    demoUrl: "https://ecommerce-dashboard-demo.com",
+    demoUrl: "https://mc-landing-two.vercel.app/home",
     date: "2023"
   },
   {

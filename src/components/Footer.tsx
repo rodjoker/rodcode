@@ -49,9 +49,9 @@ const Footer = () => {
           <div>
             <h3 className="font-bold mb-4">LEGAL</h3>
             <div className="flex flex-col space-y-2">
-              <a href="/privacy" className="text-gray-400 hover:text-white">Privacy Policy</a>
-              <a href="/terms" className="text-gray-400 hover:text-white">Terms of Service</a>
-              <a href="/cookies" className="text-gray-400 hover:text-white">Cookie Policy</a>
+              <p className="text-gray-400 hover:text-white">Privacy Policy</p>
+              <p className="text-gray-400 hover:text-white">Terms of Service</p>
+              <p className="text-gray-400 hover:text-white">Cookie Policy</p>
             </div>
           </div>
         </div>

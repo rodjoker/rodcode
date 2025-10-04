@@ -19,8 +19,8 @@ export default function Home() {
           image="/rodolfo_perfil.png"
         />
         
-        <h1 className="text-4xl font-bold mb-8 text-center text-green-900 drop-shadow">Mis Proyectos</h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <h1 className="text-4xl font-bold mb-8 text-center text-green-900 drop-shadow">Proyectos Destacados</h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {[
             {
               title: 'Delivery App',
@@ -29,10 +29,10 @@ export default function Home() {
               link: 'https://delivery-ten-umber.vercel.app',
             },
             {
-              title: 'E-commerce Moderno',
-              description: 'Tienda online con integración de pagos y panel de admin.',
-              image: '/globe.svg',
-              link: 'https://ecommerce.example.com',
+              title: 'Landing Page Castello Films',
+              description: 'Pagina Web para la productora y editora Castello Films.',
+              image: '/castello_pw.PNG',
+              link: 'https://mc-landing-two.vercel.app/home',
             },
             {
               title: 'Blog Técnico',
@@ -46,18 +46,7 @@ export default function Home() {
               image: '/vercel.svg',
               link: 'https://saas.example.com',
             },
-            {
-              title: 'Dashboard Analytics',
-              description: 'Dashboard interactivo para visualizar métricas.',
-              image: '/window.svg',
-              link: 'https://dashboard.example.com',
-            },
-            {
-              title: 'App de Tareas',
-              description: 'Aplicación para gestionar tareas y productividad.',
-              image: '/file.svg',
-              link: 'https://tasks.example.com',
-            },
+            
           ].map((project, idx) => (
             <ProjectCard key={idx} {...project} />
           ))}
