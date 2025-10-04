@@ -1,29 +1,45 @@
 
 
+'use client';
+import { motion } from 'framer-motion';
+
 interface ProjectCardProps {
   title: string;
   description: string;
   image?: string;
   link?: string;
+  index: number;
 }
 
-export default function ProjectCard({ title, description, image, link }: ProjectCardProps) {
+export default function ProjectCard({ title, description, image, link, index }: ProjectCardProps) {
   return (
-   
-  <div className="bg-green-100 border border-green-200 rounded-xl shadow-lg overflow-hidden flex flex-col hover:scale-105 transition-all duration-300">
+   <motion.div
+    initial={{ opacity: 0, x: index % 2 === 0 ? -300 : 300 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    viewport={{ 
+      once: false,
+      margin: "-100px"
+    }}
+    transition={{ 
+      duration: 0.8,
+      delay: index * 0.2,
+      type: "spring",
+      stiffness: 50
+    }}
+    className="bg-gray-900/40 border border-gray-700/20 rounded-xl shadow-lg overflow-hidden flex flex-col hover:scale-105 transition-all duration-300">
       {image && (
-  <img src={image} alt={title} className="w-full h-40 object-cover bg-green-50" />
+  <img src={image} alt={title} className="w-full h-40 object-cover bg-black/50" />
       )}
       <div className="p-6 flex-1 flex flex-col justify-between">
         <div>
-          <h2 className="text-2xl font-semibold mb-2 text-green-900">{title}</h2>
-          <p className="text-green-700 mb-4">{description}</p>
+          <h2 className="text-2xl font-semibold mb-2 text-white">{title}</h2>
+          <p className="text-gray-400 mb-4">{description}</p>
         </div>
         {link && (
-          <a href={link} target="_blank" rel="noopener noreferrer" className="mt-auto inline-block bg-green-900 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-200 text-center">Ver Proyecto</a>
+          <a href={link} target="_blank" rel="noopener noreferrer" className="mt-auto inline-block bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-200 text-center">Ver Proyecto</a>
         )}
       </div>
-    </div>
+    </motion.div>
     
   );
 }
