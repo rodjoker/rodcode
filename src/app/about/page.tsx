@@ -1,13 +1,17 @@
 import Footer from '@/components/Footer';
 import Header from '../../components/Header';
 import ProfileCard from '@/components/ProfileCard';
+import Single3DText from '@/components/Single3DText';
 
 export default function About() {
   return (
     <>
       <Header />
-      <main className="min-h-screen py-20 md:py-0">
-        <section className="min-h-screen md:h-screen w-full bg-gray-900 flex items-center justify-center px-4 py-16 md:py-0 mt-16 md:mt-32">
+      <div className="pt-24 md:pt-28">
+        <Single3DText text="RodCode" height="40vh" backgroundColor="#6e6c6cff" />
+      </div>
+      <main className="min-h-screen">
+        <section className="min-h-screen md:h-screen w-full bg-gray-900 flex items-center justify-center px-4 py-16 md:py-0">
           <div className="max-w-5xl w-11/12">
             <ProfileCard
               name="Rodolfo Rodríguez"
