@@ -21,7 +21,7 @@ const ProjectDetail = ({
   date
 }: ProjectDetailProps) => {
   return (
-    <div className="bg-white rounded-lg shadow-lg overflow-hidden mb-8">
+    <div className="bg-gray-900/40 backdrop-blur-sm border border-gray-700/20 rounded-lg shadow-lg overflow-hidden mb-8">
       {/* Imagen del proyecto */}
       <div className="relative h-64 w-full">
         <Image
@@ -34,19 +34,19 @@ const ProjectDetail = ({
 
       {/* Contenido del proyecto */}
       <div className="p-6">
-        <h3 className="text-2xl font-bold text-green-800 mb-4">{title}</h3>
+        <h3 className="text-2xl font-bold text-gray-100 mb-4">{title}</h3>
         
         {/* Descripción */}
-        <p className="text-gray-600 mb-6">{description}</p>
+        <p className="text-gray-300 mb-6">{description}</p>
 
         {/* Ficha Técnica */}
-        <div className="bg-green-50 p-4 rounded-lg">
-          <h4 className="text-lg font-semibold text-green-800 mb-3">Ficha Técnica</h4>
+        <div className="bg-gray-800/50 border border-gray-700/20 p-4 rounded-lg">
+          <h4 className="text-lg font-semibold text-gray-100 mb-3">Ficha Técnica</h4>
           
           {/* Fecha */}
           <div className="mb-2">
-            <span className="font-medium text-green-700">Fecha: </span>
-            <span className="text-gray-600">{date}</span>
+            <span className="font-medium text-gray-200">Fecha: </span>
+            <span className="text-gray-300">{date}</span>
           </div>
 
           {/* Tecnologías */}

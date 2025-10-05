@@ -17,25 +17,25 @@ export default function Home() {
                 RodCode — Rodolfo Rodriguez
               </h1>
               <p className="text-2xl text-gray-300 mb-6">
-                Programador Web FullStack creando interfaces modernas y experiencias 3D interactivas para la web
+                Programador Web FullStack 
+              </p>
+              <p className="text-2xl text-gray-300 mb-6">
+                | Desarrollador web | Transformo Ideas en Soluciones Digitales Efectivas | JavaScript | Node.js | Python | AWS | Amazon Connect | Salesforce
               </p>
               <div className="space-x-4">
                 <a
-                  href="#portfolio"
+                  href="/project"
                   className="bg-gray-800 text-white px-8 py-3 rounded-lg hover:bg-gray-700 transition-colors"
                 >
                   Ver proyectos
                 </a>
                 <a
-                  href="#contact"
+                  href="/contact"
                   className="border border-gray-600 text-gray-300 px-8 py-3 rounded-lg hover:bg-gray-800/50 hover:text-white hover:border-gray-500 transition-colors"
                 >
                   Hablar conmigo
                 </a>
               </div>
-              <p className="mt-8 text-gray-400">
-                React · Next.js · Three.js · TypeScript · Node.js · AWS
-              </p>
             </div>
 
             <div className="h-[60vh] w-full relative z-0 overflow-hidden">
@@ -45,12 +45,6 @@ export default function Home() {
 
           {/* Nueva sección 3D: Escritorio con monitor que muestra tu CV */}
           <section className="mt-20">
-            <h2 className="text-3xl font-semibold text-left text-blue-100 mb-6">Mi CV en el escritorio 3D</h2>
-            <p className="text-gray-400 mb-6 max-w-3xl">
-              Interactúa con la escena 3D del escritorio para ver mi hoja de vida integrada en la pantalla del monitor.
-              Si WebGL no está disponible, el contenido principal del CV permanece accesible en HTML para SEO y accesibilidad.
-            </p>
-
             <div className="w-full h-[60vh] bg-transparent rounded-lg overflow-hidden border border-gray-800">
               <ThreeDeskClient />
             </div>
