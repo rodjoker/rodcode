@@ -9,48 +9,42 @@ export default function Home() {
   return (
     <>
       <Header />
-      <div className="min-h-screen bg-black text-white">
+      <div className="min-h-screen bg-black text-white overflow-x-hidden">
         <section className="relative max-w-6xl mx-auto px-4 py-10 mt-36 md:mt-32">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
             <div className="relative z-10">
               <h1 className="text-5xl font-bold mb-4 text-white">
                 RodCode — Rodolfo Rodriguez
               </h1>
               <p className="text-2xl text-gray-300 mb-6">
-                Programador Web FullStack creando interfaces modernas y experiencias 3D interactivas para la web
+                Programador Web FullStack 
+              </p>
+              <p className="text-2xl text-gray-300 mb-6">
+                | Desarrollador web | Transformo Ideas en Soluciones Digitales Efectivas | JavaScript | Node.js | Python | AWS | Amazon Connect | Salesforce
               </p>
               <div className="space-x-4">
                 <a
-                  href="#portfolio"
+                  href="/project"
                   className="bg-gray-800 text-white px-8 py-3 rounded-lg hover:bg-gray-700 transition-colors"
                 >
                   Ver proyectos
                 </a>
                 <a
-                  href="#contact"
+                  href="/contact"
                   className="border border-gray-600 text-gray-300 px-8 py-3 rounded-lg hover:bg-gray-800/50 hover:text-white hover:border-gray-500 transition-colors"
                 >
                   Hablar conmigo
                 </a>
               </div>
-              <p className="mt-8 text-gray-400">
-                React · Next.js · Three.js · TypeScript · Node.js · AWS
-              </p>
             </div>
 
-            <div className="h-[60vh] w-full relative z-0">
+            <div className="h-[60vh] w-full relative z-0 overflow-hidden">
               <ClientThreeHero />
             </div>
           </div>
 
           {/* Nueva sección 3D: Escritorio con monitor que muestra tu CV */}
           <section className="mt-20">
-            <h2 className="text-3xl font-semibold text-left text-blue-100 mb-6">Mi CV en el escritorio 3D</h2>
-            <p className="text-gray-400 mb-6 max-w-3xl">
-              Interactúa con la escena 3D del escritorio para ver mi hoja de vida integrada en la pantalla del monitor.
-              Si WebGL no está disponible, el contenido principal del CV permanece accesible en HTML para SEO y accesibilidad.
-            </p>
-
             <div className="w-full h-[60vh] bg-transparent rounded-lg overflow-hidden border border-gray-800">
               <ThreeDeskClient />
             </div>
@@ -63,7 +57,7 @@ export default function Home() {
             Proyectos Destacados
           </h1>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto mt-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto mt-16 px-4">
             {[
               {
                 title: 'Delivery App',
