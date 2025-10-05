@@ -85,7 +85,7 @@ const Header = () => {
             </a>
             <div className="flex justify-center space-x-4 md:space-x-8">
               <a 
-                href="https://www.instagram.com/marcoalejandrocr" 
+                href="https://www.instagram.com/rod.code?igsh=MWhoZmIxb2x0bTZhYQ==" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="hover:text-gray-300 transition-colors"
@@ -99,7 +99,7 @@ const Header = () => {
                 </svg>
               </a>
               <a 
-                href="https://www.linkedin.com/in/marco-alejandro-castillo-rodríguez-9386bb276" 
+                href="https://www.linkedin.com/in/rodolforodriguez-desarrolladorweb" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="hover:text-gray-300 transition-colors"
@@ -113,7 +113,7 @@ const Header = () => {
                 </svg>
               </a>
               <a 
-                href="https://www.tiktok.com/@castellofilm?is_from_webapp=1&sender_device=pc" 
+                href="https://www.tiktok.com/@rodolfocode?is_from_webapp=1&sender_device=pc" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="hover:text-gray-300 transition-colors"

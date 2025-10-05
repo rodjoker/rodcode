@@ -100,22 +100,6 @@ export default function About() {
           </div>
         </section>
 
-        {/* Sección 3 - Verde bosque claro */}
-        <section className="min-h-screen md:h-screen w-full bg-emerald-800 flex items-center justify-center px-4 py-16 md:py-0">
-          <div className="max-w-5xl w-11/12">
-            <ProfileCard
-              name="Metodología"
-              title="Clean Code Advocate"
-              description="Creo firmemente en la importancia del código limpio y mantenible. Cada proyecto es una oportunidad para implementar las mejores prácticas de desarrollo."
-              subtitle="Principios de Desarrollo"
-              additionalDescription="DRY, SOLID, y arquitectura limpia son los pilares de mi enfoque de desarrollo."
-              image="/rodolfo_perfil.png"
-              showReadMore={true}
-              extendedContent="Mi enfoque metodológico se basa en años de experiencia y mejores prácticas de la industria. Creo en la importancia de escribir código que no solo funcione, sino que sea fácil de entender y mantener. Implemento patrones de diseño probados, prácticas de testing exhaustivas y documentación clara. La refactorización constante y la revisión de código son parte fundamental de mi proceso de desarrollo."
-            />
-          </div>
-        </section>
-
         {/* Sección 4 - Verde primavera */}
         <section className="min-h-screen md:h-screen w-full bg-black-800 flex items-center justify-center px-4 py-16 md:py-0 mb-16 md:mb-0">
           <div className="max-w-5xl w-11/12">
@@ -140,20 +124,6 @@ export default function About() {
                   </p>
                 </div>
               `}
-            />
-          </div>
-        </section>
-
-        {/* Sección 4 - Verde primavera */}
-        <section className="min-h-screen md:h-screen w-full bg-emerald-800 flex items-center justify-center px-4 py-16 md:py-0 mb-16 md:mb-0">
-          <div className="max-w-5xl w-11/12">
-            <ProfileCard
-              name="Objetivo"
-              title="Innovación Continua"
-              description="Constantemente busco nuevas formas de mejorar y optimizar los proyectos en los que trabajo, manteniéndome al día con las últimas tendencias."
-              subtitle="Visión de Futuro"
-              additionalDescription="Comprometido con el aprendizaje continuo y la adopción de nuevas tecnologías que beneficien a los proyectos y usuarios finales."
-              image="/rodolfo_perfil.png"
             />
           </div>
         </section>

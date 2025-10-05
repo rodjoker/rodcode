@@ -25,7 +25,7 @@ const Footer = () => {
             <h3 className="font-bold mb-4">SOCIAL</h3>
             <div className="flex flex-col space-y-2">
                <a 
-                href="https://www.instagram.com/marcoalejandrocr" 
+                href="https://www.instagram.com/rod.code?igsh=MWhoZmIxb2x0bTZhYQ==" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="hover:text-gray-300 transition-colors"
@@ -37,7 +37,7 @@ const Footer = () => {
                 className="hover:text-gray-300 transition-colors"
               >LinkedIn</a>
                <a 
-                href="https://www.tiktok.com/@castellofilm?is_from_webapp=1&sender_device=pc" 
+                href="https://www.tiktok.com/@rodolfocode?is_from_webapp=1&sender_device=pc" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="hover:text-gray-300 transition-colors"
