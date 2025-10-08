@@ -9,7 +9,7 @@ const Footer = () => {
             <div className="flex flex-col space-y-2">
               <a href="/about" className="text-gray-400 hover:text-white">About Me</a>
               <a href="/project" className="text-gray-400 hover:text-white">My Work</a>
-              <a href="/services" className="text-gray-400 hover:text-white">Services</a>
+              <a href="/service" className="text-gray-400 hover:text-white">Services</a>
             </div>
           </div>
           <div>
