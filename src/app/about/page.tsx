@@ -93,7 +93,7 @@ export default function About() {
                   </li>
                 </ul>
               `}
-              image="/rodolfo_perfil.png"
+              image="/rodcode_funko.png"
               showReadMore={true}
               extendedContent="Mi stack tecnológico incluye experiencia profunda en React y sus patrones avanzados, Next.js para aplicaciones full-stack, TypeScript para código más seguro y mantenible, y Tailwind CSS para diseños elegantes y responsivos control de versiones con Git, y metodologías ágiles. Constantemente me mantengo actualizado con las últimas tendencias y mejores prácticas del desarrollo frontend."
             />
@@ -109,7 +109,7 @@ export default function About() {
               description="Constantemente busco nuevas formas de mejorar y optimizar los proyectos en los que trabajo, manteniéndome al día con las últimas tendencias."
               subtitle="Visión de Futuro"
               additionalDescription="Comprometido con el aprendizaje continuo y la adopción de nuevas tecnologías que beneficien a los proyectos y usuarios finales."
-              image="/rodolfo_perfil.png"
+              image="/silueta_up.png"
               showReadMore={true}
               extendedContent={`
                 <div class="space-y-6">

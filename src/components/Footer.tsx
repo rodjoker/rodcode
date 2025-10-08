@@ -42,6 +42,14 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="hover:text-gray-300 transition-colors"
               >Tik Tok</a>
+              <a 
+                href="https://github.com/rodjoker" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-gray-300 transition-colors"
+              >
+                GitHub
+              </a>
             </div>
           </div>
           <div>
