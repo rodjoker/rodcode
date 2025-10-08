@@ -3,7 +3,6 @@ import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import ProjectDetail from '@/components/ProjectDetail';
 import Single3DText from '@/components/Single3DText';
-import TechStack3D from '@/components/TechStack3D';
 
 const projects = [
   {

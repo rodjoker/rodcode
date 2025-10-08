@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image';
 import { useState } from 'react';
 
 interface ProfileCardProps {
@@ -30,10 +31,12 @@ export default function ProfileCard({
         <div className="flex flex-col md:flex-row">
           <div className="w-full md:w-1/3 relative">
             <div className="aspect-square md:aspect-auto md:h-full">
-              <img 
+              <Image 
                 src={image} 
                 alt={name} 
                 className="w-full h-full object-contain object-center md:object-cover"
+                width={400}
+                height={400}
               />
             </div>
           </div>

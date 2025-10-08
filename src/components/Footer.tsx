@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const Footer = () => {
   
   return (
@@ -7,49 +9,49 @@ const Footer = () => {
           <div>
             <h3 className="font-bold mb-4">RodCode</h3>
             <div className="flex flex-col space-y-2">
-              <a href="/about" className="text-gray-400 hover:text-white">About Me</a>
-              <a href="/project" className="text-gray-400 hover:text-white">My Work</a>
-              <a href="/service" className="text-gray-400 hover:text-white">Services</a>
+              <Link href="/about" className="text-gray-400 hover:text-white">About Me</Link>
+              <Link href="/project" className="text-gray-400 hover:text-white">My Work</Link>
+              <Link href="/service" className="text-gray-400 hover:text-white">Services</Link>
             </div>
           </div>
           <div>
             <h3 className="font-bold mb-4">CONTACT</h3>
             <div className="flex flex-col space-y-2">
-               <a 
+               <Link
               href="/contact" 
               className="text-gray-400 hover:text-white"
-            >Email</a>
+            >Email</Link>
             </div>
           </div>
           <div>
             <h3 className="font-bold mb-4">SOCIAL</h3>
             <div className="flex flex-col space-y-2">
-               <a 
+               <Link
                 href="https://www.instagram.com/rod.code?igsh=MWhoZmIxb2x0bTZhYQ==" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="hover:text-gray-300 transition-colors"
-              >Instagram</a>
-               <a 
+              >Instagram</Link>
+               <Link
                 href="https://www.linkedin.com/in/rodolforodriguez-desarrolladorweb" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="hover:text-gray-300 transition-colors"
-              >LinkedIn</a>
-               <a 
+              >LinkedIn</Link>
+               <Link 
                 href="https://www.tiktok.com/@rodolfocode?is_from_webapp=1&sender_device=pc" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="hover:text-gray-300 transition-colors"
-              >Tik Tok</a>
-              <a 
+              >Tik Tok</Link>
+              <Link
                 href="https://github.com/rodjoker" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="hover:text-gray-300 transition-colors"
               >
                 GitHub
-              </a>
+              </Link>
             </div>
           </div>
           <div>
