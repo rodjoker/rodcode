@@ -4,6 +4,7 @@ import { useState } from 'react'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [imageIsLoading, setImageIsLoading] = useState(true)
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -13,13 +14,20 @@ const Header = () => {
   <header className="bg-gray-900/80 backdrop-blur-sm border-b border-gray-700/20 text-white fixed w-full top-0 z-50 shadow-md">
       <div className="container mx-auto px-4 py-4">
         <nav className="flex justify-between items-center">
-           <div className="h-26">
+           <div className="relative h-24 w-[150px]">
+            {imageIsLoading && (
+              <div className="absolute inset-0 flex items-center justify-center bg-gray-900/40">
+                <div className="w-6 h-6 border-2 border-t-blue-200 border-blue-500 rounded-full animate-spin"></div>
+              </div>
+            )}
             <Image 
               src="/rodcode_logo_black.png" 
               alt="RodCode Logo" 
-              className="h-full w-auto object-contain"
+              className="h-full w-full object-contain"
               width={150}
               height={50}
+              priority
+              onLoadingComplete={() => setImageIsLoading(false)}
             />
           </div>
 
