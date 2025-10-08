@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image';
 import { useState } from 'react'
 
 const Header = () => {
@@ -13,10 +14,12 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <nav className="flex justify-between items-center">
            <div className="h-26">
-            <img 
+            <Image 
               src="/rodcode_logo_black.png" 
               alt="RodCode Logo" 
               className="h-full w-auto object-contain"
+              width={150}
+              height={50}
             />
           </div>
 

@@ -1,6 +1,6 @@
 'use client'
-import React, { useRef, useEffect, useState } from 'react'
-import { Canvas, useFrame, useThree } from '@react-three/fiber'
+import React, { useState } from 'react'
+import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Float, Html } from '@react-three/drei'
 import * as THREE from 'three'
 

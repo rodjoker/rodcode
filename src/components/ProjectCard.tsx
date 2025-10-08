@@ -2,6 +2,7 @@
 
 'use client';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 interface ProjectCardProps {
   title: string;
@@ -28,7 +29,13 @@ export default function ProjectCard({ title, description, image, link, index }: 
     }}
     className="bg-gray-900/40 border border-gray-700/20 rounded-xl shadow-lg overflow-hidden flex flex-col hover:scale-105 transition-all duration-300">
       {image && (
-  <img src={image} alt={title} className="w-full h-40 object-cover bg-black/50" />
+  <Image 
+  src={image} 
+  alt={title} 
+  width={400}
+  height={400}
+  className="w-full h-40 object-cover bg-black/50" 
+  />
       )}
       <div className="p-6 flex-1 flex flex-col justify-between">
         <div>

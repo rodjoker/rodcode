@@ -88,7 +88,10 @@ const blogPosts: BlogPosts = {
 
         <h2>Optimización de imágenes</h2>
         <p>Descubre las mejores prácticas para la optimización de imágenes y cómo implementarlas en tu aplicación React.</p>
-      </article>
+
+        <p>Si estás pensando en construir tu portafolio, no dejes que el diseño te detenga. Enfócate en la solución y utiliza herramientas de Inteligencia Artificial como Stitch para asistirte.
+
+        </article>
     `,
     image: '/blog/react-performance.jpg',
     date: '5 Oct 2025',
