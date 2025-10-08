@@ -176,7 +176,6 @@ export default function BlogPost({ params }: BlogPostProps) {
                 </span>
               ))}
             </div>
-
             <div 
               className="text-gray-300"
               dangerouslySetInnerHTML={{ __html: post.content }}
