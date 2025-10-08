@@ -49,75 +49,59 @@ export default function About() {
               additionalDescription={`
                 <ul class="space-y-2 list-none text-sm">
                   <li class="flex flex-col">
-                    <span class="font-semibold text-green-800 mb-1 text-xs">Frontend:</span>
+                    <span class="font-semibold text-white mb-1 text-xs">Frontend:</span>
                     <div class="flex flex-wrap gap-1">
-                      <span class="px-2 py-0.5 bg-green-50 rounded-full text-green-700 text-xs">JavaScript</span>
-                      <span class="px-2 py-0.5 bg-green-50 rounded-full text-green-700 text-xs">TypeScript</span>
-                      <span class="px-2 py-0.5 bg-green-50 rounded-full text-green-700 text-xs">React</span>
-                      <span class="px-2 py-0.5 bg-green-50 rounded-full text-green-700 text-xs">Next JS.</span>
-                      <span class="px-2 py-0.5 bg-green-50 rounded-full text-green-700 text-xs">Material UI</span>
-                      <span class="px-2 py-0.5 bg-green-50 rounded-full text-green-700 text-xs">HTML</span>
-                      <span class="px-2 py-0.5 bg-green-50 rounded-full text-green-700 text-xs">CSS</span>
-                      <span class="px-2 py-0.5 bg-green-50 rounded-full text-green-700 text-xs">Tailwind</span>
+                      <span class="px-2 py-0.5 bg-gray-800 rounded-full text-white text-xs">JavaScript</span>
+                      <span class="px-2 py-0.5 bg-gray-800 rounded-full text-white text-xs">TypeScript</span>
+                      <span class="px-2 py-0.5 bg-gray-800 rounded-full text-white text-xs">React</span>
+                      <span class="px-2 py-0.5 bg-gray-800 rounded-full text-white text-xs">Next JS.</span>
+                      <span class="px-2 py-0.5 bg-gray-800 rounded-full text-white text-xs">Material UI</span>
+                      <span class="px-2 py-0.5 bg-gray-800 rounded-full text-white text-xs">HTML</span>
+                      <span class="px-2 py-0.5 bg-gray-800 rounded-full text-white text-xs">CSS</span>
+                      <span class="px-2 py-0.5 bg-gray-800 rounded-full text-white text-xs">Tailwind</span>
                     </div>
                   </li>
                   <li class="flex flex-col">
-                    <span class="font-semibold text-green-800 mb-1 text-xs">Backend:</span>
+                    <span class="font-semibold text-white mb-1 text-xs">Backend:</span>
                     <div class="flex flex-wrap gap-1">
-                      <span class="px-2 py-0.5 bg-green-50 rounded-full text-green-700 text-xs">Node.js</span>
-                      <span class="px-2 py-0.5 bg-green-50 rounded-full text-green-700 text-xs">Express.js</span>
-                      <span class="px-2 py-0.5 bg-green-50 rounded-full text-green-700 text-xs">Nest JS.</span>
-                      <span class="px-2 py-0.5 bg-green-50 rounded-full text-green-700 text-xs">Python (FastAPI)</span>
-                      <span class="px-2 py-0.5 bg-green-50 rounded-full text-green-700 text-xs">Supabase</span>
+                      <span class="px-2 py-0.5 bg-gray-800 rounded-full text-white text-xs">Node.js</span>
+                      <span class="px-2 py-0.5 bg-gray-800 rounded-full text-white text-xs">Express.js</span>
+                      <span class="px-2 py-0.5 bg-gray-800 rounded-full text-white text-xs">Nest JS.</span>
+                      <span class="px-2 py-0.5 bg-gray-800 rounded-full text-white text-xs">Python (FastAPI)</span>
+                      <span class="px-2 py-0.5 bg-gray-800 rounded-full text-white text-xs">Supabase</span>
                     </div>
                   </li>
                   <li class="flex flex-col">
-                    <span class="font-semibold text-green-800 mb-1 text-xs">Bases de datos:</span>
+                    <span class="font-semibold text-white mb-1 text-xs">Bases de datos:</span>
                     <div class="flex flex-wrap gap-1">
-                      <span class="px-2 py-0.5 bg-green-50 rounded-full text-green-700 text-xs">MongoDB</span>
-                      <span class="px-2 py-0.5 bg-green-50 rounded-full text-green-700 text-xs">PostgreSQL</span>
+                      <span class="px-2 py-0.5 bg-gray-800 rounded-full text-white text-xs">MongoDB</span>
+                      <span class="px-2 py-0.5 bg-gray-800 rounded-full text-white text-xs">PostgreSQL</span>
                     </div>
                   </li>
                   <li class="flex flex-col">
-                    <span class="font-semibold text-green-800 mb-1 text-xs">Cloud y herramientas:</span>
+                    <span class="font-semibold text-white mb-1 text-xs">Cloud y herramientas:</span>
                     <div class="flex flex-wrap gap-1">
-                      <span class="px-2 py-0.5 bg-green-50 rounded-full text-green-700 text-xs">AWS</span>
-                      <span class="px-2 py-0.5 bg-green-50 rounded-full text-green-700 text-xs">IAM</span>
-                      <span class="px-2 py-0.5 bg-green-50 rounded-full text-green-700 text-xs">Cognito</span>
-                      <span class="px-2 py-0.5 bg-green-50 rounded-full text-green-700 text-xs">S3</span>
-                      <span class="px-2 py-0.5 bg-green-50 rounded-full text-green-700 text-xs">Amazon Connect</span>
-                      <span class="px-2 py-0.5 bg-green-50 rounded-full text-green-700 text-xs">Salesforce</span>
-                      <span class="px-2 py-0.5 bg-green-50 rounded-full text-green-700 text-xs">Git</span>
-                      <span class="px-2 py-0.5 bg-green-50 rounded-full text-green-700 text-xs">GitHub</span>
+                      <span class="px-2 py-0.5 bg-gray-800 rounded-full text-white text-xs">AWS</span>
+                      <span class="px-2 py-0.5 bg-gray-800 rounded-full text-white text-xs">IAM</span>
+                      <span class="px-2 py-0.5 bg-gray-800 rounded-full text-white text-xs">Cognito</span>
+                      <span class="px-2 py-0.5 bg-gray-800 rounded-full text-white text-xs">S3</span>
+                      <span class="px-2 py-0.5 bg-gray-800 rounded-full text-white text-xs">Amazon Connect</span>
+                      <span class="px-2 py-0.5 bg-gray-800 rounded-full text-white text-xs">Salesforce</span>
+                      <span class="px-2 py-0.5 bg-gray-800 rounded-full text-white text-xs">Git</span>
+                      <span class="px-2 py-0.5 bg-gray-800 rounded-full text-white text-xs">GitHub</span>
                     </div>
                   </li>
                 </ul>
               `}
-              image="/rodolfo_perfil.png"
+              image="/rodcode_funko.png"
               showReadMore={true}
               extendedContent="Mi stack tecnológico incluye experiencia profunda en React y sus patrones avanzados, Next.js para aplicaciones full-stack, TypeScript para código más seguro y mantenible, y Tailwind CSS para diseños elegantes y responsivos control de versiones con Git, y metodologías ágiles. Constantemente me mantengo actualizado con las últimas tendencias y mejores prácticas del desarrollo frontend."
             />
           </div>
         </section>
 
-        {/* Sección 3 - Verde bosque claro */}
-        <section className="min-h-screen md:h-screen w-full bg-emerald-800 flex items-center justify-center px-4 py-16 md:py-0">
-          <div className="max-w-5xl w-11/12">
-            <ProfileCard
-              name="Metodología"
-              title="Clean Code Advocate"
-              description="Creo firmemente en la importancia del código limpio y mantenible. Cada proyecto es una oportunidad para implementar las mejores prácticas de desarrollo."
-              subtitle="Principios de Desarrollo"
-              additionalDescription="DRY, SOLID, y arquitectura limpia son los pilares de mi enfoque de desarrollo."
-              image="/rodolfo_perfil.png"
-              showReadMore={true}
-              extendedContent="Mi enfoque metodológico se basa en años de experiencia y mejores prácticas de la industria. Creo en la importancia de escribir código que no solo funcione, sino que sea fácil de entender y mantener. Implemento patrones de diseño probados, prácticas de testing exhaustivas y documentación clara. La refactorización constante y la revisión de código son parte fundamental de mi proceso de desarrollo."
-            />
-          </div>
-        </section>
-
         {/* Sección 4 - Verde primavera */}
-        <section className="min-h-screen md:h-screen w-full bg-black-800 flex items-center justify-center px-4 py-16 md:py-0 mb-16 md:mb-0">
+        <section className="min-h-screen md:h-screen w-full bg-gray-900 flex items-center justify-center px-4 py-16 md:py-0 mb-16 md:mb-0">
           <div className="max-w-5xl w-11/12">
             <ProfileCard
               name="Objetivos"
@@ -125,7 +109,7 @@ export default function About() {
               description="Constantemente busco nuevas formas de mejorar y optimizar los proyectos en los que trabajo, manteniéndome al día con las últimas tendencias."
               subtitle="Visión de Futuro"
               additionalDescription="Comprometido con el aprendizaje continuo y la adopción de nuevas tecnologías que beneficien a los proyectos y usuarios finales."
-              image="/rodolfo_perfil.png"
+              image="/silueta_up.png"
               showReadMore={true}
               extendedContent={`
                 <div class="space-y-6">
@@ -140,20 +124,6 @@ export default function About() {
                   </p>
                 </div>
               `}
-            />
-          </div>
-        </section>
-
-        {/* Sección 4 - Verde primavera */}
-        <section className="min-h-screen md:h-screen w-full bg-emerald-800 flex items-center justify-center px-4 py-16 md:py-0 mb-16 md:mb-0">
-          <div className="max-w-5xl w-11/12">
-            <ProfileCard
-              name="Objetivo"
-              title="Innovación Continua"
-              description="Constantemente busco nuevas formas de mejorar y optimizar los proyectos en los que trabajo, manteniéndome al día con las últimas tendencias."
-              subtitle="Visión de Futuro"
-              additionalDescription="Comprometido con el aprendizaje continuo y la adopción de nuevas tecnologías que beneficien a los proyectos y usuarios finales."
-              image="/rodolfo_perfil.png"
             />
           </div>
         </section>
