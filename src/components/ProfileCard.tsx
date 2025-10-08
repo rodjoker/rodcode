@@ -28,7 +28,6 @@ export default function ProfileCard({
     <>
       <div className="bg-gray-900/40 backdrop-blur-sm border border-gray-700/20 rounded-xl shadow-lg overflow-hidden mb-16 mt-16">
         <div className="flex flex-col md:flex-row">
-          {/* Imagen - ocupa todo el ancho en móvil, lado izquierdo en desktop */}
           <div className="w-full md:w-1/3 relative">
             <div className="aspect-square md:aspect-auto md:h-full">
               <img 
@@ -52,9 +51,9 @@ export default function ProfileCard({
                 Leer más
               </button>
             )}
-            <h3 className="text-xl font-semibold text-green-800 mb-3">{subtitle}</h3>
+            <h3 className="text-xl font-semibold text-white mb-3">{subtitle}</h3>
             <div 
-              className="text-green-700 text-lg leading-relaxed"
+              className="text-white text-lg leading-relaxed"
               dangerouslySetInnerHTML={{ __html: additionalDescription }}
             />
           </div>
@@ -72,7 +71,7 @@ export default function ProfileCard({
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex justify-between items-start mb-4">
-              <h2 id="modal-title" className="text-2xl font-bold text-green-900">{name}</h2>
+              <h2 id="modal-title" className="text-2xl font-bold text-gray-900">{name}</h2>
               <button
                 onClick={() => setIsModalOpen(false)}
                 className="text-gray-500 hover:text-gray-700 transition-colors duration-200"
@@ -84,7 +83,7 @@ export default function ProfileCard({
               </button>
             </div>
             <div 
-              className="text-green-700 text-lg leading-relaxed"
+              className="text-gray-700 text-lg leading-relaxed"
               dangerouslySetInnerHTML={{ __html: extendedContent }}
             />
           </div>

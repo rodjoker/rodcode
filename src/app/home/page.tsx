@@ -71,18 +71,6 @@ export default function Home() {
                 image: '/castello_pw.PNG',
                 link: 'https://mc-landing-two.vercel.app/home',
               },
-              {
-                title: 'Blog Técnico',
-                description: 'Blog para compartir artículos sobre desarrollo web.',
-                image: '/next.svg',
-                link: 'https://blog.example.com',
-              },
-              {
-                title: 'Landing Page SaaS',
-                description: 'Landing page para producto SaaS con animaciones.',
-                image: '/vercel.svg',
-                link: 'https://saas.example.com',
-              },
             ].map((project, idx) => (
               <ProjectCard
                 key={idx}

@@ -51,12 +51,12 @@ const ProjectDetail = ({
 
           {/* Tecnologías */}
           <div className="mb-4">
-            <span className="font-medium text-green-700">Tecnologías: </span>
+            <span className="font-medium text-gray-200">Tecnologías: </span>
             <div className="flex flex-wrap gap-2 mt-2">
               {technologies.map((tech, index) => (
                 <span
                   key={index}
-                  className="bg-green-200 text-green-800 px-3 py-1 rounded-full text-sm"
+                  className="bg-gray-800 text-gray-200 px-3 py-1 rounded-full text-sm"
                 >
                   {tech}
                 </span>
@@ -71,7 +71,7 @@ const ProjectDetail = ({
                 href={githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center text-green-700 hover:text-green-900"
+                className="inline-flex items-center text-gray-700 hover:text-gray-100"
               >
                 <svg
                   className="w-5 h-5 mr-2"
@@ -92,7 +92,7 @@ const ProjectDetail = ({
                 href={demoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center text-green-700 hover:text-green-900"
+                className="inline-flex items-center text-gray-700 hover:text-gray-100"
               >
                 <svg
                   className="w-5 h-5 mr-2"
