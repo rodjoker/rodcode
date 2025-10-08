@@ -3,6 +3,7 @@
 'use client';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface ProjectCardProps {
   title: string;
@@ -43,7 +44,7 @@ export default function ProjectCard({ title, description, image, link, index }: 
           <p className="text-gray-400 mb-4">{description}</p>
         </div>
         {link && (
-          <a href={link} target="_blank" rel="noopener noreferrer" className="mt-auto inline-block bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-200 text-center">Ver Proyecto</a>
+          <Link href={link} target="_blank" rel="noopener noreferrer" className="mt-auto inline-block bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-200 text-center">Ver Proyecto</Link>
         )}
       </div>
     </motion.div>

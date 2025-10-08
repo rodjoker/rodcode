@@ -3,6 +3,7 @@ import ProjectCard from '../../components/ProjectCard'
 import ClientThreeHero from '@/components/ClientThreeHero'
 import Footer from '@/components/Footer'
 import ThreeDeskClient from '@/components/ThreeDeskClient'
+import Link from 'next/link'
 
 
 export default function Home() {
@@ -23,18 +24,18 @@ export default function Home() {
                 | Desarrollador web | Transformo Ideas en Soluciones Digitales Efectivas | JavaScript | Node.js | Python | AWS | Amazon Connect | Salesforce
               </p>
               <div className="space-x-4">
-                <a
+                <Link
                   href="/project"
                   className="bg-gray-800 text-white px-8 py-3 rounded-lg hover:bg-gray-700 transition-colors"
                 >
                   Ver proyectos
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/contact"
                   className="border border-gray-600 text-gray-300 px-8 py-3 rounded-lg hover:bg-gray-800/50 hover:text-white hover:border-gray-500 transition-colors"
                 >
                   Hablar conmigo
-                </a>
+                </Link>
               </div>
             </div>
 

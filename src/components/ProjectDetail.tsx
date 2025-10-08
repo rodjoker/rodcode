@@ -1,5 +1,6 @@
 'use client'
 import Image from 'next/image'
+import Link from 'next/link';
 
 interface ProjectDetailProps {
   title: string;
@@ -67,7 +68,7 @@ const ProjectDetail = ({
           {/* Enlaces */}
           <div className="flex space-x-4">
             {githubUrl && (
-              <a
+              <Link
                 href={githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -85,10 +86,10 @@ const ProjectDetail = ({
                   />
                 </svg>
                 GitHub
-              </a>
+              </Link>
             )}
             {demoUrl && (
-              <a
+              <Link
                 href={demoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -106,7 +107,7 @@ const ProjectDetail = ({
                   <path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
                 Demo
-              </a>
+              </Link>
             )}
           </div>
         </div>
