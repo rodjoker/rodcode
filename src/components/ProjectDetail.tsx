@@ -37,7 +37,7 @@ const ProjectDetail = ({
         <h3 className="text-2xl font-bold text-gray-100 mb-4">{title}</h3>
         
         {/* Descripción */}
-        <p className="text-gray-300 mb-6">{description}</p>
+        <p className="text-gray-300 mb-6 h-24 overflow-y-auto">{description}</p>
 
         {/* Ficha Técnica */}
         <div className="bg-gray-800/50 border border-gray-700/20 p-4 rounded-lg">
