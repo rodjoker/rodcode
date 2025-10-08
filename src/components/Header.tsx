@@ -77,6 +77,13 @@ const Header = () => {
               About Me
             </a>
             <a 
+              href="/blog" 
+              className="text-blue-200 hover:text-blue-500 transition-colors block md:inline-block text-center"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Blog
+            </a>
+            <a 
               href="/service" 
               className="text-blue-200 hover:text-blue-500 transition-colors block md:inline-block text-center"
               onClick={() => setIsMenuOpen(false)}
