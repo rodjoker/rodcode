@@ -1,11 +1,11 @@
 import BlogPost from './BlogDetails';
 
-export default function Page({ params }: { params: { id: string } }) {
+export default async function Page({ params }: { params: { id: string } }) {
+  const resolvedParams = await params;
+
   return (
     <>
-      
-      <BlogPost blogId={params.id} />
-      
+      <BlogPost blogId={resolvedParams.id} />
     </>
   );
 }
