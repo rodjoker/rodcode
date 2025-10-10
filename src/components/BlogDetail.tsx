@@ -18,6 +18,23 @@ interface BlogDetailProps {
   }
 }
 
+const getImagePosition = (imageUrl: string, id: string) => {
+  // Mapeo de posiciones específicas para cada imagen
+  const imagePositions: { [key: string]: string } = {
+    '/hologramas_portfolio.png': 'object-center',
+    '/crea_metas.png': 'object-top'
+  }
+
+  // Posiciones por ID como respaldo
+  const idPositions: { [key: string]: string } = {
+    '1': 'object-center',
+    '2': 'object-top'
+  }
+
+  // Primero intenta encontrar la posición por URL de imagen, luego por ID, o usa un valor predeterminado
+  return imagePositions[imageUrl] || idPositions[id] || 'object-top'
+}
+
 export default function BlogDetail({ 
   id,
   title, 
@@ -28,6 +45,7 @@ export default function BlogDetail({
   tags,
   author
 }: BlogDetailProps) {
+  const imagePosition = getImagePosition(image, id)
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -41,7 +59,7 @@ export default function BlogDetail({
           src={image}
           alt={title}
           fill
-          className="object-cover object-top"
+          className={`object-cover ${imagePosition}`}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
       </div>

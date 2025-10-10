@@ -62,6 +62,23 @@ const blogPosts: BlogPosts = {
   }
 }
 
+const getImagePosition = (imageUrl: string, id: string) => {
+  // Mapeo de posiciones específicas para cada imagen
+  const imagePositions: { [key: string]: string } = {
+    '/hologramas_portfolio.png': 'object-center',
+    '/crea_metas.png': 'object-top'
+  }
+
+  // Posiciones por ID como respaldo
+  const idPositions: { [key: string]: string } = {
+    '1': 'object-center',
+    '2': 'object-top'
+  }
+
+  // Primero intenta encontrar la posición por URL de imagen, luego por ID, o usa un valor predeterminado
+  return imagePositions[imageUrl] || idPositions[id] || 'object-top'
+}
+
 export default function BlogDetailPage({ blogId }: BlogDetailPageProps) {
   const router = useRouter()
   const post = blogPosts[blogId]
@@ -99,7 +116,7 @@ export default function BlogDetailPage({ blogId }: BlogDetailPageProps) {
               src={post.image}
               alt={post.title}
               fill
-              className="object-cover object-top"
+              className={`object-cover ${getImagePosition(post.image, blogId)}`}
               sizes="100vw"
               priority
             />
