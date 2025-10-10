@@ -75,28 +75,53 @@ const blogPosts: BlogPosts = {
     }
   },
   '2': {
-    title: 'Optimización de rendimiento en React',
+    title: 'Crea Tu Propia Agenda de Metas',
     content: `
-      <article class="prose prose-invert lg:prose-xl max-w-none">
-        <p>El rendimiento es crucial para el éxito de cualquier aplicación web moderna. En este artículo, exploraremos técnicas avanzadas para optimizar aplicaciones React.</p>
+      <article class="prose prose-invert lg:prose-xl max-w-none text-justify">
+        <h2>El Mapa Hacia Tu Transformación Profesional</h2>
+        <br />
+        <p>Definir nuestras metas es, sin duda, uno de los actos más revolucionarios que podemos hacer por nosotros mismos. Para mí, fue un verdadero despertar. De repente, esos grandes sueños se descompusieron en una serie de pequeños pasos que, día a día, me acercan a donde quiero estar. Si sientes que estás dando vueltas sin rumbo, te invito a seguir mi camino: traza tu propia agenda de metas.</p>
+        <br />
+        <h2>La Claridad Es Poder: Metas a Corto y Largo Plazo</h2>
+        <br />
+        <p>Al sentarme a reflexionar detalladamente, descubrí algo crucial: necesito metas que me impulsen hoy y otras que guíen mi camino a futuro. Esta distinción me ha dado una claridad asombrosa, ayudándome a priorizar y a medir mi progreso.</p>
+        <br />
+        <h2>🎯 Metas a Corto Plazo (El Despegue Inmediato):</h2>
+        <br />
+        <p>Estas son las acciones concretas que estoy ejecutando ahora mismo para construir una base sólida:</p>
 
-        <h2>Memorización efectiva</h2>
-        <p>Aprende a utilizar useMemo y useCallback de manera efectiva para prevenir renderizados innecesarios y mejorar el rendimiento de tu aplicación.</p>
+        <ul>
+          <li>Crear Mi Portafolio: Estoy desarrollando una landing page robusta que no es solo un currículum, sino una vitrina interactiva para mostrar mis habilidades como programador. Es mi carta de presentación al mundo.</li>
+          <li>Desarrollar Apps de Impacto: Me he enfocado en crear aplicaciones que resuelvan problemas reales a mis usuarios. No se trata de ejercicios teóricos, sino de soluciones funcionales.</li>
+          <li>Inglés Conversacional: Llevando mi nivel de inglés a un punto en el que la comunicación fluida no sea un obstáculo, sino una ventaja.</li>
+          <li>Encontrar Trabajo: El objetivo inmediato de capitalizar todo este aprendizaje en una empresa que me permita crecer y contribuir.</li>
+        </ul>
 
-        <h2>Code Splitting</h2>
-        <p>Implementa técnicas de división de código para reducir el tamaño inicial del bundle y mejorar los tiempos de carga de tu aplicación.</p>
-
-        <h2>Optimización de imágenes</h2>
-        <p>Descubre las mejores prácticas para la optimización de imágenes y cómo implementarlas en tu aplicación React.</p>
-
-        <p>Si estás pensando en construir tu portafolio, no dejes que el diseño te detenga. Enfócate en la solución y utiliza herramientas de Inteligencia Artificial como Stitch para asistirte.
-
+        <h2>🚀 Metas a Largo Plazo (La Visión de Crecimiento):</h2>
+        <p>Estos son los pilares de mi carrera y vida que me mantienen motivado a seguir superando límites:</p>
+        <br />
+        <ul> 
+          <li>Impacto Social en Redes: Crecer en mis redes sociales compartiendo mi propia historia de cambio de carrera. Mi lema es: si yo pude, tú también puedes. Quiero demostrar que es totalmente posible dedicarse a lo que te apasiona.</li>
+          <li>Nivel de Inglés C2: Alcanzar la maestría total del idioma.</li>
+          <li>Maestría en Desarrollo: Crear aplicaciones de cero a despliegue que sean robustas, escalables y potentes en ciberseguridad. Mi meta como Senior Developer es llevar mi código al siguiente nivel de excelencia.</li>
+        </ul>
+        <br />
+        <h2>Rutas Trazadas y el Adiós al Síndrome del Impostor</h2>
+        <br />
+        <p>Definir estas metas me permitió trazar rutas claras. Cada paso, cada módulo, cada proyecto me ha enfrentado a nuevos retos, y el éxito al superarlos ha sido inmenso.</p>
+        <br />
+        <p>Actualmente, me siento listo para mostrar mis habilidades en una gran empresa y, más importante aún, para aprender profundamente de sus sistemas. Este avance no solo es técnico, sino mental. Dejé el Síndrome del Impostor atrás. Ahora estoy plenamente consciente de mis carencias, sí, pero también de mis virtudes. La confianza que he ganado es el resultado directo de este trabajo metódico. Sé lo que valgo y sé que mi esfuerzo está dando frutos.</p>
+        <br />
+        <p>Todo esto te lo cuento no por presumir, sino para animarte.
+        No importa dónde estés hoy, ni si sientes que el camino es incierto. La clave es definir tus metas, grandes y pequeñas. Es el primer paso para descubrirte y para construir la vida profesional que deseas.</p>
+        <br />
+        <P>¡No decaigas! Confía en el proceso. La agenda está lista, el mapa está trazado. Ahora, solo tienes que dar ese primer pequeño paso.</p>
         </article>
     `,
-    image: '/blog/react-performance.jpg',
+    image: '/crea_metas.png',
     date: '5 Oct 2025',
     readTime: '7 min lectura',
-    tags: ['React', 'Performance', 'JavaScript'],
+    tags: ['Evoluciona', 'Mejora', 'Superate'],
     author: {
       name: 'Rodolfo Rodríguez',
       avatar: '/rodolfo_perfil.png'
@@ -138,12 +163,14 @@ export default function BlogPost({ params }: BlogPostProps) {
         </button>
 
         <div className="bg-gray-900/40 backdrop-blur-sm border border-gray-700/20 rounded-lg shadow-lg overflow-hidden">
-          <div className="relative h-96 w-full">
+          <div className="relative h-[500px] w-full">
             <Image
               src={post.image}
               alt={post.title}
               fill
-              className="object-cover"
+              className="object-cover object-top"
+              sizes="100vw"
+              priority
             />
           </div>
 
