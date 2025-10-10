@@ -1,7 +1,7 @@
 'use client'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Float, Text3D, Center } from '@react-three/drei'
-import * as THREE from 'three'
+
 
 function Tech3DText({ text, position = [0, 0, 0] }: { text: string, position?: [number, number, number] }) {
   return (

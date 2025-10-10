@@ -21,13 +21,13 @@ const blogPosts = [
   },
   {
     id: '2',
-    title: 'Optimización de rendimiento en React',
-    summary: 'Guía completa sobre cómo mejorar el rendimiento de tus aplicaciones React. Desde la implementación de memorización hasta la optimización de renderizado.',
+    title: 'Crea Tu Propia Agenda de Metas',
+    summary: 'Definir nuestras metas es, sin duda, uno de los actos más revolucionarios que podemos hacer por nosotros mismos. Para mí, fue un verdadero despertar. De repente, esos grandes sueños se descompusieron en una serie de pequeños pasos que, día a día, me acercan a donde quiero estar.',
     content: '...',
-    image: '/blog/react-performance.jpg',
-    date: '5 Oct 2025',
+    image: '/crea_metas.png',
+    date: '10 Oct 2025',
     readTime: '7 min lectura',
-    tags: ['React', 'Performance', 'JavaScript'],
+    tags: ['Evoluciona', 'Mejora', 'Superate'],
     author: {
       name: 'Rodolfo Rodríguez',
       avatar: '/rodolfo_perfil.png'

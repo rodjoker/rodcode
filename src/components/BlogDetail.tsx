@@ -36,12 +36,13 @@ export default function BlogDetail({
       transition={{ duration: 0.5 }}
       className="bg-gray-900/40 backdrop-blur-sm border border-gray-700/20 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
     >
-      <div className="relative h-48 w-full">
+      <div className="relative h-64 w-full">
         <Image
           src={image}
           alt={title}
           fill
-          className="object-cover"
+          className="object-cover object-top"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
       </div>
       <div className="p-6">
