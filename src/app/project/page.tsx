@@ -12,16 +12,25 @@ const projects = [
     technologies: ["React Native", "Node.js", "MongoDB", "Express", "Socket.io"],
     githubUrl: "https://github.com/rodjoker",
     demoUrl: "https://delivery-app-demo.com",
-    date: "2023"
+    date: "2025"
   },
   {
     title: 'Landing Page Castello Films',
     description: 'Pagina Web para la productora y editora Castello Films.',
     imageUrl: "/castello_pw.PNG",
     technologies: ["NextJS", "TypeScript", "Tailwind CSS"],
-    githubUrl: "https://github.com/yourusername/ecommerce-dashboard",
+    githubUrl: "https://github.com/rodjoker",
     demoUrl: "https://mc-landing-two.vercel.app/home",
-    date: "2023"
+    date: "2025"
+  },
+  {
+    title: 'Strategy Search Job',
+    description: 'Agenda con estrategia de búsqueda de empleo, he investigado las mejores estrategias para encontrar empleo y he decidido implementar esta, espero te sea de utilidad.',
+    imageUrl: "/strategySearchJob.PNG",
+    technologies: ["NextJS", "TypeScript", "Tailwind CSS"],
+    githubUrl: "https://github.com/rodjoker",
+    demoUrl: "https://strategy-search-job.vercel.app/dashboard",
+    date: "2025"
   },
 ];
 
