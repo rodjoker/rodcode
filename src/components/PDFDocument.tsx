@@ -75,7 +75,7 @@ const MyDocument = () => (
       <View style={styles.header}>
         <Text style={styles.title}>RODOLFO ANTONIO RODRÍGUEZ QUINTERO</Text>
         <Text style={styles.contact}>
-          Cel: +34 611360462 | rodolfoantoniorq@gmail.com | LinkedIn | GitHub
+          Cel: +34 611360462 | rodolfoantoniorq@gmail.com 
         </Text>
         <Text style={styles.jobTitle}>DESARROLLADOR WEB</Text>
       </View>
@@ -84,13 +84,7 @@ const MyDocument = () => (
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>PERFIL</Text>
         <Text style={styles.text}>
-          Desarrollador Full Stack Eficiencia y automatización con IA, 2 años de experiencia en la creación de aplicaciones web y móviles, 
-          con un enfoque en la integración de herramientas de inteligencia artificial para optimizar y 
-          acelerar los flujos de trabajo de desarrollo front-end y back-end. Especializado en JavaScript, 
-          React, Node.js, Express.js y MongoDB, y con experiencia en Python y FastAPI para el desarrollo 
-          de APIs y servicios. He implementado soluciones que aprovechan la IA para automatizar tareas 
-          repetitivas, mejorar la eficiencia de los procesos y entregar soluciones escalables, robustas 
-          y de alto rendimiento.
+          Desarrollador FullStack Eficiencia y automatización con IA, con 2 años de experiencia en el diseño, desarrollo y mantenimiento de aplicaciones web.  integración de herramientas de inteligencia artificial para optimizar y acelerar los flujos de trabajo, mejorar la eficiencia de los procesos y entregar soluciones escalables, robustas y de alto rendimiento. Capacidad demostrada para trabajar en equipos multidisciplinarios, resolver problemas complejos y entregar soluciones escalables y eficientes. Habilidades en diseño de interfaces, desarrollo de APIs RESTful, integración de servicios cloud y gestión de bases de datos.
         </Text>
       </View>
 

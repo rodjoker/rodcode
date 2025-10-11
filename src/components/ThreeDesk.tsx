@@ -126,7 +126,7 @@ export default function ThreeDeskScene() {
     ctx.fillText('PERFIL', margin, y)
     y += 30
     
-    const perfil = 'Desarrollador Full Stack con 2 años de experiencia en desarrollo web y móvil, con un enfoque en la integración de herramientas de IA para optimizar y acelerar los flujos de trabajo de desarrollo. Especializado en JavaScript, React, Node.js, Express.js y MongoDB, con experiencia en Python y FastAPI para el desarrollo de APIs y servicios.'
+    const perfil = 'Desarrollador FullStack con 2 años de experiencia en el diseño, desarrollo y mantenimiento de aplicaciones web.  integración de herramientas de inteligencia artificial para optimizar y acelerar los flujos de trabajo, mejorar la eficiencia de los procesos y entregar soluciones escalables, robustas y de alto rendimiento. Capacidad demostrada para trabajar en equipos multidisciplinarios, resolver problemas complejos y entregar soluciones escalables y eficientes. Habilidades en diseño de interfaces, desarrollo de APIs RESTful, integración de servicios cloud y gestión de bases de datos.'
     ctx.font = '18px Inter, system-ui'
     wrapText(ctx, perfil, margin, y, contentWidth, 24)
     y += 55
