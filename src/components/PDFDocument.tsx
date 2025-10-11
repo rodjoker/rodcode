@@ -99,6 +99,12 @@ const MyDocument = () => (
           • Creación de una aplicación para la administración de proyectos inmobiliarios utilizando 
             JavaScript, React Vite, Material UI y MongoDB.
         </Text>
+        <Text style={styles.bulletPoint}>
+          • Cree una librería de componentes reutilizables para agilizar el proceso de desarrollo.
+        </Text>
+        <Text style={styles.bulletPoint}>
+          • Desarrolle componentes con Three.js para implementar diseños en 3D dentro de la plataforma.
+        </Text>
         
         <Text style={styles.text}>Integración con AWS:</Text>
         <Text style={styles.bulletPoint}>
