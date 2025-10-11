@@ -163,14 +163,15 @@ export default function BlogPost({ blogId }: { blogId: string }) {
         </button>
 
         <div className="bg-gray-900/40 backdrop-blur-sm border border-gray-700/20 rounded-lg shadow-lg overflow-hidden">
-          <div className="relative h-[500px] w-full">
+          <div className="relative w-full h-[400px]">
             <Image
               src={post.image}
               alt={post.title}
               fill
-              className="object-cover object-top"
-              sizes="100vw"
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
               priority
+              quality={100}
             />
           </div>
 
