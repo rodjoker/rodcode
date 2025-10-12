@@ -11,7 +11,7 @@ const projects = [
     imageUrl: "/delivery_app.PNG",
     technologies: ["React Native", "Node.js", "MongoDB", "Express", "Socket.io"],
     githubUrl: "https://github.com/rodjoker",
-    demoUrl: "https://delivery-app-demo.com",
+    demoUrl: "https://delivery-ten-umber.vercel.app/",
     date: "2025"
   },
   {
