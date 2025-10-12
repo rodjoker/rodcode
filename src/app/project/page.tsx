@@ -32,6 +32,15 @@ const projects = [
     demoUrl: "https://strategy-search-job.vercel.app/dashboard",
     date: "2025"
   },
+  {
+    title: 'Landing Page AWS S3',
+    description: 'Landing page de prueba para mostrar un servicio de almacenamiento en la nube: AWS S3, estoy estudiando un AWS y decidí implementarlo para este despliege.',
+    imageUrl: "/landing_AWS_S3.PNG",
+    technologies: ["HTML", "CSS"],
+    githubUrl: "https://github.com/rodjoker/rodcode_web_s3_aws",
+    demoUrl: "https://lnkd.in/eS4gUVri",
+    date: "2025"
+  },
 ];
 
 export default function ProjectsPage() {
