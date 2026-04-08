@@ -67,43 +67,43 @@ const Header = () => {
             w-full md:w-auto
             border-t md:border-t-0 border-gray-700/20
           `}>
-            <Link 
-              href="/home" 
+            <Link
+              href="/home#home"
               className="text-blue-200 hover:text-blue-500 transition-colors block md:inline-block text-center"
               onClick={() => setIsMenuOpen(false)}
             >
               Home
             </Link>
-            <Link 
-              href="/project" 
+            <Link
+              href="/home#projects"
               className="text-blue-200 hover:text-blue-500 transition-colors block md:inline-block text-center"
               onClick={() => setIsMenuOpen(false)}
             >
               Projects
             </Link>
-            <Link 
-              href="/about" 
+            <Link
+              href="/home#about"
               className="text-blue-200 hover:text-blue-500 transition-colors block md:inline-block text-center"
               onClick={() => setIsMenuOpen(false)}
             >
               About Me
             </Link>
-            <Link 
-              href="/blog" 
+            <Link
+              href="/blog"
               className="text-blue-200 hover:text-blue-500 transition-colors block md:inline-block text-center"
               onClick={() => setIsMenuOpen(false)}
             >
               Blog
             </Link>
-            <Link 
-              href="/service" 
+            <Link
+              href="/home#services"
               className="text-blue-200 hover:text-blue-500 transition-colors block md:inline-block text-center"
               onClick={() => setIsMenuOpen(false)}
             >
-              Service
+              Services
             </Link>
-            <Link 
-              href="/contact" 
+            <Link
+              href="/home#contact"
               className="text-blue-200 hover:text-blue-500 transition-colors block md:inline-block text-center"
               onClick={() => setIsMenuOpen(false)}
             >
