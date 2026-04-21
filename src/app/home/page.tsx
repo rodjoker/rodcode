@@ -11,6 +11,7 @@ import Single3DText from '@/components/Single3DText'
 import ProfileCard from '@/components/ProfileCard'
 import ServiceDetail from '@/components/ServiceDetail'
 import { PDFDownloadButton } from '@/components/PDFDownloadButton'
+import SkillsSphereClient from '@/components/SkillsSphereClient'
 
 // ─── Iconos contribuciones ───────────────────────────────────────────────────
 const FullStackIcon = () => (
@@ -224,8 +225,26 @@ export default function Home() {
                 </a>
               </div>
             </div>
-            <div className="h-[60vh] w-full relative z-0 overflow-hidden">
-              <ClientThreeHero />
+            <div className="flex items-center justify-center h-[60vh] w-full relative z-0">
+              {/* Glow de fondo */}
+              <div className="absolute w-72 h-72 rounded-full bg-blue-600/20 blur-3xl" />
+              <div className="absolute w-48 h-48 rounded-full bg-purple-600/15 blur-2xl translate-x-16 translate-y-10" />
+
+              {/* Marco con gradiente */}
+              <div className="relative p-[3px] rounded-2xl bg-gradient-to-br from-blue-500 via-purple-500 to-blue-800 shadow-2xl shadow-blue-500/20">
+                <div className="relative overflow-hidden rounded-2xl w-72 h-80 bg-gray-900">
+                  <img
+                    src="/rodolfo_perfil.png"
+                    alt="Rodolfo Rodriguez"
+                    className="w-full h-full object-cover object-top"
+                  />
+                  {/* Overlay glassmorphism inferior */}
+                  <div className="absolute bottom-0 left-0 right-0 px-4 py-3 bg-black/50 backdrop-blur-sm border-t border-white/10">
+                    <p className="text-white font-semibold text-sm">Rodolfo Rodriguez</p>
+                    <p className="text-blue-400 text-xs">Full Stack Developer</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -241,8 +260,6 @@ export default function Home() {
           SECCIÓN: ABOUT
       ══════════════════════════════════════════ */}
       <section id="about" className="bg-black text-white">
-        <Single3DText text="RodCode" height="40vh" backgroundColor="#6e6c6cff" />
-
         <div className="min-h-screen w-full bg-gray-900 flex items-center justify-center px-4 py-16">
           <div className="max-w-5xl w-11/12">
             <ProfileCard
@@ -264,80 +281,27 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="min-h-screen w-full bg-black flex items-center justify-center px-4 py-16">
-          <div className="max-w-5xl w-11/12">
-            <ProfileCard
-              name="Experiencia Técnica"
-              title="React & Next.js Specialist"
-              description="Mi viaje en el desarrollo web comenzó con HTML y CSS, pero rápidamente me enamoré de React y su ecosistema. La capacidad de crear interfaces dinámicas y escalables me cautivó desde el primer momento."
-              subtitle="Tecnologías Principales"
-              additionalDescription={`
-                <ul class="space-y-2 list-none text-sm">
-                  <li class="flex flex-col">
-                    <span class="font-semibold text-white mb-1 text-xs">Frontend:</span>
-                    <div class="flex flex-wrap gap-1">
-                      <span class="px-2 py-0.5 bg-gray-800 rounded-full text-white text-xs">JavaScript</span>
-                      <span class="px-2 py-0.5 bg-gray-800 rounded-full text-white text-xs">TypeScript</span>
-                      <span class="px-2 py-0.5 bg-gray-800 rounded-full text-white text-xs">React</span>
-                      <span class="px-2 py-0.5 bg-gray-800 rounded-full text-white text-xs">Next JS</span>
-                      <span class="px-2 py-0.5 bg-gray-800 rounded-full text-white text-xs">Material UI</span>
-                      <span class="px-2 py-0.5 bg-gray-800 rounded-full text-white text-xs">Tailwind</span>
-                    </div>
-                  </li>
-                  <li class="flex flex-col">
-                    <span class="font-semibold text-white mb-1 text-xs">Backend:</span>
-                    <div class="flex flex-wrap gap-1">
-                      <span class="px-2 py-0.5 bg-gray-800 rounded-full text-white text-xs">Node.js</span>
-                      <span class="px-2 py-0.5 bg-gray-800 rounded-full text-white text-xs">Express.js</span>
-                      <span class="px-2 py-0.5 bg-gray-800 rounded-full text-white text-xs">Nest JS</span>
-                      <span class="px-2 py-0.5 bg-gray-800 rounded-full text-white text-xs">Python (FastAPI)</span>
-                      <span class="px-2 py-0.5 bg-gray-800 rounded-full text-white text-xs">Supabase</span>
-                    </div>
-                  </li>
-                  <li class="flex flex-col">
-                    <span class="font-semibold text-white mb-1 text-xs">Bases de datos:</span>
-                    <div class="flex flex-wrap gap-1">
-                      <span class="px-2 py-0.5 bg-gray-800 rounded-full text-white text-xs">MongoDB</span>
-                      <span class="px-2 py-0.5 bg-gray-800 rounded-full text-white text-xs">PostgreSQL</span>
-                    </div>
-                  </li>
-                  <li class="flex flex-col">
-                    <span class="font-semibold text-white mb-1 text-xs">Cloud y herramientas:</span>
-                    <div class="flex flex-wrap gap-1">
-                      <span class="px-2 py-0.5 bg-gray-800 rounded-full text-white text-xs">AWS</span>
-                      <span class="px-2 py-0.5 bg-gray-800 rounded-full text-white text-xs">IAM</span>
-                      <span class="px-2 py-0.5 bg-gray-800 rounded-full text-white text-xs">Cognito</span>
-                      <span class="px-2 py-0.5 bg-gray-800 rounded-full text-white text-xs">S3</span>
-                      <span class="px-2 py-0.5 bg-gray-800 rounded-full text-white text-xs">Amazon Connect</span>
-                      <span class="px-2 py-0.5 bg-gray-800 rounded-full text-white text-xs">Salesforce</span>
-                      <span class="px-2 py-0.5 bg-gray-800 rounded-full text-white text-xs">Git</span>
-                      <span class="px-2 py-0.5 bg-gray-800 rounded-full text-white text-xs">GitHub</span>
-                    </div>
-                  </li>
-                </ul>
-              `}
-              image="/rodcode_funko.png"
-              showReadMore={true}
-              extendedContent="Mi stack tecnológico incluye experiencia profunda en React y sus patrones avanzados, Next.js para aplicaciones full-stack, TypeScript para código más seguro y mantenible, y Tailwind CSS para diseños elegantes y responsivos. Constantemente me mantengo actualizado con las últimas tendencias y mejores prácticas del desarrollo web."
-            />
-          </div>
+        <div className="w-full bg-black py-16 px-4">
+          <h2 className="text-4xl font-bold text-center text-white mb-2">Stack Tecnológico</h2>
+          <p className="text-center text-gray-500 text-sm mb-6">Tecnologías con las que trabajo a diario</p>
+          <SkillsSphereClient />
         </div>
 
         <div className="min-h-screen w-full bg-gray-900 flex items-center justify-center px-4 py-16">
           <div className="max-w-5xl w-11/12">
             <ProfileCard
               name="Objetivos"
-              title="Innovación Continua"
-              description="Constantemente busco nuevas formas de mejorar y optimizar los proyectos en los que trabajo, manteniéndome al día con las últimas tendencias."
-              subtitle="Visión de Futuro"
-              additionalDescription="Comprometido con el aprendizaje continuo y la adopción de nuevas tecnologías que beneficien a los proyectos y usuarios finales."
+              title="Cloud · IA · Modernización"
+              description="Mi enfoque está en construir soluciones modernas, escalables y potenciadas con inteligencia artificial. La certificación AWS Cloud Practitioner es el primer paso de una ruta clara hacia arquitecturas cloud de alto impacto."
+              subtitle="Hacia dónde voy"
+              additionalDescription="Trabajo con Claude Code como asistente de desarrollo diario — no como atajo, sino como multiplicador de calidad: código más limpio, menos bugs, entregas más rápidas sin sacrificar criterio técnico."
               image="/silueta_up.png"
               showReadMore={true}
               extendedContent={`
                 <div class="space-y-6">
-                  <p>Mi objetivo principal es seguir creciendo como desarrollador mientras creo soluciones que realmente marquen la diferencia. Me apasiona construir aplicaciones que no solo sean técnicamente sólidas, sino que también mejoren la vida de quienes las usan.</p>
-                  <p>Día a día continúo formándome y perfeccionando mis habilidades, especialmente en plataformas como Amazon Connect y Salesforce, que me permiten desarrollar soluciones más integrales, escalables y centradas en la experiencia del usuario.</p>
-                  <p>Estoy especialmente interesado en proyectos que desafíen mis capacidades y me impulsen a explorar nuevas tecnologías, metodologías ágiles y enfoques innovadores. A largo plazo, aspiro a contribuir activamente a la comunidad tech compartiendo conocimientos y acompañando a otros desarrolladores a través de la mentoría.</p>
+                  <p>La nube ya no es opcional — es el estándar. Con AWS como base, mi objetivo es profundizar en servicios avanzados como ECS, RDS, CloudFront y Step Functions para diseñar arquitecturas que escalen sin fricción y que los equipos puedan mantener con confianza.</p>
+                  <p>Creo que la IA aplicada al desarrollo no reemplaza el criterio técnico — lo amplifica. Usar Claude Code en el flujo de trabajo diario me permite detectar edge cases antes, documentar mejor y entregar productos más robustos en menos tiempo. Es una ventaja competitiva real, no una moda.</p>
+                  <p>A mediano plazo busco liderar proyectos donde la modernización tecnológica sea el núcleo: migrar sistemas legacy a arquitecturas serverless, adoptar prácticas de CI/CD maduras y construir productos digitales que duren. El objetivo no es solo escribir código — es construir soluciones que importen.</p>
                 </div>
               `}
             />
@@ -350,22 +314,11 @@ export default function Home() {
       ══════════════════════════════════════════ */}
       <section id="projects" className="bg-black text-white pt-8">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <Single3DText text="Next.js" />
-            <Single3DText text="AWS" />
-            <Single3DText text="TypeScript" />
-          </div>
-
+          <h2 className="text-4xl font-bold text-center text-white mb-8">Proyectos</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pb-8">
             {projects.map((project, index) => (
               <ProjectDetail key={index} {...project} />
             ))}
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <Single3DText text="JavaScript" />
-            <Single3DText text="Salesforce" />
-            <Single3DText text="Python" />
           </div>
         </div>
       </section>
