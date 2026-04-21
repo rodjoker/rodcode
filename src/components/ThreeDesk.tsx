@@ -84,124 +84,155 @@ export default function ThreeDeskScene() {
     canvas.width = 2048
     canvas.height = 1152
     const ctx = canvas.getContext('2d')!
-    
-    // Configuración base
-    const margin = 80
-    let y = margin + 20
-    const contentWidth = canvas.width - (margin * 2)
 
-    // Fondo con efecto de hoja
-    ctx.fillStyle = '#F8F8F8'
+    const margin = 70
+    const contentWidth = canvas.width - margin * 2
+    let y = 72
+
+    // ── Fondo blanco limpio ──────────────────────────────────────────────────
+    ctx.fillStyle = '#FFFFFF'
     ctx.fillRect(0, 0, canvas.width, canvas.height)
-    
-    // Efecto de sombra sutil para simular una hoja
-    ctx.shadowColor = 'rgba(0, 0, 0, 0.1)'
-    ctx.shadowBlur = 20
-    ctx.shadowOffsetX = 5
-    ctx.shadowOffsetY = 5
-    ctx.fillStyle = '#F8F8F8'
-    ctx.fillRect(margin/2, margin/2, canvas.width - margin, canvas.height - margin)
-    ctx.shadowColor = 'transparent'
-    
-    // Encabezado
+
+    // Línea de acento superior
     ctx.fillStyle = '#111827'
-    ctx.font = 'bold 48px Inter, system-ui'
+    ctx.fillRect(0, 0, canvas.width, 8)
+
+    // ── Nombre ───────────────────────────────────────────────────────────────
+    ctx.fillStyle = '#111827'
+    ctx.font = 'bold 46px Inter, system-ui'
     ctx.fillText('RODOLFO ANTONIO RODRÍGUEZ QUINTERO', margin, y)
-    y += 45
+    y += 38
 
     // Contacto
-    ctx.font = '20px Inter, system-ui'
+    ctx.font = '19px Inter, system-ui'
     ctx.fillStyle = '#4B5563'
-    ctx.fillText('Cel: +34 611360462 | rodolfoantoniorq@gmail.com | LinkedIn | GitHub', margin, y)
-    y += 45
+    ctx.fillText('+34 611360462  ·  rodolfoantoniorq@gmail.com  ·  LinkedIn  ·  Portafolio', margin, y)
+    y += 28
 
-    // Título
-    ctx.font = 'bold 32px Inter, system-ui'
-    ctx.fillStyle = '#111827'
-    ctx.fillText('DESARROLLADOR WEB', margin, y)
-    y += 45
+    // Título profesional
+    ctx.font = 'bold 22px Inter, system-ui'
+    ctx.fillStyle = '#2563EB'
+    ctx.fillText('DESARROLLADOR FULL STACK  ·  React · Next.js · NestJS · React Native · AWS', margin, y)
+    y += 22
 
-    // Perfil
-    ctx.font = 'bold 24px Inter, system-ui'
-    ctx.fillText('PERFIL', margin, y)
-    y += 30
-    
-    const perfil = 'Desarrollador FullStack con 2 años de experiencia en el diseño, desarrollo y mantenimiento de aplicaciones web.  integración de herramientas de inteligencia artificial para optimizar y acelerar los flujos de trabajo, mejorar la eficiencia de los procesos y entregar soluciones escalables, robustas y de alto rendimiento. Capacidad demostrada para trabajar en equipos multidisciplinarios, resolver problemas complejos y entregar soluciones escalables y eficientes. Habilidades en diseño de interfaces, desarrollo de APIs RESTful, integración de servicios cloud y gestión de bases de datos.'
-    ctx.font = '18px Inter, system-ui'
-    wrapText(ctx, perfil, margin, y, contentWidth, 24)
-    y += 55
+    // Línea separadora
+    ctx.fillStyle = '#E5E7EB'
+    ctx.fillRect(margin, y, contentWidth, 2)
+    y += 18
 
-    // Experiencia
-    ctx.font = 'bold 24px Inter, system-ui'
-    ctx.fillText('EXPERIENCIA', margin, y)
-    y += 35
-    
+    // ── PERFIL ───────────────────────────────────────────────────────────────
     ctx.font = 'bold 20px Inter, system-ui'
-    ctx.fillText('Desarrollador Full Stack Freelance (Mar. 2023 – Actualidad)', margin, y)
-    y += 25
+    ctx.fillStyle = '#111827'
+    ctx.fillText('PERFIL', margin, y)
+    y += 24
 
-    const experiencias = [
-      '• Desarrollo de aplicaciones web responsivas utilizando React Vite, Material UI y MongoDB',
-      '• Implementación de AWS Cognito User Pool para autenticación de usuarios',
-      '• APIs RESTful con Python (FastAPI) y NestJS, integrando AWS Boto3',
-      '• Sistemas de autenticación con OAuth 2.0 usando Passport.js',
-      '• Integración con servicios AWS (Lex, Connect) para optimización de procesos'
-    ]
+    ctx.font = '17px Inter, system-ui'
+    ctx.fillStyle = '#374151'
+    const perfil = 'Desarrollador Full Stack con experiencia construyendo productos completos en producción: interfaces web, apps móviles y arquitecturas serverless en AWS. Especializado en el ecosistema JavaScript/TypeScript (React, Next.js, NestJS, React Native) y sistemas de tiempo real con WebSockets. Uso la IA como co-piloto de desarrollo para entregar código más limpio y escalable a mayor velocidad.'
+    wrapText(ctx, perfil, margin, y, contentWidth, 23)
+    y += 70
 
-    ctx.font = '18px Inter, system-ui'
-    experiencias.forEach(exp => {
-      wrapText(ctx, exp, margin, y, contentWidth, 24)
-      y += 28
-    })
+    // Línea separadora
+    ctx.fillStyle = '#E5E7EB'
+    ctx.fillRect(margin, y, contentWidth, 2)
+    y += 18
 
-    // Habilidades
-    y += 35
-    ctx.font = 'bold 24px Inter, system-ui'
+    // ── HABILIDADES ──────────────────────────────────────────────────────────
+    ctx.font = 'bold 20px Inter, system-ui'
+    ctx.fillStyle = '#111827'
     ctx.fillText('HABILIDADES TÉCNICAS', margin, y)
-    y += 35
+    y += 24
 
     const skills = [
-      'Lenguajes: JavaScript, TypeScript, Python',
-      'Frontend: React, Next.js, Material UI, Tailwind CSS',
-      'Backend: Node.js, Express.js, FastAPI, NestJS',
-      'Bases de Datos: MongoDB, SQL',
-      'Cloud: AWS (Lex, Connect, Cognito, Boto3), Git, GitHub'
+      ['Lenguajes',      'JavaScript, TypeScript, Python'],
+      ['Frontend',       'React, Next.js, Tailwind CSS, Material UI'],
+      ['Backend',        'Node.js, Express.js, NestJS, FastAPI'],
+      ['Mobile',         'React Native, Expo'],
+      ['Bases de datos', 'MongoDB, PostgreSQL, Supabase'],
+      ['Cloud',          'AWS (Lambda, Cognito, S3, API Gateway, Connect), Serverless Framework'],
+      ['Tiempo real',    'WebSockets, Socket.io, Redis/Upstash · Estado: Zustand'],
+      ['IA & Herramientas', 'GitHub Copilot, Claude AI, Git, GitHub, Swagger'],
     ]
 
-    ctx.font = '18px Inter, system-ui'
-    skills.forEach(skill => {
-      wrapText(ctx, '• ' + skill, margin, y, contentWidth, 24)
-      y += 28
+    ctx.font = '17px Inter, system-ui'
+    skills.forEach(([label, value]) => {
+      ctx.fillStyle = '#111827'
+      ctx.font = 'bold 17px Inter, system-ui'
+      ctx.fillText(label + ':', margin, y)
+      const labelW = ctx.measureText(label + ':  ').width
+      ctx.fillStyle = '#374151'
+      ctx.font = '17px Inter, system-ui'
+      ctx.fillText(value, margin + labelW, y)
+      y += 24
     })
+    y += 6
 
-    // Otras Habilidades
-    y += 35
-    ctx.font = 'bold 24px Inter, system-ui'
-    ctx.fillText('OTRAS HABILIDADES', margin, y)
-    y += 30
+    // Línea separadora
+    ctx.fillStyle = '#E5E7EB'
+    ctx.fillRect(margin, y, contentWidth, 2)
+    y += 18
 
-    const otherSkills = [
-      'Prompt engineering y optimización de instrucciones para IA',
-      'Desarrollo asistido por IA (GitHub Copilot)',
-      'Integración de modelos de IA para optimización de procesos'
+    // ── EXPERIENCIA ──────────────────────────────────────────────────────────
+    ctx.font = 'bold 20px Inter, system-ui'
+    ctx.fillStyle = '#111827'
+    ctx.fillText('EXPERIENCIA', margin, y)
+    y += 24
+
+    // GEMES
+    ctx.font = 'bold 18px Inter, system-ui'
+    ctx.fillStyle = '#111827'
+    ctx.fillText('GEMES — Plataforma de Logística (Freelance)   |   Ene. 2024 – Actualidad', margin, y)
+    y += 22
+
+    const gemes = [
+      '• Plataforma de 3 actores en producción: backend serverless (NestJS + AWS Lambda), backoffice React y app móvil React Native',
+      '• Tiempo real con WebSockets (AWS API Gateway) + Redis — coordinación instantánea entre clientes, operadores y riders',
+      '• GPS tracking en background en app móvil con notificaciones push prioritarias (Expo Notifications)',
+      '• Infraestructura AWS completa: Lambda, Cognito, S3, API Gateway con Serverless Framework',
     ]
-
-    ctx.font = '18px Inter, system-ui'
-    otherSkills.forEach(skill => {
-      wrapText(ctx, '• ' + skill, margin, y, contentWidth, 24)
-      y += 28
+    ctx.font = '16px Inter, system-ui'
+    ctx.fillStyle = '#374151'
+    gemes.forEach(line => {
+      wrapText(ctx, line, margin, y, contentWidth, 22)
+      y += 24
     })
+    y += 8
 
-    // Estudios
-    y += 35
-    ctx.font = 'bold 24px Inter, system-ui'
+    // Freelance adicional
+    ctx.font = 'bold 18px Inter, system-ui'
+    ctx.fillStyle = '#111827'
+    ctx.fillText('Proyectos Freelance Adicionales   |   Mar. 2023 – Actualidad', margin, y)
+    y += 22
+
+    const freelance = [
+      '• Next.js + Supabase: reducción del 30% en tiempo de desarrollo con auth y BD integradas',
+      '• API RESTful Python (FastAPI) + AWS Boto3 para gestión de usuarios con CRUD completo',
+      '• Auth NestJS + Passport.js con OAuth 2.0 — integración segura con servicios de terceros',
+    ]
+    ctx.font = '16px Inter, system-ui'
+    ctx.fillStyle = '#374151'
+    freelance.forEach(line => {
+      wrapText(ctx, line, margin, y, contentWidth, 22)
+      y += 24
+    })
+    y += 10
+
+    // Línea separadora
+    ctx.fillStyle = '#E5E7EB'
+    ctx.fillRect(margin, y, contentWidth, 2)
+    y += 18
+
+    // ── ESTUDIOS ─────────────────────────────────────────────────────────────
+    ctx.font = 'bold 20px Inter, system-ui'
+    ctx.fillStyle = '#111827'
     ctx.fillText('ESTUDIOS', margin, y)
-    y += 30
+    y += 24
 
-    // Footer
-    ctx.font = '18px Inter, system-ui'
-    ctx.fillStyle = '#4B5563'
-    wrapText(ctx, 'Formación en Desarrollo Web Full Stack – Protalento/ADA School, 2023', margin, y, contentWidth, 24)
+    ctx.font = '17px Inter, system-ui'
+    ctx.fillStyle = '#374151'
+    ctx.fillText('Desarrollo Web Full Stack — Protalento / ADA School, 2023', margin, y)
+    y += 24
+    ctx.fillText('Profesional en Derecho — Universidad Arturo Michelena, 2011', margin, y)
 
     return new THREE.CanvasTexture(canvas)
   })

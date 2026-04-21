@@ -1,6 +1,7 @@
 'use client'
 import Image from 'next/image'
-import Link from 'next/link';
+import Link from 'next/link'
+import { motion } from 'framer-motion'
 
 interface ProjectDetailProps {
   title: string;
@@ -22,7 +23,13 @@ const ProjectDetail = ({
   date
 }: ProjectDetailProps) => {
   return (
-    <div className="bg-gray-900/40 backdrop-blur-sm border border-gray-700/20 rounded-lg shadow-lg overflow-hidden mb-8">
+    <motion.div
+      initial={{ opacity: 0, y: 12 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.4, ease: 'easeOut' }}
+      className="bg-gray-900/40 backdrop-blur-sm border border-gray-700/20 rounded-lg shadow-lg overflow-hidden mb-8"
+    >
       {/* Imagen del proyecto */}
       <div className="relative h-64 w-full">
         <Image
@@ -57,7 +64,7 @@ const ProjectDetail = ({
               {technologies.map((tech, index) => (
                 <span
                   key={index}
-                  className="bg-gray-800 text-gray-200 px-3 py-1 rounded-full text-sm"
+                  className="bg-gray-700/70 border border-gray-500/50 text-white px-3 py-1 rounded-full text-sm"
                 >
                   {tech}
                 </span>
@@ -112,7 +119,7 @@ const ProjectDetail = ({
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

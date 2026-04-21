@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import FloatingCVButton from "@/components/FloatingCVButton";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,8 +13,30 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "RodCode",
-  description: "Generated app web",
+  title: "RodCode — Rodolfo Rodriguez | Full Stack Developer",
+  description: "Desarrollador Full Stack con experiencia en React, Next.js, NestJS, React Native y AWS. Transformo ideas en soluciones digitales efectivas.",
+  openGraph: {
+    title: "RodCode — Rodolfo Rodriguez | Full Stack Developer",
+    description: "Desarrollador Full Stack con experiencia en React, Next.js, NestJS, React Native y AWS.",
+    url: "https://rodcode.dev",
+    siteName: "RodCode",
+    images: [
+      {
+        url: "https://rodcode.dev/hologramas_portfolio.png",
+        width: 1200,
+        height: 630,
+        alt: "RodCode Portfolio — Rodolfo Rodriguez",
+      },
+    ],
+    type: "website",
+    locale: "es_ES",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "RodCode — Rodolfo Rodriguez | Full Stack Developer",
+    description: "Desarrollador Full Stack con experiencia en React, Next.js, NestJS, React Native y AWS.",
+    images: ["https://rodcode.dev/hologramas_portfolio.png"],
+  },
 };
 
 export default function RootLayout({
@@ -28,7 +49,6 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <FloatingCVButton />
         {children}
       </body>
     </html>

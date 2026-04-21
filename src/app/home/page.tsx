@@ -10,21 +10,27 @@ import ProjectDetail from '@/components/ProjectDetail'
 import Single3DText from '@/components/Single3DText'
 import ProfileCard from '@/components/ProfileCard'
 import ServiceDetail from '@/components/ServiceDetail'
+import { PDFDownloadButton } from '@/components/PDFDownloadButton'
 
-// ─── Iconos servicios ────────────────────────────────────────────────────────
-const WebIcon = () => (
+// ─── Iconos contribuciones ───────────────────────────────────────────────────
+const FullStackIcon = () => (
   <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
   </svg>
 )
-const APIIcon = () => (
+const CloudIcon = () => (
   <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
   </svg>
 )
-const EcommerceIcon = () => (
+const MobileIcon = () => (
   <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+  </svg>
+)
+const AIIcon = () => (
+  <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
   </svg>
 )
 
@@ -66,45 +72,66 @@ const projects = [
     demoUrl: 'https://toneshift-one.vercel.app/',
     date: '2025',
   },
+  {
+    title: 'Movie App',
+    description: 'Catálogo de películas con tendencias semanales, búsqueda en tiempo real y sistema de favoritos persistente. Consume la API de TMDB con caché inteligente vía React Query.',
+    imageUrl: '/movie_app.PNG',
+    technologies: ['Next.js', 'TypeScript', 'React Query', 'Zustand', 'Axios', 'Tailwind CSS'],
+    githubUrl: 'https://github.com/rodjoker/movieApp_rodcode',
+    demoUrl: 'https://movie-app-rodcode.vercel.app/',
+    date: '2025',
+  },
 ]
 
-// ─── Datos servicios ──────────────────────────────────────────────────────────
-const services = [
+// ─── Qué puedo aportar ────────────────────────────────────────────────────────
+const contributions = [
   {
-    title: 'Desarrollo Web Frontend',
-    description: 'Creación de interfaces web modernas, responsivas y altamente interactivas utilizando las últimas tecnologías del mercado.',
-    technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
+    title: 'Aplicaciones Full Stack — Del MVP al Deploy',
+    description: 'Construyo productos completos de principio a fin: desde la interfaz hasta el servidor y la base de datos. He desarrollado plataformas multi-rol en producción con flujos complejos, como GEMES — una plataforma de logística con clientes, operadores y domiciliarios coordinándose en tiempo real.',
+    technologies: ['Next.js', 'React', 'NestJS', 'Node.js', 'TypeScript', 'MongoDB', 'PostgreSQL'],
     features: [
-      'Diseños responsivos para todos los dispositivos',
-      'Optimización de rendimiento y SEO',
-      'Animaciones y transiciones fluidas',
-      'Integración con APIs y servicios externos',
+      'Arquitectura modular y escalable desde el diseño inicial',
+      'Sistemas multi-rol con permisos y flujos diferenciados',
+      'Integración completa UI + API + base de datos',
+      'Deploy en producción con Serverless Framework y Vercel',
     ],
-    icon: <WebIcon />,
+    icon: <FullStackIcon />,
   },
   {
-    title: 'APIs y Backend',
-    description: 'Desarrollo de APIs robustas y escalables para soportar aplicaciones web y móviles, con integración a diferentes servicios en la nube.',
-    technologies: ['Node.js', 'Express', 'MongoDB', 'AWS'],
+    title: 'Infraestructura Cloud y Sistemas en Tiempo Real',
+    description: 'Diseño e implemento arquitecturas serverless sobre AWS que escalan automáticamente. En GEMES construí la capa de tiempo real completa: WebSockets con API Gateway, caché con Redis/Upstash, GPS tracking en background, autenticación con Cognito y almacenamiento de archivos en S3.',
+    technologies: ['AWS Lambda', 'API Gateway', 'Cognito', 'S3', 'Redis', 'WebSockets', 'Serverless'],
     features: [
-      'Arquitectura RESTful',
-      'Integración con bases de datos',
-      'Autenticación y autorización',
-      'Despliegue en la nube',
+      'WebSockets para coordinación en tiempo real entre múltiples actores',
+      'Autenticación y roles con AWS Cognito + Amplify',
+      'GPS tracking en background con actualización continua',
+      'Notificaciones push con prioridad alta vía Expo Notifications',
     ],
-    icon: <APIIcon />,
+    icon: <CloudIcon />,
   },
   {
-    title: 'E-commerce y CMS',
-    description: 'Implementación de soluciones de comercio electrónico personalizadas y sistemas de gestión de contenido adaptados a las necesidades del negocio.',
-    technologies: ['Next.js', 'Stripe', 'Salesforce', 'Headless CMS'],
+    title: 'Apps Móviles con Ecosistema Integrado',
+    description: 'Desarrollo aplicaciones móviles para iOS y Android con React Native y Expo, completamente integradas con su backend. La app de riders de GEMES maneja geolocalización continua, cámara, notificaciones push y sincronización con WebSockets — todo en un solo código base.',
+    technologies: ['React Native', 'Expo', 'TypeScript', 'Zustand', 'AWS Amplify', 'NativeWind'],
     features: [
-      'Integración de pasarelas de pago',
-      'Gestión de inventario',
-      'Panel de administración',
-      'Análisis y reportes',
+      'Una sola base de código para iOS y Android',
+      'Background location tracking con Expo Task Manager',
+      'Integración con Google Maps y servicios de ubicación',
+      'Estado global eficiente con Zustand + AsyncStorage',
     ],
-    icon: <EcommerceIcon />,
+    icon: <MobileIcon />,
+  },
+  {
+    title: 'Desarrollo Potenciado con Inteligencia Artificial',
+    description: 'Uso la IA como co-piloto de desarrollo: para escribir código más limpio, detectar edge cases antes de que lleguen a producción, documentar mejor y entregar más rápido. No reemplaza el criterio técnico — lo amplifica. El resultado es código más mantenible y equipos más productivos.',
+    technologies: ['Claude AI', 'Cursor IDE', 'GitHub Copilot', 'Prompt Engineering'],
+    features: [
+      'Código más limpio, documentado y con mejores patrones',
+      'Detección temprana de bugs y casos borde',
+      'Mayor velocidad de entrega sin sacrificar calidad',
+      'Revisión continua de arquitectura y mejores prácticas',
+    ],
+    icon: <AIIcon />,
   },
 ]
 
@@ -148,6 +175,10 @@ export default function Home() {
         <div className="relative max-w-6xl mx-auto px-4 py-10 mt-36 md:mt-32">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
             <div className="relative z-10">
+              <div className="inline-flex items-center gap-2 mb-6 px-3 py-1.5 bg-green-900/30 border border-green-500/40 rounded-full">
+                <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+                <span className="text-green-400 text-sm font-medium">Disponible para trabajar</span>
+              </div>
               <h1 className="text-5xl font-bold mb-4 text-white">
                 RodCode — Rodolfo Rodriguez
               </h1>
@@ -169,6 +200,27 @@ export default function Home() {
                   className="border border-gray-600 text-gray-300 px-8 py-3 rounded-lg hover:bg-gray-800/50 hover:text-white hover:border-gray-500 transition-colors"
                 >
                   Hablar conmigo
+                </a>
+                <PDFDownloadButton />
+              </div>
+
+              <div className="mt-8">
+                <p className="text-xs text-gray-500 uppercase tracking-widest mb-3">Certificaciones</p>
+                <a
+                  href="https://www.credly.com/badges/e829ea0a-7fad-4379-ab9c-c4f0b813fb32/linked_in_profile"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 bg-gray-900/60 border border-gray-700/40 hover:border-gray-500/60 rounded-xl px-4 py-2 transition-colors group"
+                >
+                  <img
+                    src="/aws_cloud_practitioner.PNG"
+                    alt="AWS Certified Cloud Practitioner"
+                    className="w-12 h-12 object-contain"
+                  />
+                  <div className="text-left">
+                    <p className="text-white text-sm font-semibold group-hover:text-gray-200">AWS Certified Cloud Practitioner</p>
+                    <p className="text-gray-400 text-xs">Amazon Web Services · 2025</p>
+                  </div>
                 </a>
               </div>
             </div>
@@ -322,17 +374,19 @@ export default function Home() {
           SECCIÓN: SERVICES
       ══════════════════════════════════════════ */}
       <section id="services" className="bg-black text-white">
-        <Single3DText text="Mis Servicios" height="40vh" />
-        <div className="container mx-auto px-4 py-16">
+        <div className="container mx-auto px-4 pt-16 pb-8">
+          <h2 className="text-4xl font-bold text-center text-white">Qué Puedo Aportar</h2>
+        </div>
+        <div className="container mx-auto px-4 py-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {services.map((service, index) => (
+            {contributions.map((item, index) => (
               <ServiceDetail
                 key={index}
-                title={service.title}
-                description={service.description}
-                technologies={service.technologies}
-                features={service.features}
-                icon={service.icon}
+                title={item.title}
+                description={item.description}
+                technologies={item.technologies}
+                features={item.features}
+                icon={item.icon}
               />
             ))}
           </div>

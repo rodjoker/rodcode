@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react'
+import { PDFDownloadButton } from './PDFDownloadButton'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -109,6 +110,8 @@ const Header = () => {
             >
               Contact
             </Link>
+            <PDFDownloadButton />
+
             <div className="flex justify-center space-x-4 md:space-x-8">
               <Link 
                 href="https://www.instagram.com/rod.code?igsh=MWhoZmIxb2x0bTZhYQ==" 

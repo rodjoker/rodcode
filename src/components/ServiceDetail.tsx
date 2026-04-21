@@ -33,7 +33,7 @@ const ServiceDetail = ({ title, description, technologies, features, icon }: Ser
               {technologies.map((tech, index) => (
                 <span
                   key={index}
-                  className="bg-gray-800/80 border border-gray-700/40 text-gray-200 px-3 py-1 rounded-full text-sm"
+                  className="bg-gray-700/70 border border-gray-500/50 text-white px-3 py-1 rounded-full text-sm"
                 >
                   {tech}
                 </span>
