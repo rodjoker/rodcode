@@ -13,6 +13,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  icons: {
+    icon: '/rodcode_logo_black.png',
+    shortcut: '/rodcode_logo_black.png',
+    apple: '/rodcode_logo_black.png',
+  },
   title: "RodCode — Rodolfo Rodriguez | Full Stack Developer",
   description: "Desarrollador Full Stack con experiencia en React, Next.js, NestJS, React Native y AWS. Transformo ideas en soluciones digitales efectivas.",
   openGraph: {
