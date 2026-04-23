@@ -2,68 +2,131 @@ import { Document, Page, Text, View, StyleSheet } from '@react-pdf/renderer';
 
 const styles = StyleSheet.create({
   page: {
-    padding: 30,
+    padding: 36,
+    paddingTop: 30,
     backgroundColor: '#FFFFFF',
+    fontFamily: 'Helvetica',
   },
-  section: {
-    marginBottom: 10,
+  // ── Header ──────────────────────────────────────────────────────────────────
+  accentBar: {
+    height: 5,
+    backgroundColor: '#111827',
+    marginBottom: 14,
   },
-  header: {
-    marginBottom: 20,
-  },
-  title: {
-    fontSize: 16,
-    marginBottom: 5,
-    fontWeight: 'bold',
-  },
-  jobTitle: {
-    fontSize: 14,
-    marginTop: 5,
-    marginBottom: 10,
-    fontWeight: 'bold',
-    color: '#333333',
-    textAlign: 'center',
-  },
-  subtitle: {
-    fontSize: 14,
-    marginBottom: 15,
-    color: '#666666',
-  },
-  sectionTitle: {
-    fontSize: 12,
-    fontWeight: 'bold',
-    marginBottom: 8,
-    color: '#333333',
-    textTransform: 'uppercase',
-  },
-  text: {
-    fontSize: 10,
-    marginBottom: 5,
-    lineHeight: 1.5,
+  name: {
+    fontSize: 17,
+    fontFamily: 'Helvetica-Bold',
+    color: '#111827',
+    marginBottom: 4,
+    letterSpacing: 0.5,
   },
   contact: {
-    fontSize: 10,
-    color: '#666666',
-    marginBottom: 15,
+    fontSize: 9.5,
+    color: '#4B5563',
+    marginBottom: 4,
   },
-  experienceTitle: {
-    fontSize: 11,
-    fontWeight: 'bold',
-    marginBottom: 2,
+  jobTitle: {
+    fontSize: 10.5,
+    fontFamily: 'Helvetica-Bold',
+    color: '#2563EB',
+    marginBottom: 10,
   },
-  experienceDate: {
+  divider: {
+    height: 1,
+    backgroundColor: '#E5E7EB',
+    marginBottom: 10,
+  },
+  // ── Secciones ────────────────────────────────────────────────────────────────
+  section: {
+    marginBottom: 8,
+  },
+  sectionTitle: {
     fontSize: 10,
-    color: '#666666',
+    fontFamily: 'Helvetica-Bold',
+    color: '#111827',
+    textTransform: 'uppercase',
+    letterSpacing: 1,
     marginBottom: 5,
+    borderBottomWidth: 1,
+    borderBottomColor: '#E5E7EB',
+    paddingBottom: 3,
   },
-  bulletPoint: {
-    marginLeft: 15,
-    fontSize: 10,
+  // ── Perfil ───────────────────────────────────────────────────────────────────
+  profileText: {
+    fontSize: 9.5,
+    color: '#374151',
+    lineHeight: 1.6,
+  },
+  // ── Skills ───────────────────────────────────────────────────────────────────
+  skillRow: {
+    flexDirection: 'row',
     marginBottom: 3,
   },
-  skillCategory: {
+  skillLabel: {
+    fontSize: 9.5,
+    fontFamily: 'Helvetica-Bold',
+    color: '#111827',
+    width: 100,
+  },
+  skillValue: {
+    fontSize: 9.5,
+    color: '#374151',
+    flex: 1,
+    lineHeight: 1.5,
+  },
+  // ── Experiencia ──────────────────────────────────────────────────────────────
+  jobHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+    marginBottom: 3,
+  },
+  jobName: {
     fontSize: 10,
-    fontWeight: 'bold',
+    fontFamily: 'Helvetica-Bold',
+    color: '#111827',
+    flex: 1,
+  },
+  jobDate: {
+    fontSize: 9,
+    color: '#6B7280',
+    marginLeft: 8,
+  },
+  bullet: {
+    fontSize: 9.5,
+    color: '#374151',
+    lineHeight: 1.5,
+    marginBottom: 3,
+    paddingLeft: 12,
+  },
+  stackLine: {
+    fontSize: 8.5,
+    color: '#6B7280',
+    fontFamily: 'Helvetica-Oblique',
+    paddingLeft: 12,
+    marginTop: 1,
+    marginBottom: 6,
+  },
+  // ── Estudios ─────────────────────────────────────────────────────────────────
+  eduRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 3,
+  },
+  eduTitle: {
+    fontSize: 9.5,
+    fontFamily: 'Helvetica-Bold',
+    color: '#111827',
+    flex: 1,
+  },
+  eduDate: {
+    fontSize: 9,
+    color: '#6B7280',
+  },
+  eduSub: {
+    fontSize: 9,
+    color: '#4B5563',
+    paddingLeft: 0,
     marginBottom: 2,
   },
 });
@@ -71,107 +134,125 @@ const styles = StyleSheet.create({
 const MyDocument = () => (
   <Document>
     <Page size="A4" style={styles.page}>
-      {/* Header / Personal Info */}
-      <View style={styles.header}>
-        <Text style={styles.title}>RODOLFO ANTONIO RODRÍGUEZ QUINTERO</Text>
-        <Text style={styles.contact}>
-          Cel: +34 611360462 | rodolfoantoniorq@gmail.com 
-        </Text>
-        <Text style={styles.jobTitle}>DESARROLLADOR WEB</Text>
-      </View>
 
-      {/* Profile Section */}
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>PERFIL</Text>
-        <Text style={styles.text}>
-          Desarrollador FullStack Eficiencia y automatización con IA, con 2 años de experiencia en el diseño, desarrollo y mantenimiento de aplicaciones web.  integración de herramientas de inteligencia artificial para optimizar y acelerar los flujos de trabajo, mejorar la eficiencia de los procesos y entregar soluciones escalables, robustas y de alto rendimiento. Capacidad demostrada para trabajar en equipos multidisciplinarios, resolver problemas complejos y entregar soluciones escalables y eficientes. Habilidades en diseño de interfaces, desarrollo de APIs RESTful, integración de servicios cloud y gestión de bases de datos.
-        </Text>
-      </View>
+      {/* Barra de acento */}
+      <View style={styles.accentBar} />
 
-      {/* Experience Section */}
+      {/* ── HEADER ── */}
+      <Text style={styles.name}>RODOLFO ANTONIO RODRÍGUEZ QUINTERO</Text>
+      <Text style={styles.contact}>
+        +34 611360462  ·  rodolfoantoniorq@gmail.com  ·  linkedin.com/in/rodolforodriguez-desarrolladorweb  ·  rodcode.dev
+      </Text>
+      <Text style={styles.jobTitle}>
+        DESARROLLADOR FULL STACK  ·  React · Next.js · NestJS · React Native · AWS
+      </Text>
+      <View style={styles.divider} />
+
+      {/* ── PERFIL ── */}
       <View style={styles.section}>
-        <Text style={styles.sectionTitle}>EXPERIENCIA</Text>
-        <Text style={styles.experienceTitle}>Desarrollador Full Stack Freelance</Text>
-        <Text style={styles.experienceDate}>Mar. 2023 – Actualmente</Text>
-        
-        <Text style={styles.text}>Desarrollo de aplicaciones web responsivas:</Text>
-        <Text style={styles.bulletPoint}>
-          • Creación de una aplicación para la administración de proyectos inmobiliarios utilizando 
-            JavaScript, React Vite, Material UI y MongoDB.
-        </Text>
-        <Text style={styles.bulletPoint}>
-          • Cree una librería de componentes reutilizables para agilizar el proceso de desarrollo.
-        </Text>
-        <Text style={styles.bulletPoint}>
-          • Desarrolle componentes con Three.js para implementar diseños en 3D dentro de la plataforma.
-        </Text>
-        
-        <Text style={styles.text}>Integración con AWS:</Text>
-        <Text style={styles.bulletPoint}>
-          • Implementación de Cognito User Pool para autenticación de usuarios.
-        </Text>
-        <Text style={styles.bulletPoint}>
-          • Desarrollo de una API RESTful para conectar frontend y backend, Connect y la base de datos 
-            asegurando la escalabilidad y eficiencia del sistema.
-        </Text>
-        
-        <Text style={styles.text}>Desarrollo de aplicaciones BackEnd:</Text>
-        <Text style={styles.bulletPoint}>
-          • Implementé un API RESTful robusta con Python (FastAPI), integrando AWS (Boto3) para la 
-            gestión de usuarios (CRUD) y persistencia en base de datos.
-        </Text>
-        <Text style={styles.bulletPoint}>
-          • Diseñé y desarrollé un sistema de autenticación de usuarios con NestJS y Passport.js, 
-            incluyendo soporte OAuth 2.0 para integración con terceros.
+        <Text style={styles.sectionTitle}>Perfil</Text>
+        <Text style={styles.profileText}>
+          Desarrollador Full Stack con experiencia construyendo productos completos en producción: interfaces web, apps móviles y arquitecturas serverless en AWS. Especializado en el ecosistema JavaScript/TypeScript (React, Next.js, NestJS, React Native) y en sistemas de tiempo real con WebSockets. Uso la IA como co-piloto de desarrollo para entregar código más limpio y escalable a mayor velocidad.
         </Text>
       </View>
 
-      {/* Technical Skills Section */}
+      {/* ── HABILIDADES ── */}
       <View style={styles.section}>
-        <Text style={styles.sectionTitle}>HABILIDADES TÉCNICAS</Text>
-        <Text style={styles.text}>
-          <Text style={styles.skillCategory}>Lenguajes de Programación: </Text>
-          JavaScript, TypeScript, Python.
+        <Text style={styles.sectionTitle}>Habilidades Técnicas</Text>
+
+        {[
+          ['Lenguajes',        'JavaScript, TypeScript, Python'],
+          ['Frontend',         'React, Next.js, Tailwind CSS, Material UI, HTML, CSS'],
+          ['Backend',          'Node.js, Express.js, NestJS, FastAPI'],
+          ['Mobile',           'React Native, Expo'],
+          ['Bases de datos',   'MongoDB, PostgreSQL, Supabase'],
+          ['Cloud',            'AWS (Lambda, Cognito, S3, API Gateway, Connect), Serverless Framework, Boto3'],
+          ['Tiempo real',      'WebSockets, Socket.io, Redis/Upstash · Estado: Zustand'],
+          ['IA & Herramientas','GitHub Copilot, Claude AI, Git, GitHub, Swagger'],
+          ['Metodologías',     'Clean Code, GitFlow, Agile, REST API Design'],
+        ].map(([label, value]) => (
+          <View key={label} style={styles.skillRow}>
+            <Text style={styles.skillLabel}>{label}:</Text>
+            <Text style={styles.skillValue}>{value}</Text>
+          </View>
+        ))}
+      </View>
+
+      {/* ── EXPERIENCIA ── */}
+      <View style={styles.section}>
+        <Text style={styles.sectionTitle}>Experiencia</Text>
+
+        {/* GEMES */}
+        <View style={styles.jobHeader}>
+          <Text style={styles.jobName}>GEMES — Plataforma de Logística (Freelance)</Text>
+          <Text style={styles.jobDate}>Ene. 2024 – Actualidad</Text>
+        </View>
+        <Text style={styles.bullet}>
+          • Construí plataforma de 3 actores en producción: backend serverless (NestJS + AWS Lambda), backoffice web (React + Vite + MUI) y app móvil (React Native + Expo)
         </Text>
-        <Text style={styles.text}>
-          <Text style={styles.skillCategory}>Frontend: </Text>
-          React, Next JS (uso de IA para generación de componentes, optimización de código y análisis 
-          de UX), Material UI, HTML, CSS, Tailwind CSS.
+        <Text style={styles.bullet}>
+          • Implementé tiempo real con WebSockets (AWS API Gateway) + Redis para coordinación instantánea entre clientes, operadores y domiciliarios
         </Text>
-        <Text style={styles.text}>
-          <Text style={styles.skillCategory}>Backend: </Text>
-          Node.js, Express.js, FastAPI (integración de modelos de IA para procesamiento de datos y 
-          lógica de negocio), Nest.js.
+        <Text style={styles.bullet}>
+          • GPS tracking en background en app móvil con notificaciones push prioritarias (Expo Notifications)
         </Text>
-        <Text style={styles.text}>
-          <Text style={styles.skillCategory}>Bases de Datos: </Text>
-          MongoDB, SQL.
+        <Text style={styles.bullet}>
+          • Infraestructura AWS completa: Lambda, Cognito, S3, API Gateway con Serverless Framework
         </Text>
-        <Text style={styles.text}>
-          <Text style={styles.skillCategory}>Cloud y Herramientas: </Text>
-          AWS (Lex, Connect, Cognito, Boto3), Git, GitHub.
+        <Text style={styles.stackLine}>
+          Stack: NestJS · TypeScript · MongoDB Atlas · AWS Lambda/Cognito/S3/API Gateway · React Native · Expo · Redis · Zustand
+        </Text>
+
+        {/* Proyectos adicionales */}
+        <View style={styles.jobHeader}>
+          <Text style={styles.jobName}>Proyectos Freelance Adicionales</Text>
+          <Text style={styles.jobDate}>Mar. 2023 – Actualidad</Text>
+        </View>
+        <Text style={styles.bullet}>
+          • Next.js + Supabase: reducción del 30% en tiempo de desarrollo aprovechando auth y base de datos integradas
+        </Text>
+        <Text style={styles.bullet}>
+          • API RESTful Python (FastAPI) + AWS Boto3 para gestión de usuarios con CRUD completo y persistencia en BD
+        </Text>
+        <Text style={styles.bullet}>
+          • Auth NestJS + Passport.js con soporte OAuth 2.0 para integración segura con servicios de terceros
+        </Text>
+        <Text style={styles.bullet}>
+          • Plataforma inmobiliaria: administración de proyectos con React Vite, Material UI y MongoDB
+        </Text>
+        <Text style={styles.bullet}>
+          • Integración AWS Connect + Cognito para flujos de autenticación y atención al cliente
         </Text>
       </View>
 
-      {/* Other Skills Section */}
+      {/* ── ESTUDIOS ── */}
       <View style={styles.section}>
-        <Text style={styles.sectionTitle}>OTRAS HABILIDADES</Text>
-        <Text style={styles.bulletPoint}>
-          • Prompt engineering: Creación y optimización de instrucciones para modelos de IA.
-        </Text>
-        <Text style={styles.bulletPoint}>
-          • Desarrollo asistido por IA: Utilización de herramientas como GitHub Copilot para la 
-            generación, refactorización y depuración de código.
-        </Text>
+        <Text style={styles.sectionTitle}>Estudios</Text>
+
+        <View style={styles.eduRow}>
+          <Text style={styles.eduTitle}>Desarrollo Web Full Stack</Text>
+          <Text style={styles.eduDate}>2023</Text>
+        </View>
+        <Text style={styles.eduSub}>Protalento / ADA School</Text>
+
+        <View style={[styles.eduRow, { marginTop: 4 }]}>
+          <Text style={styles.eduTitle}>Profesional en Derecho</Text>
+          <Text style={styles.eduDate}>2011</Text>
+        </View>
+        <Text style={styles.eduSub}>Universidad Arturo Michelena</Text>
       </View>
 
-      {/* Education Section */}
+      {/* ── CERTIFICACIONES ── */}
       <View style={styles.section}>
-        <Text style={styles.sectionTitle}>ESTUDIOS</Text>
-        <Text style={styles.text}>
-          Formación en Desarrollo Web Full Stack – Protalento/ADA School, 2023
-        </Text>
+        <Text style={styles.sectionTitle}>Certificaciones</Text>
+
+        <View style={styles.eduRow}>
+          <Text style={styles.eduTitle}>AWS Certified Cloud Practitioner</Text>
+          <Text style={styles.eduDate}>2025</Text>
+        </View>
+        <Text style={styles.eduSub}>Amazon Web Services · credly.com/badges/e829ea0a-7fad-4379-ab9c-c4f0b813fb32</Text>
       </View>
+
     </Page>
   </Document>
 );

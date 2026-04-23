@@ -69,15 +69,15 @@ export default function ProfileCard({
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50"
           onClick={() => setIsModalOpen(false)}
         >
-          <div 
-            className="bg-white rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 transform transition-all duration-300 ease-in-out"
+          <div
+            className="bg-gray-900 border border-gray-700/40 rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex justify-between items-start mb-4">
-              <h2 id="modal-title" className="text-2xl font-bold text-gray-900">{name}</h2>
+              <h2 className="text-2xl font-bold text-white">{name}</h2>
               <button
                 onClick={() => setIsModalOpen(false)}
-                className="text-gray-500 hover:text-gray-700 transition-colors duration-200"
+                className="text-gray-500 hover:text-white transition-colors duration-200"
                 aria-label="Cerrar modal"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -85,8 +85,8 @@ export default function ProfileCard({
                 </svg>
               </button>
             </div>
-            <div 
-              className="text-gray-700 text-lg leading-relaxed"
+            <div
+              className="text-gray-300 text-lg leading-relaxed"
               dangerouslySetInnerHTML={{ __html: extendedContent }}
             />
           </div>
