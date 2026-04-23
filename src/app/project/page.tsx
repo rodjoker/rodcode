@@ -42,7 +42,6 @@ const projects = [
     date: "2025"
   },
 ];
-
 export default function ProjectsPage() {
   return (
      <>
