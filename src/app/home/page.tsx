@@ -82,6 +82,15 @@ const projects = [
     demoUrl: 'https://movie-app-rodcode.vercel.app/',
     date: '2025',
   },
+  {
+    title: 'Auth System — Next.js + Supabase',
+    description: 'Sistema de autenticación seguro con bloqueo automático tras 3 intentos fallidos, RBAC con roles y 20 permisos estructurados en base de datos, protección de rutas con middleware y edición de perfil vinculada a auth.users. Políticas RLS activas con patrones optimizados de rendimiento.',
+    imageUrl: '/login.PNG',
+    technologies: ['Next.js', 'TypeScript', 'Supabase', 'PostgreSQL', 'RLS', 'Tailwind CSS'],
+    githubUrl: 'https://github.com/rodjoker/library_login_sb',
+    demoUrl: 'https://github.com/rodjoker/library_login_sb',
+    date: '2025',
+  },
 ]
 
 // ─── Qué puedo aportar ────────────────────────────────────────────────────────
@@ -272,9 +281,22 @@ export default function Home() {
               showReadMore={true}
               extendedContent={`
                 <div class="space-y-6">
-                  <p>La vida me llevó por un camino diferente inicialmente. Durante años, trabajé en otros campos, pero la pasión por la tecnología nunca se apagó. Siempre encontraba la manera de incorporar soluciones tecnológicas en mi trabajo diario. Finalmente, decidí dar el salto y convertirme en desarrollador profesional.</p>
-                  <p>Este cambio no fue fácil, pero la satisfacción de crear soluciones digitales y ver cómo impactan positivamente en la vida de las personas hace que todo el esfuerzo valga la pena. Un año después de terminar el bootcamp, tras muchos proyectos personales y noches de aprendizaje, fui reclutado por un grupo de desarrolladores como junior. Desde entonces, no he parado de crecer.</p>
-                  <p>Hoy lidero equipos, diseño soluciones, y creo aplicaciones que funcionan y emocionan. Programar no solo me dio una nueva carrera: me devolvió la alegría, me quitó el estrés, me hizo sentir vivo. Cada línea de código que escribo es un paso más hacia el futuro que siempre soñé.</p>
+                  <div>
+                    <h3 class="text-white font-semibold text-lg mb-2">Plataformas multi-rol en producción</h3>
+                    <p>He construido GEMES de cero: una plataforma de logística con tres actores coordinándose en tiempo real — clientes, operadores y riders. El backend corre en AWS Lambda con NestJS y Serverless Framework. La comunicación en tiempo real usa WebSockets sobre API Gateway, con Redis/Upstash para caché de estado y presencia. La autenticación y gestión de usuarios está sobre AWS Cognito. La base de datos migró de MongoDB Atlas a DocumentDB dentro de una VPC, con acceso privado desde las Lambdas. Los riders usan una app React Native con Expo que hace GPS tracking en background, recibe notificaciones push de alta prioridad y soporta hasta dos órdenes simultáneas activas.</p>
+                  </div>
+                  <div>
+                    <h3 class="text-white font-semibold text-lg mb-2">Autenticación y seguridad a nivel de base de datos</h3>
+                    <p>Implementé un sistema de auth completo con Next.js 16 y Supabase: login/signup con bloqueo automático tras 3 intentos fallidos, RBAC con 3 roles y 20 permisos estructurados directamente en PostgreSQL, políticas RLS con el patrón <code class="bg-gray-800 px-1 rounded text-sm">(select auth.uid())</code> para evitar evaluación por fila, UPDATE policies con <code class="bg-gray-800 px-1 rounded text-sm">WITH CHECK</code> para prevenir reassign silencioso, y middleware de Next.js que gestiona sesiones y redirecciones protegiendo todas las rutas.</p>
+                  </div>
+                  <div>
+                    <h3 class="text-white font-semibold text-lg mb-2">Frontend con criterio de producto</h3>
+                    <p>Trabajo con Next.js App Router usando Server Components para fetching seguro de datos, Server Actions para mutaciones con progressive enhancement, y Client Components solo donde hay interactividad real. He integrado animaciones con Framer Motion, Three.js para experiencias 3D, generación de PDF con @react-pdf/renderer y PWA con next-pwa. Cada decisión de arquitectura apunta a performance real: menos JavaScript al cliente, carga más rápida, mejor SEO.</p>
+                  </div>
+                  <div>
+                    <h3 class="text-white font-semibold text-lg mb-2">AWS en producción — experiencia real</h3>
+                    <p>En GEMES gestioné la infraestructura completa sobre AWS con Serverless Framework. Esto incluye: <strong class="text-white">Lambda</strong> para cada endpoint del API (NestJS compilado como función serverless), <strong class="text-white">API Gateway HTTP</strong> para las rutas REST y <strong class="text-white">API Gateway WebSocket</strong> para la capa de tiempo real con conexiones persistentes por rider y operador. <strong class="text-white">S3</strong> para almacenamiento de archivos y assets. <strong class="text-white">Cognito User Pools</strong> para autenticación, JWT y gestión de sesiones — integrado tanto en el backend NestJS como en la app móvil con Amplify. <strong class="text-white">IAM roles</strong> definidos en el <code class="bg-gray-800 px-1 rounded text-sm">serverless.yml</code> con permisos mínimos por función. <strong class="text-white">CloudWatch Logs</strong> para trazabilidad de errores en producción. <strong class="text-white">VPC</strong> para aislar DocumentDB y acceder desde Lambda con configuración de subnets y security groups. Todo declarado como código — un solo <code class="bg-gray-800 px-1 rounded text-sm">sls deploy</code> reconstruye el entorno completo.</p>
+                  </div>
                 </div>
               `}
             />
@@ -299,9 +321,22 @@ export default function Home() {
               showReadMore={true}
               extendedContent={`
                 <div class="space-y-6">
-                  <p>La nube ya no es opcional — es el estándar. Con AWS como base, mi objetivo es profundizar en servicios avanzados como ECS, RDS, CloudFront y Step Functions para diseñar arquitecturas que escalen sin fricción y que los equipos puedan mantener con confianza.</p>
-                  <p>Creo que la IA aplicada al desarrollo no reemplaza el criterio técnico — lo amplifica. Usar Claude Code en el flujo de trabajo diario me permite detectar edge cases antes, documentar mejor y entregar productos más robustos en menos tiempo. Es una ventaja competitiva real, no una moda.</p>
-                  <p>A mediano plazo busco liderar proyectos donde la modernización tecnológica sea el núcleo: migrar sistemas legacy a arquitecturas serverless, adoptar prácticas de CI/CD maduras y construir productos digitales que duren. El objetivo no es solo escribir código — es construir soluciones que importen.</p>
+                  <div>
+                    <h3 class="text-white font-semibold text-lg mb-2">AWS: más allá del Cloud Practitioner</h3>
+                    <p>Ya tengo experiencia práctica en producción con Lambda, API Gateway (HTTP + WebSocket), S3, Cognito, CloudWatch y IAM. La siguiente etapa es profundizar en ECS Fargate para workloads containerizados, RDS Aurora Serverless para bases de datos relacionales gestionadas, CloudFront para distribución de contenido estático y Step Functions para orquestar flujos de trabajo complejos. El objetivo es poder diseñar arquitecturas completas sin depender de un DevOps separado.</p>
+                  </div>
+                  <div>
+                    <h3 class="text-white font-semibold text-lg mb-2">PostgreSQL y Supabase como stack de referencia</h3>
+                    <p>Estoy consolidando Supabase + PostgreSQL como mi stack de base de datos para proyectos nuevos. Ya aplico patrones de RLS optimizados (subquery caching con <code class="bg-gray-800 px-1 rounded text-sm">select auth.uid()</code>), índices parciales, políticas con <code class="bg-gray-800 px-1 rounded text-sm">WITH CHECK</code> y GRANTs explícitos por rol. El siguiente nivel es connection pooling con pgBouncer, particionado de tablas para datos de alta volumetría y uso de extensiones como <code class="bg-gray-800 px-1 rounded text-sm">pg_cron</code> para tareas programadas directamente en la base de datos.</p>
+                  </div>
+                  <div>
+                    <h3 class="text-white font-semibold text-lg mb-2">IA aplicada al ciclo de desarrollo</h3>
+                    <p>Uso Claude Code como asistente de desarrollo en sesiones reales de trabajo: para revisar migraciones SQL antes de aplicarlas, detectar vulnerabilidades de seguridad en RLS, refactorizar componentes con criterio de arquitectura y mantener coherencia entre capas del sistema. No es un generador de código — es un revisor técnico que corre en paralelo. El resultado medible: menos bugs en PR, documentación actualizada y decisiones de diseño más conscientes.</p>
+                  </div>
+                  <div>
+                    <h3 class="text-white font-semibold text-lg mb-2">Hacia arquitecturas que duren</h3>
+                    <p>Lo que me interesa no es solo que funcione — es que sea mantenible. Busco proyectos donde pueda aplicar TypeScript estricto de punta a punta, separación clara entre capas (presentación, lógica de negocio, acceso a datos), migraciones versionadas, variables de entorno bien separadas por contexto y pipelines de CI/CD que corran tests antes de cada deploy. Código que otro desarrollador pueda leer, entender y extender sin necesitar al autor.</p>
+                  </div>
                 </div>
               `}
             />
