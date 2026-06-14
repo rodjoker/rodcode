@@ -40,7 +40,7 @@ const projects = [
   {
     title: 'English Journey — AI English Platform',
     description: 'Plataforma de aprendizaje de inglés técnico para programadores hispanohablantes. 60 días de contenido estructurado: vocabulario (900 palabras), lecturas técnicas, gramática, práctica de entrevistas y tests diarios con score mínimo. Integra IA con DeepSeek — RodCode, el profesor virtual que responde en tiempo real vía streaming.',
-    imageUrl: '/english_journey.PNG',
+    imageUrl: '/english_journey.png',
     technologies: ['Next.js 16', 'TypeScript', 'Supabase', 'DeepSeek AI', 'PostgreSQL', 'Tailwind CSS'],
     githubUrl: 'https://github.com/rodjoker/rc_a2_english',
     demoUrl: 'https://github.com/rodjoker/rc_a2_english',
