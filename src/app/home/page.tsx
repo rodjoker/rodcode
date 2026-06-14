@@ -38,12 +38,39 @@ const AIIcon = () => (
 // ─── Datos proyectos ─────────────────────────────────────────────────────────
 const projects = [
   {
-    title: 'Delivery App',
-    description: 'Aplicación de entrega a domicilio con seguimiento en tiempo real y sistema de pagos. Gestiona pedidos de restaurantes y tiendas con actualización instantánea vía WebSockets.',
-    imageUrl: '/delivery_app.PNG',
-    technologies: ['React Native', 'Node.js', 'MongoDB', 'Express', 'Socket.io'],
+    title: 'English Journey — AI English Platform',
+    description: 'Plataforma de aprendizaje de inglés técnico para programadores hispanohablantes. 60 días de contenido estructurado: vocabulario (900 palabras), lecturas técnicas, gramática, práctica de entrevistas y tests diarios con score mínimo. Integra IA con DeepSeek — RodCode, el profesor virtual que responde en tiempo real vía streaming.',
+    imageUrl: '/english_journey.PNG',
+    technologies: ['Next.js 16', 'TypeScript', 'Supabase', 'DeepSeek AI', 'PostgreSQL', 'Tailwind CSS'],
+    githubUrl: 'https://github.com/rodjoker/rc_a2_english',
+    demoUrl: 'https://github.com/rodjoker/rc_a2_english',
+    date: '2026',
+  },
+  {
+    title: 'Auth System — Next.js + Supabase',
+    description: 'Sistema de autenticación seguro con bloqueo automático tras 3 intentos fallidos, RBAC con roles y 20 permisos estructurados en base de datos, protección de rutas con middleware y edición de perfil vinculada a auth.users. Políticas RLS activas con patrones optimizados de rendimiento.',
+    imageUrl: '/login.PNG',
+    technologies: ['Next.js', 'TypeScript', 'Supabase', 'PostgreSQL', 'RLS', 'Tailwind CSS'],
+    githubUrl: 'https://github.com/rodjoker/library_login_sb',
+    demoUrl: 'https://github.com/rodjoker/library_login_sb',
+    date: '2025',
+  },
+  {
+    title: 'GEMES — Plataforma de Logística en Producción',
+    description: 'Plataforma de delivery de tres lados (clientes, operadores y riders) en producción real. Backend serverless en AWS Lambda + NestJS, WebSockets para coordinación en tiempo real, GPS tracking en background, autenticación con Cognito, almacenamiento S3 y notificaciones push. Incluye backoffice React para operadores y app móvil Expo para riders.',
+    imageUrl: '/gemes.PNG',
+    technologies: ['NestJS', 'React Native', 'Expo', 'AWS Lambda', 'WebSockets', 'DocumentDB', 'Cognito', 'Redis', 'VPC'],
     githubUrl: 'https://github.com/rodjoker',
-    demoUrl: 'https://delivery-ten-umber.vercel.app/',
+    demoUrl: '',
+    date: '2024',
+  },
+  {
+    title: 'ToneShift',
+    description: 'PWA para transportar tonalidades de canciones. Detecta automáticamente la tonalidad, soporta acordes en español e inglés y transpone en tiempo real por semitonos.',
+    imageUrl: '/toneshift.PNG',
+    technologies: ['Next.js', 'TypeScript', 'Zustand', 'Framer Motion', 'PWA'],
+    githubUrl: 'https://github.com/rodjoker/toneshift',
+    demoUrl: 'https://toneshift-one.vercel.app/',
     date: '2025',
   },
   {
@@ -62,33 +89,6 @@ const projects = [
     technologies: ['NextJS', 'TypeScript', 'Tailwind CSS'],
     githubUrl: 'https://github.com/rodjoker',
     demoUrl: 'https://strategy-search-job.vercel.app/dashboard',
-    date: '2025',
-  },
-  {
-    title: 'ToneShift',
-    description: 'PWA para transportar tonalidades de canciones. Detecta automáticamente la tonalidad, soporta acordes en español e inglés y transpone en tiempo real por semitonos.',
-    imageUrl: '/toneshift.PNG',
-    technologies: ['Next.js', 'TypeScript', 'Zustand', 'Framer Motion', 'PWA'],
-    githubUrl: 'https://github.com/rodjoker/toneshift',
-    demoUrl: 'https://toneshift-one.vercel.app/',
-    date: '2025',
-  },
-  {
-    title: 'Movie App',
-    description: 'Catálogo de películas con tendencias semanales, búsqueda en tiempo real y sistema de favoritos persistente. Consume la API de TMDB con caché inteligente vía React Query.',
-    imageUrl: '/movie_app.PNG',
-    technologies: ['Next.js', 'TypeScript', 'React Query', 'Zustand', 'Axios', 'Tailwind CSS'],
-    githubUrl: 'https://github.com/rodjoker/movieApp_rodcode',
-    demoUrl: 'https://movie-app-rodcode.vercel.app/',
-    date: '2025',
-  },
-  {
-    title: 'Auth System — Next.js + Supabase',
-    description: 'Sistema de autenticación seguro con bloqueo automático tras 3 intentos fallidos, RBAC con roles y 20 permisos estructurados en base de datos, protección de rutas con middleware y edición de perfil vinculada a auth.users. Políticas RLS activas con patrones optimizados de rendimiento.',
-    imageUrl: '/login.PNG',
-    technologies: ['Next.js', 'TypeScript', 'Supabase', 'PostgreSQL', 'RLS', 'Tailwind CSS'],
-    githubUrl: 'https://github.com/rodjoker/library_login_sb',
-    demoUrl: 'https://github.com/rodjoker/library_login_sb',
     date: '2025',
   },
 ]
@@ -275,6 +275,8 @@ export default function Home() {
               name="Rodolfo Rodríguez"
               title="Frontend Developer"
               description="Desde que tengo memoria, la tecnología me fascinaba. Mientras otros soñaban con ser astronautas o futbolistas, yo soñaba con entender cómo funcionaban los ordenadores, los videojuegos, los cables, los códigos. Me pasaba horas imaginando que algún día podría crear cosas increíbles con solo unas líneas en una pantalla. Aunque no lo sabía entonces, esa pasión infantil sería la semilla de algo mucho más grande."
+              profileUrl="/about"
+              profileUrlLabel="Mi Historia"
               subtitle="Mi Enfoque"
               additionalDescription="En algún punto pensé que no se iba a poder, pero descubrí que la vida te puede dar sorpresas."
               image="/rodolfo_perfil.png"

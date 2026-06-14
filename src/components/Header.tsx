@@ -73,21 +73,28 @@ const Header = () => {
               className="text-blue-200 hover:text-blue-500 transition-colors block md:inline-block text-center"
               onClick={() => setIsMenuOpen(false)}
             >
-              Home
+              Inicio
             </Link>
             <Link
               href="/home#projects"
               className="text-blue-200 hover:text-blue-500 transition-colors block md:inline-block text-center"
               onClick={() => setIsMenuOpen(false)}
             >
-              Projects
+              Proyectos
             </Link>
             <Link
               href="/home#about"
               className="text-blue-200 hover:text-blue-500 transition-colors block md:inline-block text-center"
               onClick={() => setIsMenuOpen(false)}
             >
-              About Me
+              Sobre Mí
+            </Link>
+            <Link
+              href="/about"
+              className="text-blue-200 hover:text-blue-500 transition-colors block md:inline-block text-center"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Mi Historia
             </Link>
             <Link
               href="/blog"
@@ -101,14 +108,14 @@ const Header = () => {
               className="text-blue-200 hover:text-blue-500 transition-colors block md:inline-block text-center"
               onClick={() => setIsMenuOpen(false)}
             >
-              Services
+              Servicios
             </Link>
             <Link
               href="/home#contact"
               className="text-blue-200 hover:text-blue-500 transition-colors block md:inline-block text-center"
               onClick={() => setIsMenuOpen(false)}
             >
-              Contact
+              Contacto
             </Link>
             <PDFDownloadButton />
 

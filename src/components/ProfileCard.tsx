@@ -1,5 +1,6 @@
 'use client'
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState } from 'react';
 
 interface ProfileCardProps {
@@ -11,17 +12,21 @@ interface ProfileCardProps {
   image: string;
   showReadMore?: boolean;
   extendedContent?: string;
+  profileUrl?: string;
+  profileUrlLabel?: string;
 }
 
-export default function ProfileCard({ 
-  name, 
-  title, 
-  description, 
-  subtitle, 
-  additionalDescription, 
+export default function ProfileCard({
+  name,
+  title,
+  description,
+  subtitle,
+  additionalDescription,
   image,
   showReadMore = false,
-  extendedContent = ""
+  extendedContent = "",
+  profileUrl,
+  profileUrlLabel = "Mi Historia",
 }: ProfileCardProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -46,14 +51,24 @@ export default function ProfileCard({
             <h1 className="text-3xl md:text-4xl font-bold text-gray-100 mb-2">{name}</h1>
             <h2 className="text-xl md:text-2xl font-semibold text-gray-300 mb-4">{title}</h2>
             <p className="text-gray-300 text-lg leading-relaxed text-justify mb-6">{description}</p>
-            {showReadMore && extendedContent && (
-              <button
-                onClick={() => setIsModalOpen(true)}
-                className="text-gray-300 hover:text-gray-100 font-semibold py-2 px-4 rounded-lg mb-6 w-fit transition-colors duration-200"
-              >
-                Leer más
-              </button>
-            )}
+            <div className="flex flex-wrap gap-3 mb-6">
+              {showReadMore && extendedContent && (
+                <button
+                  onClick={() => setIsModalOpen(true)}
+                  className="text-gray-300 hover:text-gray-100 font-semibold py-2 px-4 rounded-lg transition-colors duration-200 border border-gray-700/50 hover:border-gray-500/50"
+                >
+                  Leer más
+                </button>
+              )}
+              {profileUrl && (
+                <Link
+                  href={profileUrl}
+                  className="text-blue-400 hover:text-blue-300 font-semibold py-2 px-4 rounded-lg transition-colors duration-200 border border-blue-500/30 hover:border-blue-400/60 hover:bg-blue-500/5"
+                >
+                  {profileUrlLabel}
+                </Link>
+              )}
+            </div>
             <h3 className="text-xl font-semibold text-white mb-3">{subtitle}</h3>
             <div 
               className="text-white text-lg leading-relaxed"
