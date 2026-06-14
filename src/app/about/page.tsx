@@ -147,10 +147,11 @@ export default function AboutPage() {
               <p className="text-lg md:text-xl text-slate-400 max-w-xl leading-relaxed mb-6 font-medium">
                 Full Stack Developer · AWS · React Native · NestJS · Next.js
               </p>
-              <p className="text-[15px] text-slate-400 max-w-2xl leading-relaxed">
+              <p className="text-[15px] text-slate-400 max-w-2xl leading-relaxed text-justify">
                 Construyo sistemas completos en producción — desde el diseño de la base de datos
                 hasta la interfaz de usuario, pasando por la infraestructura cloud que lo sostiene todo.
-                Dos proyectos reales, una certificación AWS y experiencia hands-on con IA aplicada al desarrollo.
+                Plataformas multi-rol con tiempo real, apps móviles en Expo, arquitecturas serverless en AWS
+                y proyectos con IA integrada usando DeepSeek y streaming de respuestas.
               </p>
             </motion.div>
           </div>
@@ -315,7 +316,7 @@ export default function AboutPage() {
             <FadeIn delay={0.3}>
               <div className="relative rounded-2xl overflow-hidden border border-white/8 group">
                 <Image
-                  src="/delivery_app.PNG"
+                  src="/gemes.PNG"
                   alt="GEMES — App de riders en producción"
                   width={1200}
                   height={600}
