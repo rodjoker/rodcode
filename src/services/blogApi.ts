@@ -21,6 +21,7 @@ export interface PaginatedResult<T> {
 
 export function getArticleImageUrl(article: Article): string | null {
   if (!article.image) return null
+  if (article.image.startsWith('http')) return article.image
   if (article.image.startsWith('/uploads/')) return `${API_URL}${article.image}`
   if (article.image.startsWith('data:image/')) return `${API_URL}/articles/image/${article.id}`
   return null
