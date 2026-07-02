@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import remarkBreaks from 'remark-breaks'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { Article, getArticle, getArticleImageUrl } from '@/services/blogApi'
@@ -117,8 +118,8 @@ export default function BlogPost({ blogId }: { blogId: string }) {
               <h1 className="text-4xl font-bold text-gray-100 mb-8">{post.title}</h1>
 
               {/* Markdown content */}
-              <div className="prose prose-invert prose-lg max-w-none prose-headings:text-gray-100 prose-a:text-blue-300 hover:prose-a:text-blue-100 prose-code:bg-gray-800 prose-code:text-gray-200 prose-pre:bg-gray-950 prose-blockquote:border-blue-400 prose-strong:text-gray-100 prose-img:rounded-xl">
-                <ReactMarkdown remarkPlugins={[remarkGfm]}>
+              <div className="prose prose-invert prose-lg max-w-none prose-headings:text-gray-100 prose-a:text-blue-300 hover:prose-a:text-blue-100 prose-code:bg-gray-800 prose-code:text-gray-200 prose-pre:bg-gray-950 prose-blockquote:border-blue-400 prose-strong:text-gray-100 prose-img:rounded-xl [&_p]:text-justify">
+                <ReactMarkdown remarkPlugins={[remarkGfm, remarkBreaks]}>
                   {post.content}
                 </ReactMarkdown>
               </div>

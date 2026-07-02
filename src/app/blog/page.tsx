@@ -33,11 +33,8 @@ export default async function Blog({ searchParams }: Props) {
   return (
     <>
       <Header />
-      <div className="pt-24 md:pt-28">
-        <Single3DText text="Blog" height="40vh" />
-      </div>
 
-      <main className="min-h-screen py-16">
+      <main className="min-h-screen pt-28 py-16">
         <div className="container mx-auto px-4">
 
           {/* Search bar */}
@@ -121,6 +118,8 @@ export default async function Blog({ searchParams }: Props) {
           )}
         </div>
       </main>
+
+      <Single3DText text="Blog" height="40vh" />
 
       <Footer />
     </>
