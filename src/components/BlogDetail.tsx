@@ -16,7 +16,7 @@ export default function BlogDetail({ article }: { article: Article }) {
       className="bg-gray-900/40 backdrop-blur-sm border border-gray-700/20 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
     >
       {/* Image */}
-      <div className="relative h-64 w-full bg-gray-800">
+      <div className="relative h-44 w-full bg-gray-800">
         {imageUrl ? (
           <Image
             src={imageUrl}

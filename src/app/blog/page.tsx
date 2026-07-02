@@ -1,4 +1,3 @@
-import Single3DText from '@/components/Single3DText'
 import BlogDetail from '@/components/BlogDetail'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -36,6 +35,12 @@ export default async function Blog({ searchParams }: Props) {
 
       <main className="min-h-screen pt-28 py-16">
         <div className="container mx-auto px-4">
+
+          {/* Hero */}
+          <div className="text-center mb-10">
+            <h1 className="text-5xl font-bold text-white mb-3">Blog</h1>
+            <p className="text-gray-400 text-lg">Artículos sobre desarrollo, tecnología y crecimiento personal.</p>
+          </div>
 
           {/* Search bar */}
           <form method="GET" action="/blog" className="mb-10 max-w-lg mx-auto">
@@ -118,8 +123,6 @@ export default async function Blog({ searchParams }: Props) {
           )}
         </div>
       </main>
-
-      <Single3DText text="Blog" height="40vh" />
 
       <Footer />
     </>
