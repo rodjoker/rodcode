@@ -37,8 +37,7 @@ export default async function Blog({ searchParams }: Props) {
         <div className="container mx-auto px-4">
 
           {/* Hero */}
-          <div className="text-center mb-10">
-            <h1 className="text-5xl font-bold text-white mb-3">Blog</h1>
+          <div className="text-center mb-10 mt-8">
             <p className="text-gray-400 text-lg">Artículos sobre desarrollo, tecnología y crecimiento personal.</p>
           </div>
 
