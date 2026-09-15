@@ -24,15 +24,6 @@ const projects = [
     date: "2025"
   },
   {
-    title: 'Strategy Search Job',
-    description: 'Agenda con estrategia de búsqueda de empleo, he investigado las mejores estrategias para encontrar empleo y he decidido implementar esta, espero te sea de utilidad.',
-    imageUrl: "/strategySearchJob.PNG",
-    technologies: ["NextJS", "TypeScript", "Tailwind CSS"],
-    githubUrl: "https://github.com/rodjoker",
-    demoUrl: "https://strategy-search-job.vercel.app/dashboard",
-    date: "2025"
-  },
-  {
     title: 'Landing Page AWS S3',
     description: 'Landing page de prueba para mostrar un servicio de almacenamiento en la nube: AWS S3, estoy estudiando un AWS y decidí implementarlo para este despliege.',
     imageUrl: "/landing_AWS_S3.PNG",
@@ -40,6 +31,15 @@ const projects = [
     githubUrl: "https://github.com/rodjoker/rodcode_web_s3_aws",
     demoUrl: "https://lnkd.in/eS4gUVri",
     date: "2025"
+  },
+  {
+    title: 'Exam Studio — Simulador Salesforce ADM-201',
+    description: 'Simulador del examen oficial Salesforce Certified Administrator con preguntas generadas por IA (DeepSeek) que nunca se repiten. 65 preguntas ponderadas por dominio, 3 niveles de dificultad, historial de intentos con revisión y reintento.',
+    imageUrl: "/salesforce_exam.PNG",
+    technologies: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Zustand", "DeepSeek AI", "Tailwind CSS"],
+    githubUrl: "https://github.com/rodjoker/exam-generator",
+    demoUrl: "https://exam-generator-black.vercel.app/",
+    date: "2026"
   },
 ];
 export default function ProjectsPage() {

@@ -50,7 +50,7 @@ function CVModal({ onClose }: { onClose: () => void }) {
               +34 611360462 · rodolfoantoniorq@gmail.com · linkedin.com/in/rodolforodriguez-desarrolladorweb · rodcode.dev
             </p>
             <p className="text-[#58A6FF] font-semibold mt-1">
-              DESARROLLADOR FULL STACK · React · Next.js · NestJS · React Native · AWS
+              DESARROLLADOR FULL STACK · React · Node.js · Express · NestJS · AWS
             </p>
             <hr className="border-[#30363D] mt-3" />
           </div>
@@ -59,7 +59,7 @@ function CVModal({ onClose }: { onClose: () => void }) {
           <div>
             <h2 className="text-xs font-bold text-[#58A6FF] uppercase tracking-widest mb-2">Perfil</h2>
             <p className="text-[#8B949E]">
-              Desarrollador Full Stack con experiencia construyendo productos completos en producción: interfaces web, apps móviles y arquitecturas serverless en AWS. Especializado en el ecosistema JavaScript/TypeScript (React, Next.js, NestJS, React Native) y en sistemas de tiempo real con WebSockets. Uso la IA como co-piloto de desarrollo para entregar código más limpio y escalable a mayor velocidad.
+              Desarrollador Full Stack con cerca de 3 años de experiencia programando, especializado en React, Node.js y Express. Experiencia concreta en mantenimiento, evolución y mejora continua de aplicaciones web en producción real: diagnóstico y resolución de bugs críticos, optimización de infraestructura y evolución de APIs y flujos de negocio existentes. Trabajo con MongoDB y SQL, diseño APIs RESTful, y estoy acostumbrado a operar de forma autónoma sobre múltiples frentes de un mismo producto (frontend, backend y despliegue), con foco en calidad, buenas prácticas y aprendizaje continuo.
             </p>
           </div>
 
@@ -68,15 +68,13 @@ function CVModal({ onClose }: { onClose: () => void }) {
             <h2 className="text-xs font-bold text-[#58A6FF] uppercase tracking-widest mb-3">Habilidades Técnicas</h2>
             <div className="space-y-1.5">
               {[
-                ['Lenguajes',       'JavaScript, TypeScript, Python'],
-                ['Frontend',        'React, Next.js, Tailwind CSS, Material UI, HTML, CSS'],
-                ['Backend',         'Node.js, Express.js, NestJS, FastAPI'],
-                ['Mobile',          'React Native, Expo'],
-                ['Bases de datos',  'MongoDB, PostgreSQL, Supabase'],
-                ['Cloud',           'AWS (Lambda, Cognito, S3, API Gateway, Connect), Serverless Framework, Boto3'],
-                ['Tiempo real',     'WebSockets, Socket.io, Redis/Upstash · Estado: Zustand'],
-                ['IA & Herramientas','GitHub Copilot, Claude AI, Git, GitHub, Swagger'],
-                ['Metodologías',    'Clean Code, GitFlow, Agile, REST API Design'],
+                ['Lenguajes',       'JavaScript, TypeScript'],
+                ['Frontend',        'React, Next JS, Material UI, HTML, CSS, Tailwind CSS'],
+                ['Backend',         'Node.js, Express.js, NestJS'],
+                ['Bases de datos',  'MongoDB, SQL'],
+                ['Tiempo real',     'WebSockets'],
+                ['Cloud',           'AWS (Lambda, Amazon Connect)'],
+                ['Herramientas y prácticas', 'Git/GitHub, Postman, diseño de APIs RESTful, control de versiones, optimización de costos de infraestructura, Prompt engineering, Desarrollo asistido por IA (GitHub Copilot, Claude AI)'],
               ].map(([label, value]) => (
                 <div key={label} className="flex gap-2">
                   <span className="text-[#E6EDF3] font-semibold min-w-[130px]">{label}:</span>
@@ -90,33 +88,35 @@ function CVModal({ onClose }: { onClose: () => void }) {
           <div>
             <h2 className="text-xs font-bold text-[#58A6FF] uppercase tracking-widest mb-3">Experiencia</h2>
 
+            <div className="flex justify-between items-start mb-2">
+              <span className="font-semibold text-[#E6EDF3]">Desarrollador Full Stack — Freelance</span>
+              <span className="text-[#6E7681] text-xs whitespace-nowrap ml-4">Mar. 2023 – Actualidad</span>
+            </div>
+
             <div className="mb-4">
-              <div className="flex justify-between items-start">
-                <span className="font-semibold text-[#E6EDF3]">GEMES — Plataforma de Logística (Freelance)</span>
-                <span className="text-[#6E7681] text-xs whitespace-nowrap ml-4">Ene. 2024 – Actualidad</span>
-              </div>
+              <p className="font-semibold text-[#C9D1D9] text-[13px]">
+                GEMES — Plataforma de logística y delivery (Ene. 2024 – Actualidad)
+              </p>
               <ul className="mt-2 space-y-1 text-[#8B949E]">
-                <li>• Construí plataforma de 3 actores en producción: backend serverless (NestJS + AWS Lambda), backoffice web (React + Vite + MUI) y app móvil (React Native + Expo)</li>
-                <li>• Implementé tiempo real con WebSockets (AWS API Gateway) + Redis para coordinación instantánea entre clientes, operadores y domiciliarios</li>
-                <li>• GPS tracking en background en app móvil con notificaciones push prioritarias (Expo Notifications)</li>
-                <li>• Infraestructura AWS completa: Lambda, Cognito, S3, API Gateway con Serverless Framework</li>
+                <li>• Asumí la responsabilidad completa del backend y frontend (cliente y operadores) tras los primeros 8 meses del proyecto, liderando su mantenimiento y evolución continua</li>
+                <li>• Migré la infraestructura AWS, reduciendo el costo operativo mensual en aproximadamente un 80% mediante la eliminación de componentes innecesarios (DocumentDB, NAT, VPC)</li>
+                <li>• Diagnostiqué y resolví incidentes críticos en producción: cálculo incorrecto de tarifas de riders, pérdida de sesión entre cuentas y reconexión de WebSocket con tokens vencidos</li>
+                <li>• Desarrollé y mantuve APIs RESTful con Node.js/NestJS y MongoDB, integradas con servicios AWS (Cognito, Lambda) para autenticación y comunicación en tiempo real vía WebSockets</li>
+                <li>• Construí y evolucioné el frontend web en React para clientes y operadores: formularios, tablas dinámicas y módulos de notificaciones</li>
+                <li>• Diseñé e implementé el sistema de auto-asignación de pedidos a riders, que calcula el rider disponible más cercano al local de origen aplicando reglas de negocio (disponibilidad, pedidos activos, ubicación), reduciendo la carga operativa manual del equipo de despacho</li>
               </ul>
               <p className="mt-1 text-xs text-[#58A6FF] italic">
-                Stack: NestJS · TypeScript · MongoDB Atlas · AWS Lambda/Cognito/S3/API Gateway · React Native · Expo · Redis · Zustand
+                Stack: NestJS · Node.js · MongoDB · AWS (Lambda, Cognito) · WebSockets · React
               </p>
             </div>
 
             <div>
-              <div className="flex justify-between items-start">
-                <span className="font-semibold text-[#E6EDF3]">Proyectos Freelance Adicionales</span>
-                <span className="text-[#6E7681] text-xs whitespace-nowrap ml-4">Mar. 2023 – Actualidad</span>
-              </div>
+              <p className="font-semibold text-[#C9D1D9] text-[13px]">
+                Plataforma de administración de proyectos inmobiliarios (Mar. 2023 – Dic. 2023)
+              </p>
               <ul className="mt-2 space-y-1 text-[#8B949E]">
-                <li>• Next.js + Supabase: reducción del 30% en tiempo de desarrollo aprovechando auth y base de datos integradas</li>
-                <li>• API RESTful Python (FastAPI) + AWS Boto3 para gestión de usuarios con CRUD completo y persistencia en BD</li>
-                <li>• Auth NestJS + Passport.js con soporte OAuth 2.0 para integración segura con servicios de terceros</li>
-                <li>• Plataforma inmobiliaria: administración de proyectos con React Vite, Material UI y MongoDB</li>
-                <li>• Integración AWS Connect + Cognito para flujos de autenticación y atención al cliente</li>
+                <li>• Desarrollé el frontend con React (Vite) y Material UI para la gestión de proyectos de construcción y remodelación: alta, edición y eliminación de proyectos, asignación de trabajadores y seguimiento de avance</li>
+                <li>• Contribuí puntualmente al backend (endpoints REST) y a la infraestructura como código para el despliegue en AWS</li>
               </ul>
             </div>
           </div>
@@ -127,10 +127,10 @@ function CVModal({ onClose }: { onClose: () => void }) {
             <div className="space-y-2">
               <div>
                 <div className="flex justify-between">
-                  <span className="font-semibold text-[#E6EDF3]">Desarrollo Web Full Stack</span>
+                  <span className="font-semibold text-[#E6EDF3]">Formación en Desarrollo Web Full Stack MERN</span>
                   <span className="text-[#6E7681] text-xs">2023</span>
                 </div>
-                <p className="text-[#8B949E]">Protalento / ADA School</p>
+                <p className="text-[#8B949E]">ADA School</p>
               </div>
               <div>
                 <div className="flex justify-between">
@@ -147,8 +147,7 @@ function CVModal({ onClose }: { onClose: () => void }) {
             <h2 className="text-xs font-bold text-[#58A6FF] uppercase tracking-widest mb-3">Certificaciones</h2>
             <div>
               <div className="flex justify-between">
-                <span className="font-semibold text-[#E6EDF3]">AWS Certified Cloud Practitioner</span>
-                <span className="text-[#6E7681] text-xs">2025</span>
+                <span className="font-semibold text-[#E6EDF3]">AWS Certified Cloud Practitioner (CCP)</span>
               </div>
               <p className="text-[#8B949E]">Amazon Web Services</p>
               <a

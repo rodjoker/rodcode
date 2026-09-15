@@ -144,7 +144,7 @@ const MyDocument = () => (
         +34 611360462  ·  rodolfoantoniorq@gmail.com  ·  linkedin.com/in/rodolforodriguez-desarrolladorweb  ·  rodcode.dev
       </Text>
       <Text style={styles.jobTitle}>
-        DESARROLLADOR FULL STACK  ·  React · Next.js · NestJS · React Native · AWS
+        DESARROLLADOR FULL STACK  ·  React · Node.js · Express · NestJS · AWS
       </Text>
       <View style={styles.divider} />
 
@@ -152,7 +152,7 @@ const MyDocument = () => (
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Perfil</Text>
         <Text style={styles.profileText}>
-          Desarrollador Full Stack con experiencia construyendo productos completos en producción: interfaces web, apps móviles y arquitecturas serverless en AWS. Especializado en el ecosistema JavaScript/TypeScript (React, Next.js, NestJS, React Native) y en sistemas de tiempo real con WebSockets. Uso la IA como co-piloto de desarrollo para entregar código más limpio y escalable a mayor velocidad.
+          Desarrollador Full Stack con cerca de 3 años de experiencia programando, especializado en React, Node.js y Express. Experiencia concreta en mantenimiento, evolución y mejora continua de aplicaciones web en producción real: diagnóstico y resolución de bugs críticos, optimización de infraestructura y evolución de APIs y flujos de negocio existentes. Trabajo con MongoDB y SQL, diseño APIs RESTful, y estoy acostumbrado a operar de forma autónoma sobre múltiples frentes de un mismo producto (frontend, backend y despliegue), con foco en calidad, buenas prácticas y aprendizaje continuo.
         </Text>
       </View>
 
@@ -161,15 +161,13 @@ const MyDocument = () => (
         <Text style={styles.sectionTitle}>Habilidades Técnicas</Text>
 
         {[
-          ['Lenguajes',        'JavaScript, TypeScript, Python'],
-          ['Frontend',         'React, Next.js, Tailwind CSS, Material UI, HTML, CSS'],
-          ['Backend',          'Node.js, Express.js, NestJS, FastAPI'],
-          ['Mobile',           'React Native, Expo'],
-          ['Bases de datos',   'MongoDB, PostgreSQL, Supabase'],
-          ['Cloud',            'AWS (Lambda, Cognito, S3, API Gateway, Connect), Serverless Framework, Boto3'],
-          ['Tiempo real',      'WebSockets, Socket.io, Redis/Upstash · Estado: Zustand'],
-          ['IA & Herramientas','GitHub Copilot, Claude AI, Git, GitHub, Swagger'],
-          ['Metodologías',     'Clean Code, GitFlow, Agile, REST API Design'],
+          ['Lenguajes',              'JavaScript, TypeScript'],
+          ['Frontend',               'React, Next JS, Material UI, HTML, CSS, Tailwind CSS'],
+          ['Backend',                'Node.js, Express.js, NestJS'],
+          ['Bases de datos',         'MongoDB, SQL'],
+          ['Tiempo real',            'WebSockets'],
+          ['Cloud',                  'AWS (Lambda, Amazon Connect)'],
+          ['Herramientas y prácticas','Git/GitHub, Postman, diseño de APIs RESTful, control de versiones, optimización de costos de infraestructura, Prompt engineering, Desarrollo asistido por IA (GitHub Copilot, Claude AI)'],
         ].map(([label, value]) => (
           <View key={label} style={styles.skillRow}>
             <Text style={styles.skillLabel}>{label}:</Text>
@@ -182,46 +180,46 @@ const MyDocument = () => (
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Experiencia</Text>
 
-        {/* GEMES */}
         <View style={styles.jobHeader}>
-          <Text style={styles.jobName}>GEMES — Plataforma de Logística (Freelance)</Text>
-          <Text style={styles.jobDate}>Ene. 2024 – Actualidad</Text>
-        </View>
-        <Text style={styles.bullet}>
-          • Construí plataforma de 3 actores en producción: backend serverless (NestJS + AWS Lambda), backoffice web (React + Vite + MUI) y app móvil (React Native + Expo)
-        </Text>
-        <Text style={styles.bullet}>
-          • Implementé tiempo real con WebSockets (AWS API Gateway) + Redis para coordinación instantánea entre clientes, operadores y domiciliarios
-        </Text>
-        <Text style={styles.bullet}>
-          • GPS tracking en background en app móvil con notificaciones push prioritarias (Expo Notifications)
-        </Text>
-        <Text style={styles.bullet}>
-          • Infraestructura AWS completa: Lambda, Cognito, S3, API Gateway con Serverless Framework
-        </Text>
-        <Text style={styles.stackLine}>
-          Stack: NestJS · TypeScript · MongoDB Atlas · AWS Lambda/Cognito/S3/API Gateway · React Native · Expo · Redis · Zustand
-        </Text>
-
-        {/* Proyectos adicionales */}
-        <View style={styles.jobHeader}>
-          <Text style={styles.jobName}>Proyectos Freelance Adicionales</Text>
+          <Text style={styles.jobName}>Desarrollador Full Stack — Freelance</Text>
           <Text style={styles.jobDate}>Mar. 2023 – Actualidad</Text>
         </View>
-        <Text style={styles.bullet}>
-          • Next.js + Supabase: reducción del 30% en tiempo de desarrollo aprovechando auth y base de datos integradas
+
+        {/* GEMES */}
+        <Text style={[styles.jobName, { fontSize: 9.5, paddingLeft: 12, marginBottom: 4 }]}>
+          GEMES — Plataforma de logística y delivery (Ene. 2024 – Actualidad)
         </Text>
         <Text style={styles.bullet}>
-          • API RESTful Python (FastAPI) + AWS Boto3 para gestión de usuarios con CRUD completo y persistencia en BD
+          • Asumí la responsabilidad completa del backend y frontend (cliente y operadores) tras los primeros 8 meses del proyecto, liderando su mantenimiento y evolución continua
         </Text>
         <Text style={styles.bullet}>
-          • Auth NestJS + Passport.js con soporte OAuth 2.0 para integración segura con servicios de terceros
+          • Migré la infraestructura AWS, reduciendo el costo operativo mensual en aproximadamente un 80% mediante la eliminación de componentes innecesarios (DocumentDB, NAT, VPC)
         </Text>
         <Text style={styles.bullet}>
-          • Plataforma inmobiliaria: administración de proyectos con React Vite, Material UI y MongoDB
+          • Diagnostiqué y resolví incidentes críticos en producción: cálculo incorrecto de tarifas de riders, pérdida de sesión entre cuentas y reconexión de WebSocket con tokens vencidos
         </Text>
         <Text style={styles.bullet}>
-          • Integración AWS Connect + Cognito para flujos de autenticación y atención al cliente
+          • Desarrollé y mantuve APIs RESTful con Node.js/NestJS y MongoDB, integradas con servicios AWS (Cognito, Lambda) para autenticación y comunicación en tiempo real vía WebSockets
+        </Text>
+        <Text style={styles.bullet}>
+          • Construí y evolucioné el frontend web en React para clientes y operadores: formularios, tablas dinámicas y módulos de notificaciones
+        </Text>
+        <Text style={styles.bullet}>
+          • Diseñé e implementé el sistema de auto-asignación de pedidos a riders, que calcula el rider disponible más cercano al local de origen aplicando reglas de negocio (disponibilidad, pedidos activos, ubicación), reduciendo la carga operativa manual del equipo de despacho
+        </Text>
+        <Text style={styles.stackLine}>
+          Stack: NestJS · Node.js · MongoDB · AWS (Lambda, Cognito) · WebSockets · React
+        </Text>
+
+        {/* Proyecto inmobiliario */}
+        <Text style={[styles.jobName, { fontSize: 9.5, paddingLeft: 12, marginBottom: 4 }]}>
+          Plataforma de administración de proyectos inmobiliarios (Mar. 2023 – Dic. 2023)
+        </Text>
+        <Text style={styles.bullet}>
+          • Desarrollé el frontend con React (Vite) y Material UI para la gestión de proyectos de construcción y remodelación: alta, edición y eliminación de proyectos, asignación de trabajadores y seguimiento de avance
+        </Text>
+        <Text style={styles.bullet}>
+          • Contribuí puntualmente al backend (endpoints REST) y a la infraestructura como código para el despliegue en AWS
         </Text>
       </View>
 
@@ -230,10 +228,10 @@ const MyDocument = () => (
         <Text style={styles.sectionTitle}>Estudios</Text>
 
         <View style={styles.eduRow}>
-          <Text style={styles.eduTitle}>Desarrollo Web Full Stack</Text>
+          <Text style={styles.eduTitle}>Formación en Desarrollo Web Full Stack MERN</Text>
           <Text style={styles.eduDate}>2023</Text>
         </View>
-        <Text style={styles.eduSub}>Protalento / ADA School</Text>
+        <Text style={styles.eduSub}>ADA School</Text>
 
         <View style={[styles.eduRow, { marginTop: 4 }]}>
           <Text style={styles.eduTitle}>Profesional en Derecho</Text>
@@ -247,8 +245,7 @@ const MyDocument = () => (
         <Text style={styles.sectionTitle}>Certificaciones</Text>
 
         <View style={styles.eduRow}>
-          <Text style={styles.eduTitle}>AWS Certified Cloud Practitioner</Text>
-          <Text style={styles.eduDate}>2025</Text>
+          <Text style={styles.eduTitle}>AWS Certified Cloud Practitioner (CCP)</Text>
         </View>
         <Text style={styles.eduSub}>Amazon Web Services · credly.com/badges/e829ea0a-7fad-4379-ab9c-c4f0b813fb32</Text>
       </View>

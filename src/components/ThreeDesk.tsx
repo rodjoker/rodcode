@@ -84,7 +84,7 @@ function buildCVTexture(): THREE.CanvasTexture {
 
   ctx.font = 'bold 19px Inter, system-ui'
   ctx.fillStyle = '#58A6FF'
-  ctx.fillText('DESARROLLADOR FULL STACK  ·  React · Next.js · NestJS · React Native · AWS', M, y)
+  ctx.fillText('DESARROLLADOR FULL STACK  ·  React · Node.js · Express · NestJS · AWS', M, y)
   y += 16
 
   ctx.fillStyle = '#30363D'
@@ -99,7 +99,7 @@ function buildCVTexture(): THREE.CanvasTexture {
 
   ctx.font = '15px Inter, system-ui'
   ctx.fillStyle = '#C9D1D9'
-  y = wrapText(ctx, 'Desarrollador Full Stack con experiencia construyendo productos completos en producción: interfaces web, apps móviles y arquitecturas serverless en AWS. Especializado en JavaScript/TypeScript (React, Next.js, NestJS, React Native) y sistemas de tiempo real con WebSockets. Uso la IA como co-piloto de desarrollo para entregar código más limpio y escalable.', M, y, W, 21)
+  y = wrapText(ctx, 'Desarrollador Full Stack con cerca de 3 años de experiencia programando, especializado en React, Node.js y Express. Experiencia concreta en mantenimiento, evolución y mejora continua de aplicaciones web en producción real: diagnóstico y resolución de bugs críticos, optimización de infraestructura y evolución de APIs y flujos de negocio existentes. Trabajo con MongoDB y SQL, diseño APIs RESTful, y opero de forma autónoma sobre múltiples frentes de un mismo producto (frontend, backend y despliegue).', M, y, W, 21)
   y += 4
 
   ctx.fillStyle = '#30363D'
@@ -113,14 +113,13 @@ function buildCVTexture(): THREE.CanvasTexture {
   y += 18
 
   const skills: [string, string][] = [
-    ['Lenguajes',        'JavaScript, TypeScript, Python'],
-    ['Frontend',         'React, Next.js, Tailwind CSS, Material UI, HTML, CSS'],
-    ['Backend',          'Node.js, Express.js, NestJS, FastAPI'],
-    ['Mobile',           'React Native, Expo'],
-    ['Bases de datos',   'MongoDB, PostgreSQL, Supabase'],
-    ['Cloud',            'AWS (Lambda, Cognito, S3, API Gateway, Connect), Serverless Framework'],
-    ['Tiempo real',      'WebSockets, Socket.io, Redis/Upstash · Zustand'],
-    ['IA & Tools',       'Claude AI, GitHub Copilot, Git, GitHub, Swagger'],
+    ['Lenguajes',        'JavaScript, TypeScript'],
+    ['Frontend',         'React, Next JS, Material UI, HTML, CSS, Tailwind CSS'],
+    ['Backend',          'Node.js, Express.js, NestJS'],
+    ['Bases de datos',   'MongoDB, SQL'],
+    ['Tiempo real',      'WebSockets'],
+    ['Cloud',            'AWS (Lambda, Amazon Connect)'],
+    ['Herramientas',     'Git/GitHub, Postman, REST APIs, costos de infra, Prompt engineering, Copilot, Claude AI'],
   ]
 
   skills.forEach(([label, value]) => {
@@ -147,21 +146,28 @@ function buildCVTexture(): THREE.CanvasTexture {
 
   ctx.font = 'bold 16px Inter, system-ui'
   ctx.fillStyle = '#E6EDF3'
-  ctx.fillText('GEMES — Plataforma de Logística (Freelance)', M, y)
+  ctx.fillText('Desarrollador Full Stack — Freelance', M, y)
   ctx.font = '14px Inter, system-ui'
   ctx.fillStyle = '#6E7681'
   ctx.textAlign = 'right'
-  ctx.fillText('Ene. 2024 – Actualidad', canvas.width - M, y)
+  ctx.fillText('Mar. 2023 – Actualidad', canvas.width - M, y)
   ctx.textAlign = 'left'
-  y += 20
+  y += 22
+
+  ctx.font = 'bold 14px Inter, system-ui'
+  ctx.fillStyle = '#C9D1D9'
+  y = wrapText(ctx, 'GEMES — Plataforma de logística y delivery (Ene. 2024 – Actualidad)', M + 10, y, W - 10, 18)
+  y += 2
 
   ctx.font = '14px Inter, system-ui'
   ctx.fillStyle = '#8B949E'
   const gemesLines = [
-    '• Backend serverless (NestJS + AWS Lambda), backoffice React y app móvil React Native en producción',
-    '• Tiempo real con WebSockets (AWS API Gateway) + Redis — coordinación entre clientes, operadores y riders',
-    '• GPS tracking en background con notificaciones push prioritarias (Expo Notifications)',
-    '• Infraestructura AWS: Lambda, Cognito, S3, API Gateway con Serverless Framework',
+    '• Asumí la responsabilidad completa del backend y frontend (cliente y operadores) tras los primeros 8 meses del proyecto',
+    '• Migré la infraestructura AWS, reduciendo el costo operativo mensual en aproximadamente un 80% (eliminación de DocumentDB, NAT, VPC)',
+    '• Diagnostiqué y resolví incidentes críticos: tarifas de riders, pérdida de sesión entre cuentas, reconexión de WebSocket con tokens vencidos',
+    '• APIs RESTful con Node.js/NestJS y MongoDB, integradas con AWS (Cognito, Lambda) para auth y tiempo real vía WebSockets',
+    '• Frontend web en React para clientes y operadores: formularios, tablas dinámicas y módulos de notificaciones',
+    '• Sistema de auto-asignación de pedidos a riders por cercanía y reglas de negocio, reduciendo la carga operativa manual',
   ]
   gemesLines.forEach(line => {
     y = wrapText(ctx, line, M + 10, y, W - 10, 20)
@@ -169,27 +175,21 @@ function buildCVTexture(): THREE.CanvasTexture {
 
   ctx.font = '13px Inter, system-ui'
   ctx.fillStyle = '#58A6FF'
-  ctx.fillText('Stack: NestJS · TypeScript · MongoDB Atlas · AWS · React Native · Expo · Redis · Zustand', M + 10, y)
-  y += 20
+  ctx.fillText('Stack: NestJS · Node.js · MongoDB · AWS (Lambda, Cognito) · WebSockets · React', M + 10, y)
+  y += 22
 
-  ctx.font = 'bold 16px Inter, system-ui'
-  ctx.fillStyle = '#E6EDF3'
-  ctx.fillText('Proyectos Freelance Adicionales', M, y)
-  ctx.font = '14px Inter, system-ui'
-  ctx.fillStyle = '#6E7681'
-  ctx.textAlign = 'right'
-  ctx.fillText('Mar. 2023 – Actualidad', canvas.width - M, y)
-  ctx.textAlign = 'left'
-  y += 20
+  ctx.font = 'bold 14px Inter, system-ui'
+  ctx.fillStyle = '#C9D1D9'
+  y = wrapText(ctx, 'Plataforma de administración de proyectos inmobiliarios (Mar. 2023 – Dic. 2023)', M + 10, y, W - 10, 18)
+  y += 2
 
   ctx.font = '14px Inter, system-ui'
   ctx.fillStyle = '#8B949E'
-  const freelanceLines = [
-    '• Next.js + Supabase: reducción del 30% en tiempo de desarrollo',
-    '• API RESTful Python (FastAPI) + AWS Boto3 — CRUD completo con persistencia en BD',
-    '• Auth NestJS + Passport.js con OAuth 2.0 para integración con servicios de terceros',
+  const realEstateLines = [
+    '• Frontend con React (Vite) y Material UI: alta, edición y eliminación de proyectos, asignación de trabajadores y seguimiento de avance',
+    '• Contribuí puntualmente al backend (endpoints REST) y a la infraestructura como código para el despliegue en AWS',
   ]
-  freelanceLines.forEach(line => {
+  realEstateLines.forEach(line => {
     y = wrapText(ctx, line, M + 10, y, W - 10, 20)
   })
   y += 6
@@ -206,7 +206,7 @@ function buildCVTexture(): THREE.CanvasTexture {
 
   ctx.font = 'bold 15px Inter, system-ui'
   ctx.fillStyle = '#E6EDF3'
-  ctx.fillText('Desarrollo Web Full Stack', M, y)
+  ctx.fillText('Formación en Desarrollo Web Full Stack MERN', M, y)
   ctx.font = '13px Inter, system-ui'
   ctx.fillStyle = '#6E7681'
   ctx.textAlign = 'right'
@@ -215,7 +215,7 @@ function buildCVTexture(): THREE.CanvasTexture {
   y += 18
   ctx.font = '13px Inter, system-ui'
   ctx.fillStyle = '#8B949E'
-  ctx.fillText('Protalento / ADA School', M, y)
+  ctx.fillText('ADA School', M, y)
   y += 18
 
   ctx.font = 'bold 15px Inter, system-ui'
@@ -244,12 +244,7 @@ function buildCVTexture(): THREE.CanvasTexture {
 
   ctx.font = 'bold 15px Inter, system-ui'
   ctx.fillStyle = '#E6EDF3'
-  ctx.fillText('AWS Certified Cloud Practitioner', M, y)
-  ctx.font = '13px Inter, system-ui'
-  ctx.fillStyle = '#6E7681'
-  ctx.textAlign = 'right'
-  ctx.fillText('2025', canvas.width - M, y)
-  ctx.textAlign = 'left'
+  ctx.fillText('AWS Certified Cloud Practitioner (CCP)', M, y)
   y += 18
   ctx.font = '13px Inter, system-ui'
   ctx.fillStyle = '#8B949E'

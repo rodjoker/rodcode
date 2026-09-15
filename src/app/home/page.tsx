@@ -83,13 +83,13 @@ const projects = [
     date: '2025',
   },
   {
-    title: 'Strategy Search Job',
-    description: 'Agenda con estrategia de búsqueda de empleo basada en metodologías probadas para maximizar las posibilidades de encontrar trabajo.',
-    imageUrl: '/strategySearchJob.PNG',
-    technologies: ['NextJS', 'TypeScript', 'Tailwind CSS'],
-    githubUrl: 'https://github.com/rodjoker',
-    demoUrl: 'https://strategy-search-job.vercel.app/dashboard',
-    date: '2025',
+    title: 'Exam Studio — Simulador Salesforce ADM-201',
+    description: 'Simulador del examen oficial Salesforce Certified Administrator con preguntas generadas por IA (DeepSeek) que nunca se repiten. 65 preguntas ponderadas por dominio, 3 niveles de dificultad, historial de intentos con revisión y reintento.',
+    imageUrl: '/salesforce_exam.PNG',
+    technologies: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL', 'Zustand', 'DeepSeek AI', 'Tailwind CSS'],
+    githubUrl: 'https://github.com/rodjoker/exam-generator',
+    demoUrl: 'https://exam-generator-black.vercel.app/',
+    date: '2026',
   },
 ]
 
