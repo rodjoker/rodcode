@@ -38,6 +38,15 @@ const AIIcon = () => (
 // ─── Datos proyectos ─────────────────────────────────────────────────────────
 const projects = [
   {
+    title: 'Honey Badger — Reclamaciones de techos',
+    description: 'Plataforma de gestión de reclamaciones de techos en Florida: sitio público con leads en tiempo real, inspecciones con fotos y mapa, reclamaciones de 11 estados, portal del propietario y dashboard de 5 pestañas. Clonada de mi plantilla AlignPro y terminada en 5 días con Next.js y desarrollo asistido por IA.',
+    imageUrl: '/projects/honey-badger/dashboard.jpg',
+    technologies: ['Next.js 16', 'TypeScript', 'Supabase', 'PostgreSQL', 'RLS', 'Realtime', 'Tailwind CSS'],
+    githubUrl: 'https://github.com/rodjoker/honey_badger',
+    slug: 'honey-badger',
+    date: '2026',
+  },
+  {
     title: 'English Journey — AI English Platform',
     description: 'Plataforma de aprendizaje de inglés técnico para programadores hispanohablantes. 60 días de contenido estructurado: vocabulario (900 palabras), lecturas técnicas, gramática, práctica de entrevistas y tests diarios con score mínimo. Integra IA con DeepSeek — RodCode, el profesor virtual que responde en tiempo real vía streaming.',
     imageUrl: '/english_journey.png',
