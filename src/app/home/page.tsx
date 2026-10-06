@@ -49,10 +49,11 @@ const projects = [
   {
     title: 'English Journey — AI English Platform',
     description: 'Plataforma de aprendizaje de inglés técnico para programadores hispanohablantes. 60 días de contenido estructurado: vocabulario (900 palabras), lecturas técnicas, gramática, práctica de entrevistas y tests diarios con score mínimo. Integra IA con DeepSeek — RodCode, el profesor virtual que responde en tiempo real vía streaming.',
-    imageUrl: '/english_journey.png',
+    imageUrl: '/projects/english-journey/login.jpg',
     technologies: ['Next.js 16', 'TypeScript', 'Supabase', 'DeepSeek AI', 'PostgreSQL', 'Tailwind CSS'],
     githubUrl: 'https://github.com/rodjoker/rc_a2_english',
-    demoUrl: 'https://github.com/rodjoker/rc_a2_english',
+    demoUrl: 'https://rc-a2-english.vercel.app/',
+    slug: 'english-journey',
     date: '2026',
   },
   {
@@ -67,10 +68,11 @@ const projects = [
   {
     title: 'GEMES — Plataforma de Logística en Producción',
     description: 'Plataforma de delivery de tres lados (clientes, operadores y riders) en producción real. Backend serverless en AWS Lambda + NestJS, WebSockets para coordinación en tiempo real, GPS tracking en background, autenticación con Cognito, almacenamiento S3 y notificaciones push. Incluye backoffice React para operadores y app móvil Expo para riders.',
-    imageUrl: '/gemes.PNG',
-    technologies: ['NestJS', 'React Native', 'Expo', 'AWS Lambda', 'WebSockets', 'DocumentDB', 'Cognito', 'Redis', 'VPC'],
+    imageUrl: '/projects/gemes/operator-rider-map.jpg',
+    technologies: ['NestJS', 'React Native', 'Expo', 'AWS Lambda', 'WebSockets', 'MongoDB Atlas', 'Cognito', 'Redis'],
     githubUrl: 'https://github.com/rodjoker',
     demoUrl: '',
+    slug: 'gemes',
     date: '2024',
   },
   {

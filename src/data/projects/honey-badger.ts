@@ -145,8 +145,13 @@ const honeyBadger: ProjectCase = {
     },
   ],
   links: {
-    demo: 'https://honey-badger-mu.vercel.app/public',
+    demo: 'https://honey-badger-mu.vercel.app/login',
     github: 'https://github.com/rodjoker/honey_badger',
+  },
+  demoCredentials: {
+    email: 'demo@example.com',
+    password: 'Demo2026!',
+    note: 'Usuario de solo lectura: puedes recorrer el dashboard, reclamaciones, inspecciones y leads, pero no modificar datos. El sitio público de captación está en /public.',
   },
   disclaimer: 'Todos los datos de la demo (clientes, direcciones, montos) son ficticios y se cargaron con seeds.',
 }

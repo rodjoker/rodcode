@@ -40,8 +40,10 @@ export interface ProjectCase {
     start: string
     /** Fecha de término o despliegue, texto libre. */
     end: string
-    /** Duración en días. */
-    days: number
+    /** Duración en días. Si el proyecto sigue evolucionando, omítelo y usa `duration`. */
+    days?: number
+    /** Texto libre para proyectos en evolución continua, p. ej. "+2 años en producción". */
+    duration?: string
     /** Frase corta de cómo fue posible. */
     how?: string
   }

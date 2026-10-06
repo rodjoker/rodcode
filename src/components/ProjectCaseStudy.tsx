@@ -131,8 +131,12 @@ export default function ProjectCaseStudy({ project }: { project: ProjectCase }) 
         <div className="max-w-5xl mx-auto">
           <FadeIn className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
             <Stat
-              label="Tiempo total"
-              value={`${timeline.days} ${timeline.days === 1 ? 'día' : 'días'}`}
+              label={timeline.days ? 'Tiempo total' : 'Trayectoria'}
+              value={
+                timeline.days
+                  ? `${timeline.days} ${timeline.days === 1 ? 'día' : 'días'}`
+                  : (timeline.duration ?? '')
+              }
               sub={`${timeline.start} → ${timeline.end}`}
             />
             <Stat
