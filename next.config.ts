@@ -4,16 +4,21 @@ const blogApiUrl = process.env.NEXT_PUBLIC_BLOG_API_URL || "http://localhost:300
 const blogApiOrigin = new URL(blogApiUrl).origin;
 const blogApiHostname = new URL(blogApiUrl).hostname;
 const blogApiPort = new URL(blogApiUrl).port;
+const blogApiProtocol = new URL(blogApiUrl).protocol.replace(':', '') as 'http' | 'https';
 
 const nextConfig: NextConfig = {
   transpilePackages: ['@react-pdf/renderer'],
   images: {
     remotePatterns: [
       {
-        protocol: 'http',
+        protocol: blogApiProtocol,
         hostname: blogApiHostname,
         port: blogApiPort,
         pathname: '/uploads/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
       },
     ],
   },

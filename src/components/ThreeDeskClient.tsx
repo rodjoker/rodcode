@@ -3,6 +3,7 @@
 import dynamic from 'next/dynamic'
 import React, { useState } from 'react'
 import { PDFDownloadButton } from './PDFDownloadButton'
+import Lazy3D from './Lazy3D'
 
 const ThreeDeskScene = dynamic(() => import('./ThreeDesk'), { ssr: false })
 
@@ -172,9 +173,32 @@ export default function ThreeDeskClient() {
 
   return (
     <>
-      <div style={{ width: '100%', height: '100%', cursor: 'pointer' }}>
-        <ThreeDeskScene onMonitorClick={() => setShowModal(true)} />
-      </div>
+      <Lazy3D
+        className="w-full h-full"
+        reserveHeight="60vh"
+        fallback={
+          <div className="w-full h-full flex flex-col items-center justify-center gap-4 text-center px-6">
+            <p className="text-gray-300 text-lg font-semibold">Mi CV</p>
+            <p className="text-gray-400 text-sm max-w-sm">
+              Full Stack con React, Node.js/Express y AWS. Ábrelo aquí o descárgalo en PDF.
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              <button
+                type="button"
+                onClick={() => setShowModal(true)}
+                className="bg-gray-800 hover:bg-gray-700 text-white px-6 py-2 rounded-lg transition-colors"
+              >
+                Ver CV
+              </button>
+              <PDFDownloadButton />
+            </div>
+          </div>
+        }
+      >
+        <div style={{ width: '100%', height: '60vh', cursor: 'pointer' }}>
+          <ThreeDeskScene onMonitorClick={() => setShowModal(true)} />
+        </div>
+      </Lazy3D>
       {showModal && <CVModal onClose={() => setShowModal(false)} />}
     </>
   )

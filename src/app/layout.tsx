@@ -19,18 +19,18 @@ export const metadata: Metadata = {
     apple: '/rodcode_logo_black.png',
   },
   title: "RodCode — Rodolfo Rodriguez | Full Stack Developer",
-  description: "Desarrollador Full Stack con experiencia en React, Next.js, NestJS, React Native y AWS. Transformo ideas en soluciones digitales efectivas.",
+  description: "Desarrollador Full Stack: React, Next.js, Node.js/Express, NestJS, React Native y AWS. Plataformas en producción y proyectos con IA.",
   openGraph: {
     title: "RodCode — Rodolfo Rodriguez | Full Stack Developer",
-    description: "Desarrollador Full Stack con experiencia en React, Next.js, NestJS, React Native y AWS.",
+    description: "Desarrollador Full Stack: React, Node.js/Express, Next.js, NestJS y AWS.",
     url: "https://rodcode.dev",
     siteName: "RodCode",
     images: [
       {
-        url: "https://rodcode.dev/hologramas_portfolio.png",
+        url: "https://rodcode.dev/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "RodCode Portfolio — Rodolfo Rodriguez",
+        alt: "Rodolfo Rodríguez — Full Stack Developer (React, Node.js, Express)",
       },
     ],
     type: "website",
@@ -39,8 +39,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "RodCode — Rodolfo Rodriguez | Full Stack Developer",
-    description: "Desarrollador Full Stack con experiencia en React, Next.js, NestJS, React Native y AWS.",
-    images: ["https://rodcode.dev/hologramas_portfolio.png"],
+    description: "Desarrollador Full Stack: React, Node.js/Express, Next.js, NestJS y AWS.",
+    images: ["https://rodcode.dev/og-image.jpg"],
   },
 };
 
@@ -50,7 +50,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="es">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

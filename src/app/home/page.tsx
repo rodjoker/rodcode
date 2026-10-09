@@ -1,17 +1,13 @@
-'use client'
-
-import { useRef, useState } from 'react'
-import emailjs from '@emailjs/browser'
+import Image from 'next/image'
 import Header from '../../components/Header'
 import Footer from '@/components/Footer'
-import ClientThreeHero from '@/components/ClientThreeHero'
 import ThreeDeskClient from '@/components/ThreeDeskClient'
 import ProjectDetail from '@/components/ProjectDetail'
-import Single3DText from '@/components/Single3DText'
 import ProfileCard from '@/components/ProfileCard'
 import ServiceDetail from '@/components/ServiceDetail'
 import { PDFDownloadButton } from '@/components/PDFDownloadButton'
 import SkillsSphereClient from '@/components/SkillsSphereClient'
+import ContactForm from '@/components/ContactForm'
 
 // ─── Iconos contribuciones ───────────────────────────────────────────────────
 const FullStackIcon = () => (
@@ -38,12 +34,40 @@ const AIIcon = () => (
 // ─── Datos proyectos ─────────────────────────────────────────────────────────
 const projects = [
   {
+    title: 'GEMES — Plataforma de Logística en Producción',
+    description: 'Plataforma de delivery de tres lados (clientes, operadores y riders) en producción real. Backend serverless en AWS Lambda + NestJS, WebSockets para coordinación en tiempo real, GPS tracking en background, autenticación con Cognito, almacenamiento S3 y notificaciones push. Incluye backoffice React para operadores y app móvil Expo para riders.',
+    imageUrl: '/projects/gemes/operator-rider-map.jpg',
+    technologies: ['NestJS', 'React Native', 'Expo', 'AWS Lambda', 'WebSockets', 'MongoDB Atlas', 'Cognito', 'Redis'],
+    githubUrl: 'https://github.com/rodjoker',
+    demoUrl: '',
+    slug: 'gemes',
+    date: '2024',
+  },
+  {
+    title: 'Login Front + Back — Next.js + Express',
+    description: 'Plantilla full stack de autenticación: frontend en Next.js (React) y API REST en Node.js/Express con MongoDB. JWT, roles, bloqueo de cuenta tras intentos fallidos, límite de peticiones por ruta (login, registro y global), manejo centralizado de errores y pruebas de integración automáticas con supertest.',
+    imageUrl: '/projects/login-front-back/card.jpg',
+    technologies: ['Node.js', 'Express', 'MongoDB', 'JWT', 'Next.js', 'TypeScript', 'supertest'],
+    githubUrl: 'https://github.com/rodjoker/login_front_back',
+    date: '2026',
+  },
+  {
     title: 'Honey Badger — Reclamaciones de techos',
     description: 'Plataforma de gestión de reclamaciones de techos en Florida: sitio público con leads en tiempo real, inspecciones con fotos y mapa, reclamaciones de 11 estados, portal del propietario y dashboard de 5 pestañas. Clonada de mi plantilla AlignPro y terminada en 5 días con Next.js y desarrollo asistido por IA.',
     imageUrl: '/projects/honey-badger/dashboard.jpg',
     technologies: ['Next.js 16', 'TypeScript', 'Supabase', 'PostgreSQL', 'RLS', 'Realtime', 'Tailwind CSS'],
     githubUrl: 'https://github.com/rodjoker/honey_badger',
+    demoUrl: 'https://honey-badger-mu.vercel.app',
     slug: 'honey-badger',
+    date: '2026',
+  },
+  {
+    title: 'Exam Studio — Simulador Salesforce ADM-201',
+    description: 'Simulador del examen oficial Salesforce Certified Administrator con preguntas generadas por IA (DeepSeek) que nunca se repiten. 65 preguntas ponderadas por dominio, 3 niveles de dificultad, historial de intentos con revisión y reintento.',
+    imageUrl: '/salesforce_exam.PNG',
+    technologies: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL', 'Zustand', 'DeepSeek AI', 'Tailwind CSS'],
+    githubUrl: 'https://github.com/rodjoker/exam-generator',
+    demoUrl: 'https://exam-generator-black.vercel.app/',
     date: '2026',
   },
   {
@@ -57,23 +81,13 @@ const projects = [
     date: '2026',
   },
   {
-    title: 'Auth System — Next.js + Supabase',
-    description: 'Sistema de autenticación seguro con bloqueo automático tras 3 intentos fallidos, RBAC con roles y 20 permisos estructurados en base de datos, protección de rutas con middleware y edición de perfil vinculada a auth.users. Políticas RLS activas con patrones optimizados de rendimiento.',
-    imageUrl: '/login.PNG',
-    technologies: ['Next.js', 'TypeScript', 'Supabase', 'PostgreSQL', 'RLS', 'Tailwind CSS'],
-    githubUrl: 'https://github.com/rodjoker/library_login_sb',
-    demoUrl: 'https://github.com/rodjoker/library_login_sb',
-    date: '2025',
-  },
-  {
-    title: 'GEMES — Plataforma de Logística en Producción',
-    description: 'Plataforma de delivery de tres lados (clientes, operadores y riders) en producción real. Backend serverless en AWS Lambda + NestJS, WebSockets para coordinación en tiempo real, GPS tracking en background, autenticación con Cognito, almacenamiento S3 y notificaciones push. Incluye backoffice React para operadores y app móvil Expo para riders.',
-    imageUrl: '/projects/gemes/operator-rider-map.jpg',
-    technologies: ['NestJS', 'React Native', 'Expo', 'AWS Lambda', 'WebSockets', 'MongoDB Atlas', 'Cognito', 'Redis'],
-    githubUrl: 'https://github.com/rodjoker',
-    demoUrl: '',
-    slug: 'gemes',
-    date: '2024',
+    title: 'RodCode Blog — Panel de administración',
+    description: 'Blog propio integrado en este portafolio. Panel protegido con login para escribir, publicar y despublicar artículos, con subida de imágenes a Cloudinary. Frontend en Next.js y API en NestJS con PostgreSQL (Neon), JWT en cookie httpOnly y migraciones versionadas.',
+    imageUrl: '/projects/rodcode-blog/card.jpg',
+    technologies: ['Next.js', 'NestJS', 'PostgreSQL', 'TypeORM', 'JWT', 'Cloudinary'],
+    githubUrl: 'https://github.com/rodjoker/rodcode_blog',
+    demoUrl: 'https://rodcode.dev/blog',
+    date: '2026',
   },
   {
     title: 'ToneShift',
@@ -93,15 +107,6 @@ const projects = [
     demoUrl: 'https://mc-landing-two.vercel.app/home',
     date: '2025',
   },
-  {
-    title: 'Exam Studio — Simulador Salesforce ADM-201',
-    description: 'Simulador del examen oficial Salesforce Certified Administrator con preguntas generadas por IA (DeepSeek) que nunca se repiten. 65 preguntas ponderadas por dominio, 3 niveles de dificultad, historial de intentos con revisión y reintento.',
-    imageUrl: '/salesforce_exam.PNG',
-    technologies: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL', 'Zustand', 'DeepSeek AI', 'Tailwind CSS'],
-    githubUrl: 'https://github.com/rodjoker/exam-generator',
-    demoUrl: 'https://exam-generator-black.vercel.app/',
-    date: '2026',
-  },
 ]
 
 // ─── Qué puedo aportar ────────────────────────────────────────────────────────
@@ -109,7 +114,7 @@ const contributions = [
   {
     title: 'Aplicaciones Full Stack — Del MVP al Deploy',
     description: 'Construyo productos completos de principio a fin: desde la interfaz hasta el servidor y la base de datos. He desarrollado plataformas multi-rol en producción con flujos complejos, como GEMES — una plataforma de logística con clientes, operadores y domiciliarios coordinándose en tiempo real.',
-    technologies: ['Next.js', 'React', 'NestJS', 'Node.js', 'TypeScript', 'MongoDB', 'PostgreSQL'],
+    technologies: ['React', 'Next.js', 'Node.js', 'Express', 'NestJS', 'TypeScript', 'MongoDB', 'PostgreSQL'],
     features: [
       'Arquitectura modular y escalable desde el diseño inicial',
       'Sistemas multi-rol con permisos y flujos diferenciados',
@@ -158,33 +163,6 @@ const contributions = [
 
 // ─── Página principal (single-page) ──────────────────────────────────────────
 export default function Home() {
-  const form = useRef<HTMLFormElement>(null)
-  const [statusMessage, setStatusMessage] = useState<string | null>(null)
-  const [isSuccess, setIsSuccess] = useState<boolean | null>(null)
-
-  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    if (!form.current) return
-    emailjs
-      .sendForm(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? '',
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ?? '',
-        form.current,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ?? ''
-      )
-      .then(
-        () => {
-          setStatusMessage('Mensaje enviado con éxito ✅')
-          setIsSuccess(true)
-          form.current?.reset()
-        },
-        () => {
-          setStatusMessage('Error al enviar el mensaje ❌')
-          setIsSuccess(false)
-        }
-      )
-  }
-
   return (
     <>
       <Header />
@@ -204,10 +182,10 @@ export default function Home() {
                 RodCode — Rodolfo Rodriguez
               </h1>
               <p className="text-2xl text-gray-300 mb-4">
-                Programador Web FullStack
+                Desarrollador Full Stack · React · Node.js / Express
               </p>
               <p className="text-lg text-gray-400 mb-8">
-                Transformo ideas en soluciones digitales efectivas con React, Next.js, Node.js y AWS.
+                Construyo APIs con Express y NestJS y interfaces con React y Next.js. Desarrollador principal de GEMES, una plataforma de delivery en producción sobre AWS.
               </p>
               <div className="flex flex-wrap gap-4">
                 <a
@@ -226,16 +204,18 @@ export default function Home() {
               </div>
 
               <div className="mt-8">
-                <p className="text-xs text-gray-500 uppercase tracking-widest mb-3">Certificaciones</p>
+                <p className="text-xs text-gray-400 uppercase tracking-widest mb-3">Certificaciones</p>
                 <a
                   href="https://www.credly.com/badges/e829ea0a-7fad-4379-ab9c-c4f0b813fb32/linked_in_profile"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-3 bg-gray-900/60 border border-gray-700/40 hover:border-gray-500/60 rounded-xl px-4 py-2 transition-colors group"
                 >
-                  <img
+                  <Image
                     src="/aws_cloud_practitioner.PNG"
                     alt="AWS Certified Cloud Practitioner"
+                    width={48}
+                    height={48}
                     className="w-12 h-12 object-contain"
                   />
                   <div className="text-left">
@@ -253,10 +233,13 @@ export default function Home() {
               {/* Marco con gradiente */}
               <div className="relative p-[3px] rounded-2xl bg-gradient-to-br from-blue-500 via-purple-500 to-blue-800 shadow-2xl shadow-blue-500/20">
                 <div className="relative overflow-hidden rounded-2xl w-72 h-80 bg-gray-900">
-                  <img
+                  <Image
                     src="/rodolfo_perfil.png"
                     alt="Rodolfo Rodriguez"
-                    className="w-full h-full object-cover object-top"
+                    fill
+                    priority
+                    sizes="288px"
+                    className="object-cover object-top"
                   />
                   {/* Overlay glassmorphism inferior */}
                   <div className="absolute bottom-0 left-0 right-0 px-4 py-3 bg-black/50 backdrop-blur-sm border-t border-white/10">
@@ -284,8 +267,8 @@ export default function Home() {
           <div className="max-w-5xl w-11/12">
             <ProfileCard
               name="Rodolfo Rodríguez"
-              title="Frontend Developer"
-              description="Desde que tengo memoria, la tecnología me fascinaba. Mientras otros soñaban con ser astronautas o futbolistas, yo soñaba con entender cómo funcionaban los ordenadores, los videojuegos, los cables, los códigos. Me pasaba horas imaginando que algún día podría crear cosas increíbles con solo unas líneas en una pantalla. Aunque no lo sabía entonces, esa pasión infantil sería la semilla de algo mucho más grande."
+              title="Full Stack Developer"
+              description="Desde que tengo memoria, la tecnología me fascinaba. Mientras otros soñaban con ser estrellas de rock o futbolistas, yo soñaba con entender cómo funcionaban los ordenadores, los videojuegos, los cables, los códigos. Me pasaba horas imaginando que algún día podría crear cosas increíbles con solo unas líneas en una pantalla. Aunque no lo sabía entonces, esa pasión infantil sería la semilla de algo mucho más grande."
               profileUrl="/about"
               profileUrlLabel="Mi Historia"
               subtitle="Mi Enfoque"
@@ -318,7 +301,7 @@ export default function Home() {
 
         <div className="w-full bg-black py-16 px-4">
           <h2 className="text-4xl font-bold text-center text-white mb-2">Stack Tecnológico</h2>
-          <p className="text-center text-gray-500 text-sm mb-6">Tecnologías con las que trabajo a diario</p>
+          <p className="text-center text-gray-400 text-sm mb-6">Tecnologías con las que trabajo a diario</p>
           <SkillsSphereClient />
         </div>
 
@@ -339,8 +322,8 @@ export default function Home() {
                     <p>Ya tengo experiencia práctica en producción con Lambda, API Gateway (HTTP + WebSocket), S3, Cognito, CloudWatch y IAM. La siguiente etapa es profundizar en ECS Fargate para workloads containerizados, RDS Aurora Serverless para bases de datos relacionales gestionadas, CloudFront para distribución de contenido estático y Step Functions para orquestar flujos de trabajo complejos. El objetivo es poder diseñar arquitecturas completas sin depender de un DevOps separado.</p>
                   </div>
                   <div>
-                    <h3 class="text-white font-semibold text-lg mb-2">PostgreSQL y Supabase como stack de referencia</h3>
-                    <p>Estoy consolidando Supabase + PostgreSQL como mi stack de base de datos para proyectos nuevos. Ya aplico patrones de RLS optimizados (subquery caching con <code class="bg-gray-800 px-1 rounded text-sm">select auth.uid()</code>), índices parciales, políticas con <code class="bg-gray-800 px-1 rounded text-sm">WITH CHECK</code> y GRANTs explícitos por rol. El siguiente nivel es connection pooling con pgBouncer, particionado de tablas para datos de alta volumetría y uso de extensiones como <code class="bg-gray-800 px-1 rounded text-sm">pg_cron</code> para tareas programadas directamente en la base de datos.</p>
+                    <h3 class="text-white font-semibold text-lg mb-2">Backend con Node.js y Express</h3>
+                    <p>Desarrollo APIs REST con <strong class="text-white">Node.js y Express</strong> y las dejo listas para producción: autenticación con JWT, roles, bloqueo de cuenta tras intentos fallidos, límite de peticiones por ruta (login, registro y global), validación de entrada y manejo centralizado de errores, todo con MongoDB y Mongoose. Cada endpoint se cubre con pruebas automáticas de integración (supertest). Lo uso como base junto a un frontend en Next.js y React, y en GEMES llevé el mismo enfoque a NestJS, que corre sobre Express. El siguiente paso es mover el token a cookies httpOnly con CORS de origen exacto, y ampliar la cobertura de pruebas en los flujos críticos.</p>
                   </div>
                   <div>
                     <h3 class="text-white font-semibold text-lg mb-2">IA aplicada al ciclo de desarrollo</h3>
@@ -403,40 +386,8 @@ export default function Home() {
           <p className="text-lg text-gray-300 mb-8">
             ¿Quieres trabajar conmigo o tienes alguna pregunta? ¡Contáctame!
           </p>
-          <form ref={form} onSubmit={sendEmail} className="flex flex-col gap-4 text-left">
-            <input
-              type="text"
-              name="name"
-              placeholder="Nombre"
-              required
-              className="p-3 rounded-lg bg-gray-900 border border-gray-700 text-white focus:border-gray-500 focus:ring-1 focus:ring-gray-500 outline-none placeholder-gray-500"
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              required
-              className="p-3 rounded-lg bg-gray-900 border border-gray-700 text-white focus:border-gray-500 focus:ring-1 focus:ring-gray-500 outline-none placeholder-gray-500"
-            />
-            <textarea
-              name="message"
-              placeholder="Mensaje"
-              required
-              rows={4}
-              className="p-3 rounded-lg bg-gray-900 border border-gray-700 text-white focus:border-gray-500 focus:ring-1 focus:ring-gray-500 outline-none placeholder-gray-500"
-            />
-            <button
-              type="submit"
-              className="bg-gray-800 hover:bg-gray-700 py-3 px-6 rounded-xl font-bold text-white transition-colors"
-            >
-              Enviar
-            </button>
-          </form>
-          {statusMessage && (
-            <p className={`mt-6 text-lg font-medium ${isSuccess ? 'text-gray-300' : 'text-red-400'}`}>
-              {statusMessage}
-            </p>
-          )}
+          <ContactForm />
+          
         </div>
       </section>
 

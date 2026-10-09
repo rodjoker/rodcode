@@ -5,26 +5,27 @@ const Footer = () => {
   return (
     <footer className="bg-black text-white py-8">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
           <div>
             <h3 className="font-bold mb-4">RodCode</h3>
             <div className="flex flex-col space-y-2">
-              <Link href="/about" className="text-gray-400 hover:text-white">About Me</Link>
-              <Link href="/project" className="text-gray-400 hover:text-white">My Work</Link>
-              <Link href="/service" className="text-gray-400 hover:text-white">Services</Link>
+              <Link href="/about" className="text-gray-400 hover:text-white">Mi historia</Link>
+              <Link href="/home#projects" className="text-gray-400 hover:text-white">Proyectos</Link>
+              <Link href="/blog" className="text-gray-400 hover:text-white">Blog</Link>
+              <Link href="/home#services" className="text-gray-400 hover:text-white">Servicios</Link>
             </div>
           </div>
           <div>
-            <h3 className="font-bold mb-4">CONTACT</h3>
+            <h3 className="font-bold mb-4">CONTACTO</h3>
             <div className="flex flex-col space-y-2">
                <Link
               href="/contact" 
               className="text-gray-400 hover:text-white"
-            >Email</Link>
+            >Escríbeme</Link>
             </div>
           </div>
           <div>
-            <h3 className="font-bold mb-4">SOCIAL</h3>
+            <h3 className="font-bold mb-4">REDES</h3>
             <div className="flex flex-col space-y-2">
                <Link
                 href="https://www.instagram.com/rod.code?igsh=MWhoZmIxb2x0bTZhYQ==" 
@@ -54,17 +55,9 @@ const Footer = () => {
               </Link>
             </div>
           </div>
-          <div>
-            <h3 className="font-bold mb-4">LEGAL</h3>
-            <div className="flex flex-col space-y-2">
-              <p className="text-gray-400 hover:text-white">Privacy Policy</p>
-              <p className="text-gray-400 hover:text-white">Terms of Service</p>
-              <p className="text-gray-400 hover:text-white">Cookie Policy</p>
-            </div>
-          </div>
         </div>
         <div className="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400">
-          <p>© {new Date().getFullYear()} Rodcode. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} RodCode · Rodolfo Rodríguez</p>
         </div>
       </div>
     </footer>
