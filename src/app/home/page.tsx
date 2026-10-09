@@ -52,6 +52,15 @@ const projects = [
     date: '2026',
   },
   {
+    title: 'Zona de Clientes — Portal para compradores de inmuebles',
+    description: 'Demo construida para responder un RFP de una constructora: portal de autoservicio donde el comprador sigue su negocio. Catálogo y reserva de inmuebles con fotos, plan de pagos por cuotas, línea de tiempo de trámites, documentos y firma electrónica, con paneles por rol (comprador, constructora, admin). Frontend en Next.js y API serverless en AWS Lambda con MongoDB, JWT, S3 y pruebas con Vitest.',
+    imageUrl: '/projects/zona-clientes/pagos.jpg',
+    technologies: ['Next.js', 'TypeScript', 'AWS Lambda', 'Node.js', 'MongoDB', 'S3', 'JWT', 'Zod', 'Vitest'],
+    githubUrl: 'https://github.com/rodjoker/demo_costructora',
+    slug: 'zona-clientes',
+    date: '2026',
+  },
+  {
     title: 'Honey Badger — Reclamaciones de techos',
     description: 'Plataforma de gestión de reclamaciones de techos en Florida: sitio público con leads en tiempo real, inspecciones con fotos y mapa, reclamaciones de 11 estados, portal del propietario y dashboard de 5 pestañas. Clonada de mi plantilla AlignPro y terminada en 5 días con Next.js y desarrollo asistido por IA.',
     imageUrl: '/projects/honey-badger/dashboard.jpg',
@@ -82,11 +91,11 @@ const projects = [
   },
   {
     title: 'RodCode Blog — Panel de administración',
-    description: 'Blog propio integrado en este portafolio. Panel protegido con login para escribir, publicar y despublicar artículos, con subida de imágenes a Cloudinary. Frontend en Next.js y API en NestJS con PostgreSQL (Neon), JWT en cookie httpOnly y migraciones versionadas.',
-    imageUrl: '/projects/rodcode-blog/card.jpg',
-    technologies: ['Next.js', 'NestJS', 'PostgreSQL', 'TypeORM', 'JWT', 'Cloudinary'],
+    description: 'Blog propio integrado en esta misma landing: los artículos que lees en el blog se escriben y publican desde un panel de administración protegido con login (publicar, despublicar y subir imágenes a Cloudinary). Frontend en Next.js y API en NestJS desplegada en AWS con Lambda y Serverless Framework, con PostgreSQL (Neon), JWT en cookie httpOnly y migraciones versionadas.',
+    imageUrl: '/projects/rodcode-blog/panel.jpg',
+    technologies: ['Next.js', 'NestJS', 'AWS Lambda', 'Serverless', 'PostgreSQL', 'JWT', 'Cloudinary'],
     githubUrl: 'https://github.com/rodjoker/rodcode_blog',
-    demoUrl: 'https://rodcode.dev/blog',
+    demoUrl: '/blog',
     date: '2026',
   },
   {
